@@ -1,6 +1,7 @@
 import java.util.Scanner;	
 import javax.swing.*;
 import java.awt.Color;
+import java.util.Random;
 
 public class Main {
 
@@ -10,7 +11,14 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		
+		public static Carta nextCarta(Carta[] mazzo) {
+	        // Generazione casuale di un indice
+	        Random random = new Random();
+	        int indiceCasuale = random.nextInt(mazzo.length);
+
+	        // Restituisci la carta corrispondente all'indice casuale
+	        return mazzo[indiceCasuale];
+	    }
 
 		
 			CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "https://drive.google.com/file/d/1P_3Tllh30W6Jax1v58YJPEDhSmAubbsz/view");
@@ -185,7 +193,11 @@ public class Main {
 		mazzoOro[79] = co40;
 		
 		
+		//inserire carte obiettivo
+		
 		CartaObiettivo mazzoObiettivo[] = new CartaObiettivo[20];
+		
+		CartaIniziale mazzoIniziale[] = new CartaIniziale[6];
 		
 		Carta CarteDaPescare[] = new Carta[4];
 
@@ -209,8 +221,58 @@ public class Main {
 			gamers[i] = new Giocatore(sc.next());
 			
 		}
+		
+		int scelta1=0;
+		int scelta2=0;
+		
+		Random random = new Random();
+		
+		for(int i=0;i<numGiocatori;i++)
+		{
+			
+			CartaIniziale case1 = nextCarta(mazzoIniziale);
+			
+			CartaIniziale case2 = nextCarta(mazzoIniziale);
+			
+			System.out.println("Quale carta iniziale vuoi usare? ");
+			System.out.println("[1] Prima carta ");
+			System.out.println("[2] Seconda carta ");
+			scelta1 = sc.nextInt();
+		
+			switch(scelta1)
+			{
+				case 1: 
+				{
+					//getPuntatore
+					//guarda codice discord 22/04 15:24
+					System.out.println("Vuoi usare il fronte o il retro? ");
+					System.out.println("[1] fronte ");
+					System.out.println("[2] retro ");
+					scelta2 = sc.nextInt();
+					
+					switch(scelta2)
+					{
+						
+						case 3:
+						{
+							
+						}
+						case 4:
+						{
+							case1.useRetro();
+						}
+					}
+				}
+				case 2:
+				{
+					
+				}
+			
+			}
+		}
+		
 
-		Frame f1 = new Frame();
+		//Frame f1 = new Frame();
 		
 		
 		
