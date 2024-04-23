@@ -9,7 +9,11 @@ public class CartaIniziale {
 		this.bs = bsx;
 		this.bd = bdx;
     }
-
+    
+    public void useRetro(CartaIniziale ci)
+    {
+    	if(ci.)
+    }
     
     public void useRetroCi1(CartaIniziale ci1)
     {

@@ -9,18 +9,11 @@ public class Main {
 
 	public static int numGiocatori;
 	
-	private Giocatore gamers[] = new Giocatore[numGiocatori];
+	
 
 	public static void main(String[] args) {
 
-		public static Carta nextCarta(Carta[] mazzo) {
-	        // Generazione casuale di un indice
-	        Random random = new Random();
-	        int indiceCasuale = random.nextInt(mazzo.length);
-
-	        // Restituisci la carta corrispondente all'indice casuale
-	        return mazzo[indiceCasuale];
-	    }
+	Giocatore gamers[] = new Giocatore[numGiocatori];
 
 		
 			CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "https://drive.google.com/file/d/1P_3Tllh30W6Jax1v58YJPEDhSmAubbsz/view");
@@ -115,93 +108,112 @@ public class Main {
                 CartaIniziale ci4 = new CartaIniziale("foglia","farfalla","lupo","fungo");
                 CartaIniziale ci5 = new CartaIniziale("farfalla","lupo","fungo","foglia");
                 CartaIniziale ci6 = new CartaIniziale("foglia","lupo","fungo","farfalla");
+                
+                
+                CartaObiettivo cob1 = new CartaObiettivo();
+        		CartaObiettivo cob2 = new CartaObiettivo();
+        		CartaObiettivo cob3 = new CartaObiettivo();
+        		CartaObiettivo cob4 = new CartaObiettivo();
+        		CartaObiettivo cob5 = new CartaObiettivo();
+        		CartaObiettivo cob6 = new CartaObiettivo();
+        		CartaObiettivo cob7 = new CartaObiettivo();
+        		CartaObiettivo cob8 = new CartaObiettivo();
+        		CartaObiettivo cob9 = new CartaObiettivo();
+        		CartaObiettivo cob10 = new CartaObiettivo();
+        		CartaObiettivo cob11 = new CartaObiettivo();
+        		CartaObiettivo cob12 = new CartaObiettivo();
+        		CartaObiettivo cob13 = new CartaObiettivo();
+        		CartaObiettivo cob14 = new CartaObiettivo();
+        		CartaObiettivo cob15 = new CartaObiettivo();
+        		CartaObiettivo cob16 = new CartaObiettivo();
                
 		
-		CartaRisorsa mazzoRisorse[] = new CartaRisorsa[40];
+		ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
 		
-		mazzoRisorse[0] = cr1;
-		mazzoRisorse[1] = cr2;
-		mazzoRisorse[2] = cr3;
-		mazzoRisorse[3] = cr4;
-		mazzoRisorse[4] = cr5;
-		mazzoRisorse[5] = cr6;
-		mazzoRisorse[6] = cr7;
-		mazzoRisorse[7] = cr8;
-		mazzoRisorse[8] = cr9;
-		mazzoRisorse[9] = cr10;
-		mazzoRisorse[10] = cr11;
-		mazzoRisorse[11] = cr12;
-		mazzoRisorse[12] = cr13;
-		mazzoRisorse[13] = cr14;
-		mazzoRisorse[14] = cr15;
-		mazzoRisorse[15] = cr16;
-		mazzoRisorse[16] = cr17;
-		mazzoRisorse[17] = cr18;
-		mazzoRisorse[18] = cr19;
-		mazzoRisorse[19] = cr20;
-		mazzoRisorse[20] = cr21;
-		mazzoRisorse[21] = cr22;
-		mazzoRisorse[22] = cr23;
-		mazzoRisorse[23] = cr24;
-		mazzoRisorse[24] = cr25;
-		mazzoRisorse[25] = cr26;
-		mazzoRisorse[26] = cr27;
-		mazzoRisorse[27] = cr28;
-		mazzoRisorse[28] = cr29;
-		mazzoRisorse[29] = cr30;
-		mazzoRisorse[30] = cr31;
-		mazzoRisorse[31] = cr32;
-		mazzoRisorse[32] = cr33;
-		mazzoRisorse[33] = cr34;
-		mazzoRisorse[34] = cr35;
-		mazzoRisorse[35] = cr36;
-		mazzoRisorse[36] = cr37;
-		mazzoRisorse[37] = cr38;
-		mazzoRisorse[38] = cr39;
-		mazzoRisorse[39] = cr40;
+		mazzoRisorse.add(cr1);
+		mazzoRisorse.add(cr2);
+		mazzoRisorse.add(cr3);
+		mazzoRisorse.add(cr4);
+		mazzoRisorse.add(cr5);
+		mazzoRisorse.add(cr6);
+		mazzoRisorse.add(cr7);
+		mazzoRisorse.add(cr8);
+		mazzoRisorse.add(cr9);
+		mazzoRisorse.add(cr10);
+		mazzoRisorse.add(cr11);
+		mazzoRisorse.add(cr12);
+		mazzoRisorse.add(cr13);
+		mazzoRisorse.add(cr14);
+		mazzoRisorse.add(cr15);
+		mazzoRisorse.add(cr16);
+		mazzoRisorse.add(cr17);
+		mazzoRisorse.add(cr18);
+		mazzoRisorse.add(cr19);
+		mazzoRisorse.add(cr20);
+		mazzoRisorse.add(cr21);
+		mazzoRisorse.add(cr22);
+		mazzoRisorse.add(cr23);
+		mazzoRisorse.add(cr24);
+		mazzoRisorse.add(cr25);
+		mazzoRisorse.add(cr26);
+		mazzoRisorse.add(cr27);
+		mazzoRisorse.add(cr28);
+		mazzoRisorse.add(cr29);
+		mazzoRisorse.add(cr30);
+		mazzoRisorse.add(cr31);
+		mazzoRisorse.add(cr32);
+		mazzoRisorse.add(cr33);
+		mazzoRisorse.add(cr34);
+		mazzoRisorse.add(cr35);
+		mazzoRisorse.add(cr36);
+		mazzoRisorse.add(cr37);
+		mazzoRisorse.add(cr38);
+		mazzoRisorse.add(cr39);
+		mazzoRisorse.add(cr40);
 		
-		CartaOro mazzoOro[] = new CartaOro[40];
+		
+		ArrayList<CartaOro> mazzoOro = new ArrayList<CartaOro>();
 
-		mazzoOro[40] = co1;
-		mazzoOro[41] = co2;
-		mazzoOro[42] = co3;
-		mazzoOro[43] = co4;
-		mazzoOro[44] = co5;
-		mazzoOro[45] = co6;
-		mazzoOro[46] = co7;
-		mazzoOro[47] = co8;
-		mazzoOro[48] = co9;
-		mazzoOro[49] = co10;
-		mazzoOro[50] = co11;
-		mazzoOro[51] = co12;
-		mazzoOro[52] = co13;
-		mazzoOro[53] = co14;
-		mazzoOro[54] = co15;
-		mazzoOro[55] = co16;
-		mazzoOro[56] = co17;
-		mazzoOro[57] = co18;
-		mazzoOro[58] = co19;
-		mazzoOro[59] = co20;
-		mazzoOro[60] = co21;
-		mazzoOro[61] = co22;
-		mazzoOro[62] = co23;
-		mazzoOro[63] = co24;
-		mazzoOro[64] = co25;
-		mazzoOro[65] = co26;
-		mazzoOro[66] = co27;
-		mazzoOro[67] = co28;
-		mazzoOro[68] = co29;
-		mazzoOro[69] = co30;
-		mazzoOro[70] = co31;
-		mazzoOro[71] = co32;
-		mazzoOro[72] = co33;
-		mazzoOro[73] = co34;
-		mazzoOro[74] = co35;
-		mazzoOro[75] = co36;
-		mazzoOro[76] = co37;
-		mazzoOro[77] = co38;
-		mazzoOro[78] = co39;
-		mazzoOro[79] = co40;
+		mazzoOro.add(co1);
+		mazzoOro.add(co2);
+		mazzoOro.add(co3);
+		mazzoOro.add(co4);
+		mazzoOro.add(co5);
+		mazzoOro.add(co6);
+		mazzoOro.add(co7);
+		mazzoOro.add(co8);
+		mazzoOro.add(co9);
+		mazzoOro.add(co10);
+		mazzoOro.add(co11);
+		mazzoOro.add(co12);
+		mazzoOro.add(co13);
+		mazzoOro.add(co14);
+		mazzoOro.add(co15);
+		mazzoOro.add(co16);
+		mazzoOro.add(co17);
+		mazzoOro.add(co18);
+		mazzoOro.add(co19);
+		mazzoOro.add(co20);
+		mazzoOro.add(co21);
+		mazzoOro.add(co22);
+		mazzoOro.add(co23);
+		mazzoOro.add(co24);
+		mazzoOro.add(co25);
+		mazzoOro.add(co26);
+		mazzoOro.add(co27);
+		mazzoOro.add(co28);
+		mazzoOro.add(co29);
+		mazzoOro.add(co30);
+		mazzoOro.add(co31);
+		mazzoOro.add(co32);
+		mazzoOro.add(co33);
+		mazzoOro.add(co34);
+		mazzoOro.add(co35);
+		mazzoOro.add(co36);
+		mazzoOro.add(co37);
+		mazzoOro.add(co38);
+		mazzoOro.add(co39);
+		mazzoOro.add(co40);
 		
 		
 		
@@ -209,26 +221,34 @@ public class Main {
 		ArrayList<CartaObiettivo> mazzoObiettivo = new ArrayList<CartaObiettivo>();
 		
 		
-		
-		CartaObiettivo cob1 = new CartaObiettivo();
-		CartaObiettivo cob2 = new CartaObiettivo();
-		CartaObiettivo cob3 = new CartaObiettivo();
-		CartaObiettivo cob4 = new CartaObiettivo();
-		CartaObiettivo cob5 = new CartaObiettivo();
-		CartaObiettivo cob6 = new CartaObiettivo();
-		CartaObiettivo cob7 = new CartaObiettivo();
-		CartaObiettivo cob8 = new CartaObiettivo();
-		CartaObiettivo cob9 = new CartaObiettivo();
-		CartaObiettivo cob10 = new CartaObiettivo();
-		CartaObiettivo cob11 = new CartaObiettivo();
-		CartaObiettivo cob12 = new CartaObiettivo();
-		CartaObiettivo cob13 = new CartaObiettivo();
-		CartaObiettivo cob14 = new CartaObiettivo();
-		CartaObiettivo cob15 = new CartaObiettivo();
-		CartaObiettivo cob16 = new CartaObiettivo();
-		
+		mazzoObiettivo.add(cob1);
+		mazzoObiettivo.add(cob2);
+		mazzoObiettivo.add(cob3);
+		mazzoObiettivo.add(cob4);
+		mazzoObiettivo.add(cob5);
+		mazzoObiettivo.add(cob6);
+		mazzoObiettivo.add(cob7);
+		mazzoObiettivo.add(cob8);
+		mazzoObiettivo.add(cob9);
+		mazzoObiettivo.add(cob10);
+		mazzoObiettivo.add(cob11);
+		mazzoObiettivo.add(cob12);
+		mazzoObiettivo.add(cob13);
+		mazzoObiettivo.add(cob14);
+		mazzoObiettivo.add(cob15);
+		mazzoObiettivo.add(cob16);
 		
 		
+		
+		ArrayList<CartaIniziale> MazzoIniziali = new ArrayList<CartaIniziale>();
+		
+		
+		MazzoIniziali.add(ci1);
+		MazzoIniziali.add(ci2);
+		MazzoIniziali.add(ci3);
+		MazzoIniziali.add(ci4);
+		MazzoIniziali.add(ci5);
+		MazzoIniziali.add(ci6);
 		
 		
 		
@@ -261,46 +281,37 @@ public class Main {
 			
 			
 			
-			ArrayList<CartaIniziale> MazzoCarteIniziali = new ArrayList<CartaIniziale>();
 			
 			
+		MazzoIniziali.shuffle();
 			
-			MazzoCarteIniziali.add(ci1);
-			MazzoCarteIniziali.add(ci2);
-			MazzoCarteIniziali.add(ci3);
-			MazzoCarteIniziali.add(ci4);
-			MazzoCarteIniziali.add(ci5);
-			MazzoCarteIniziali.add(ci6);
-			
-			MazzoCarteIniziale.shuffle();
 			//parte grafica per mostarre le carte inziaili per fronte e retro
 			
 			
 			
 			//assegnazione delle carte inziali e decisione su fronte e retro
 			for(int i=0;i<numGiocatori;i++)
-			
 			{
 				
-					int j=0;
-					String scelta2;
+					int j;
 					
-					gamers[i].setCartaInizialePropria(MazzoCarteIniziali.get(j));
+					if(i==0)
+						j=0;
 					
-
-					System.out.println("vuoi usare il retro (si=s) e (no=n)");
+					String scelta = null;
 					
-					scelta2=sc.nextLine();
-				    if(scelta2=='s')
-				    {
-				    	
-				    	gamers[i].CartaInizialePropria.useRetro();
-				    	
-				    }
+					gamers[i].setCartaInizialePropria(MazzoIniziali.get(j));
+					
+					do
+					{
+						System.out.println("vuoi usare il retro (si=s) e (no=n)");
+						scelta=sc.nextLine();
+					}while(!(scelta.equals('s') || scelta.equals('n')));
+					
+					
+				    if(scelta.equals('s'))
+				    	gamers[i].getCartaInizialePropria().useRetro();
 						
-						
-					
-					
 					j++;		 
 			    
 			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchè il giocatore interessa questo mazzo una sola volta
@@ -313,24 +324,6 @@ public class Main {
 			
 			
 			
-			mazzoObiettivo.add(cob1);
-			mazzoObiettivo.add(cob2);
-			mazzoObiettivo.add(cob3);
-			mazzoObiettivo.add(cob4);
-			mazzoObiettivo.add(cob5);
-			mazzoObiettivo.add(cob6);
-			mazzoObiettivo.add(cob7);
-			mazzoObiettivo.add(cob8);
-			mazzoObiettivo.add(cob9);
-			mazzoObiettivo.add(cob10);
-			mazzoObiettivo.add(cob11);
-			mazzoObiettivo.add(cob12);
-			mazzoObiettivo.add(cob13);
-			mazzoObiettivo.add(cob14);
-			mazzoObiettivo.add(cob15);
-			mazzoObiettivo.add(cob16);
-			
-			
 			mazzoObiettivo.shuffle();//mischia le carte obbiettivo
 			
 			//assegnazione delle carte OBIETTIVO
@@ -341,8 +334,6 @@ public class Main {
 					
 
 				  //parte grafica per mostare le carte da scegliere
-					
-					
 					
 					
 					int scelta=0;
@@ -380,18 +371,17 @@ public class Main {
 					
 					}
 					
-					gamers[i].
+					//gamers[i].
 					
-					j++;		  
+					//j++;		  
 				
 			}
 
 	
 
-			
-					
-
 		//Frame f1 = new Frame();
 		
 		
+}
+	
 }
