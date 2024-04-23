@@ -10,12 +10,6 @@ public class CartaIniziale {
 		this.bd = bdx;
     }
 
-    public CartaIniziale ci1 = new CartaIniziale("fungo","foglia","farfalla","lupo");
-    public CartaIniziale ci2 = new CartaIniziale("fungo","lupo","foglia","farfalla");
-    public CartaIniziale ci3 = new CartaIniziale("farfalla","fungo","foglia","lupo");
-    public CartaIniziale ci4 = new CartaIniziale("foglia","farfalla","lupo","fungo");
-    public CartaIniziale ci5 = new CartaIniziale("farfalla","lupo","fungo","foglia");
-    public CartaIniziale ci6 = new CartaIniziale("foglia","lupo","fungo","farfalla");
     
     public void useRetroCi1(CartaIniziale ci1)
     {

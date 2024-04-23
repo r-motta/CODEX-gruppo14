@@ -4,6 +4,7 @@ public class Giocatore {
 	private String nickname;
 	private int punti=0;
 	private CartaObiettivo cartaObiettivoSegreta;
+	private CartaIniziale CartaInizialePropria;
 	
 	private Carta[] carteInMano = new Carta[3];
 	
