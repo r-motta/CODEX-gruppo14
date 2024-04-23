@@ -29,6 +29,14 @@ public class Giocatore {
 	public void setCartaInizialePropria(CartaIniziale cartaInizialePropria) {
 		CartaInizialePropria = cartaInizialePropria;
 	}
+
+	public CartaObiettivo getCartaObiettivoSegreta() {
+		return cartaObiettivoSegreta;
+	}
+
+	public void setCartaObiettivoSegreta(CartaObiettivo cartaObiettivoSegreta) {
+		this.cartaObiettivoSegreta = cartaObiettivoSegreta;
+	}
 	
 
 }

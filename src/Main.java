@@ -204,14 +204,48 @@ public class Main {
 		mazzoOro[79] = co40;
 		
 		
-		//inserire carte obiettivo
+		
 		
 		ArrayList<CartaObiettivo> mazzoObiettivo = new ArrayList<CartaObiettivo>();
 		
 		
-		//inserire le carte obiettivo
 		
-		mazzoObiettivo
+		CartaObiettivo cob1 = new CartaObiettivo();
+		CartaObiettivo cob2 = new CartaObiettivo();
+		CartaObiettivo cob3 = new CartaObiettivo();
+		CartaObiettivo cob4 = new CartaObiettivo();
+		CartaObiettivo cob5 = new CartaObiettivo();
+		CartaObiettivo cob6 = new CartaObiettivo();
+		CartaObiettivo cob7 = new CartaObiettivo();
+		CartaObiettivo cob8 = new CartaObiettivo();
+		CartaObiettivo cob9 = new CartaObiettivo();
+		CartaObiettivo cob10 = new CartaObiettivo();
+		CartaObiettivo cob11 = new CartaObiettivo();
+		CartaObiettivo cob12 = new CartaObiettivo();
+		CartaObiettivo cob13 = new CartaObiettivo();
+		CartaObiettivo cob14 = new CartaObiettivo();
+		CartaObiettivo cob15 = new CartaObiettivo();
+		CartaObiettivo cob16 = new CartaObiettivo();
+		
+		
+		
+		
+		mazzoObiettivo.add(cob1);
+		mazzoObiettivo.add(cob2);
+		mazzoObiettivo.add(cob3);
+		mazzoObiettivo.add(cob4);
+		mazzoObiettivo.add(cob5);
+		mazzoObiettivo.add(cob6);
+		mazzoObiettivo.add(cob7);
+		mazzoObiettivo.add(cob8);
+		mazzoObiettivo.add(cob9);
+		mazzoObiettivo.add(cob10);
+		mazzoObiettivo.add(cob11);
+		mazzoObiettivo.add(cob12);
+		mazzoObiettivo.add(cob13);
+		mazzoObiettivo.add(cob14);
+		mazzoObiettivo.add(cob15);
+		mazzoObiettivo.add(cob16);
 		
 		
 		
@@ -289,6 +323,23 @@ public class Main {
 			for(int i=0;i<numGiocatori;i++)
 			{
 					int j=0,k=0;
+					
+					int scelta=0;
+					
+					switch(scelta)
+					{
+					case 1:
+					{
+						break;
+					}
+					
+					case 2:
+					{
+						break;
+					}
+					
+					
+					}
 					
 					gamers[i].
 					
