@@ -2,6 +2,8 @@ import java.util.Scanner;
 import javax.swing.*;
 import java.awt.Color;
 import java.util.Random;
+import java.util.ArrayList;
+
 
 public class Main {
 
@@ -105,6 +107,15 @@ public class Main {
                 CartaOro co38 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", 1, "");
                 CartaOro co39 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", 1, "");
                 CartaOro co40 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", 1, "");
+                
+                
+                CartaIniziale ci1 = new CartaIniziale("fungo","foglia","farfalla","lupo");
+                CartaIniziale ci2 = new CartaIniziale("fungo","lupo","foglia","farfalla");
+                CartaIniziale ci3 = new CartaIniziale("farfalla","fungo","foglia","lupo");
+                CartaIniziale ci4 = new CartaIniziale("foglia","farfalla","lupo","fungo");
+                CartaIniziale ci5 = new CartaIniziale("farfalla","lupo","fungo","foglia");
+                CartaIniziale ci6 = new CartaIniziale("foglia","lupo","fungo","farfalla");
+               
 		
 		CartaRisorsa mazzoRisorse[] = new CartaRisorsa[40];
 		
@@ -213,7 +224,7 @@ public class Main {
 
 
 		System.out.println("Inserite i vostri nickname: ");
-		System.out.println("(L'ordine dei giocatori in partita sarà uguale a come vi inserirete adesso)");
+		System.out.println("(L'ordine dei giocatori in partita sarï¿½ uguale a come vi inserirete adesso)");
 		
 		for(int i=0;i<numGiocatori;i++)
 		{
@@ -233,6 +244,41 @@ public class Main {
 			CartaIniziale case1 = nextCarta(mazzoIniziale);
 			
 			CartaIniziale case2 = nextCarta(mazzoIniziale);
+			
+			
+			
+			ArrayList<CartaIniziale> MazzoCarteIniziali = new ArrayList<CartaIniziale>();
+			
+			
+			
+			MazzoCarteIniziali.add(ci1);
+			MazzoCarteIniziali.add(ci2);
+			MazzoCarteIniziali.add(ci3);
+			MazzoCarteIniziali.add(ci4);
+			MazzoCarteIniziali.add(ci5);
+			MazzoCarteIniziali.add(ci6);
+			
+			MazzoCarteIniziale.shuffle;
+			
+			
+			//assegnazione delle carte inziali
+			for(int i=0;i<numGiocatori;i++)
+			
+			{
+				
+					int j=0
+					
+					gamers[i].CartaInizialePropria = MazzoCarteIniziali[j];
+					
+					j++;		 
+			    
+			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchÃ¨ il giocatore interessa questo mazzo una sola volta
+			   
+				
+			}
+
+	
+
 			
 			System.out.println("Quale carta iniziale vuoi usare? ");
 			System.out.println("[1] Prima carta ");
