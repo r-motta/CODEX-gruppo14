@@ -4,7 +4,9 @@ public class Giocatore {
 	private String nickname;
 	private int punti=0;
 	private CartaObiettivo cartaObiettivoSegreta;
-	private CartaIniziale CartaInizialePropria;
+	private CartaIniziale CartaInizialePropria = null;
+	
+	
 	
 	private Carta[] carteInMano = new Carta[3];
 	
@@ -18,6 +20,14 @@ public class Giocatore {
 	{
 		return false;
 		
+	}
+
+	public CartaIniziale getCartaInizialePropria() {
+		return CartaInizialePropria;
+	}
+
+	public void setCartaInizialePropria(CartaIniziale cartaInizialePropria) {
+		CartaInizialePropria = cartaInizialePropria;
 	}
 	
 

@@ -206,7 +206,12 @@ public class Main {
 		
 		//inserire carte obiettivo
 		
-		CartaObiettivo mazzoObiettivo[] = new CartaObiettivo[20];
+		ArrayList<CartaObiettivo> mazzoObiettivo = new ArrayList<CartaObiettivo>();
+		
+		
+		//inserire le carte obiettivo
+		
+		mazzoObiettivo
 		
 		
 		
@@ -233,17 +238,7 @@ public class Main {
 			
 		}
 		
-		int scelta1=0;
-		int scelta2=0;
-		
 		Random random = new Random();
-		
-		for(int i=0;i<numGiocatori;i++)
-		{
-			
-			CartaIniziale case1 = nextCarta(mazzoIniziale);
-			
-			CartaIniziale case2 = nextCarta(mazzoIniziale);
 			
 			
 			
@@ -258,7 +253,7 @@ public class Main {
 			MazzoCarteIniziali.add(ci5);
 			MazzoCarteIniziali.add(ci6);
 			
-			MazzoCarteIniziale.shuffle;
+			MazzoCarteIniziale.shuffle();
 			
 			
 			//assegnazione delle carte inziali
@@ -266,9 +261,9 @@ public class Main {
 			
 			{
 				
-					int j=0
+					int j=0;
 					
-					gamers[i].CartaInizialePropria = MazzoCarteIniziali[j];
+					gamers[i].setCartaInizialePropria(MazzoCarteIniziali.get(j));
 					
 					j++;		 
 			    
@@ -276,11 +271,35 @@ public class Main {
 			   
 				
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			mazzoObiettivo.shuffle();
+			
+			//assegnazione delle carte OBIETTIVO
+			for(int i=0;i<numGiocatori;i++)
+			{
+					int j=0,k=0;
+					
+					gamers[i].
+					
+					j++;		  
+				
+			}
 
 	
 
 			
-			System.out.println("Quale carta iniziale vuoi usare? ");
+			System.out.println("Quale carta obiettivo vuoi usare? ");
 			System.out.println("[1] Prima carta ");
 			System.out.println("[2] Seconda carta ");
 			scelta1 = sc.nextInt();
@@ -321,9 +340,4 @@ public class Main {
 		//Frame f1 = new Frame();
 		
 		
-		
-		
-
-	}
-
 }
