@@ -230,22 +230,7 @@ public class Main {
 		
 		
 		
-		mazzoObiettivo.add(cob1);
-		mazzoObiettivo.add(cob2);
-		mazzoObiettivo.add(cob3);
-		mazzoObiettivo.add(cob4);
-		mazzoObiettivo.add(cob5);
-		mazzoObiettivo.add(cob6);
-		mazzoObiettivo.add(cob7);
-		mazzoObiettivo.add(cob8);
-		mazzoObiettivo.add(cob9);
-		mazzoObiettivo.add(cob10);
-		mazzoObiettivo.add(cob11);
-		mazzoObiettivo.add(cob12);
-		mazzoObiettivo.add(cob13);
-		mazzoObiettivo.add(cob14);
-		mazzoObiettivo.add(cob15);
-		mazzoObiettivo.add(cob16);
+		
 		
 		
 		
@@ -288,16 +273,33 @@ public class Main {
 			MazzoCarteIniziali.add(ci6);
 			
 			MazzoCarteIniziale.shuffle();
+			//parte grafica per mostarre le carte inziaili per fronte e retro
 			
 			
-			//assegnazione delle carte inziali
+			
+			//assegnazione delle carte inziali e decisione su fronte e retro
 			for(int i=0;i<numGiocatori;i++)
 			
 			{
 				
 					int j=0;
+					String scelta2;
 					
 					gamers[i].setCartaInizialePropria(MazzoCarteIniziali.get(j));
+					
+
+					System.out.println("vuoi usare il retro (si=s) e (no=n)");
+					
+					scelta2=sc.nextLine();
+				    if(scelta2=='s')
+				    {
+				    	
+				    	gamers[i].CartaInizialePropria.useRetro();
+				    	
+				    }
+						
+						
+					
 					
 					j++;		 
 			    
@@ -307,36 +309,73 @@ public class Main {
 			}
 			
 			
+
 			
 			
 			
+			mazzoObiettivo.add(cob1);
+			mazzoObiettivo.add(cob2);
+			mazzoObiettivo.add(cob3);
+			mazzoObiettivo.add(cob4);
+			mazzoObiettivo.add(cob5);
+			mazzoObiettivo.add(cob6);
+			mazzoObiettivo.add(cob7);
+			mazzoObiettivo.add(cob8);
+			mazzoObiettivo.add(cob9);
+			mazzoObiettivo.add(cob10);
+			mazzoObiettivo.add(cob11);
+			mazzoObiettivo.add(cob12);
+			mazzoObiettivo.add(cob13);
+			mazzoObiettivo.add(cob14);
+			mazzoObiettivo.add(cob15);
+			mazzoObiettivo.add(cob16);
 			
 			
-			
-			
-			
-			
-			
-			mazzoObiettivo.shuffle();
+			mazzoObiettivo.shuffle();//mischia le carte obbiettivo
 			
 			//assegnazione delle carte OBIETTIVO
 			for(int i=0;i<numGiocatori;i++)
 			{
-					int j=0,k=0;
+					int j=0,k=1;
+					
+					
+
+				  //parte grafica per mostare le carte da scegliere
+					
+					
+					
 					
 					int scelta=0;
 					
-					switch(scelta)
+					
+					
+					System.out.println("scegli una tra le due carte obbiettivo");
+					System.out.println("[1] prima carta");
+					System.out.println("[2] seconda carta");
+					scelta= sc.nextInt();
+					
+					switch(scelta)//serve per gestire la scelta delle due carte obbiettivo
 					{
 					case 1:
 					{
+
+						gamers[i].setcartaObiettivoSegreta(mazzoObiettivo.get(j));
+						
+						
 						break;
 					}
 					
 					case 2:
 					{
+						
+						gamers[i].setcartaObiettivoSegreta(mazzoObiettivo.get(k));
+						
+						k++;	
+						
 						break;
 					}
+					
+					
 					
 					
 					}
@@ -350,43 +389,7 @@ public class Main {
 	
 
 			
-			System.out.println("Quale carta obiettivo vuoi usare? ");
-			System.out.println("[1] Prima carta ");
-			System.out.println("[2] Seconda carta ");
-			scelta1 = sc.nextInt();
-		
-			switch(scelta1)
-			{
-				case 1: 
-				{
-					//getPuntatore
-					//guarda codice discord 22/04 15:24
-					System.out.println("Vuoi usare il fronte o il retro? ");
-					System.out.println("[1] fronte ");
-					System.out.println("[2] retro ");
-					scelta2 = sc.nextInt();
 					
-					switch(scelta2)
-					{
-						
-						case 3:
-						{
-							
-						}
-						case 4:
-						{
-							case1.useRetro();
-						}
-					}
-				}
-				case 2:
-				{
-					
-				}
-			
-			}
-		}
-		
 
 		//Frame f1 = new Frame();
 		
