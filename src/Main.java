@@ -197,7 +197,7 @@ public class Main {
 		
 		CartaObiettivo mazzoObiettivo[] = new CartaObiettivo[20];
 		
-		CartaIniziale mazzoIniziale[] = new CartaIniziale[6];
+		
 		
 		Carta CarteDaPescare[] = new Carta[4];
 
@@ -281,8 +281,3 @@ public class Main {
 	}
 
 }
-//soluzione a gestione carte risorsa
-//per gestire gi angoli si potrebe fare una funzione ricorsiva delle carte che richiamano se stesse(mettere un  getter card) in modo che esse contino negli angoli quali simboli abbiano e li aggiungino
-//in counter e cosi facvendo sic ontrolla rispwtto alla carta obbiettivo utilizzata.
-
-//per la parte grafica usare swing o java effects meglio usare swing
