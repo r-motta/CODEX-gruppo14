@@ -35,7 +35,7 @@ public class Giocatore {
 	}
 
 	public void setCartaObiettivoSegreta(CartaObiettivo cartaObiettivoSegreta) {
-		this.cartaObiettivoSegreta = cartaObiettivoSegreta;
+		this.cartaObiettivoSegreta = cartaObiettivoSegreta ; 
 	}
 	
 

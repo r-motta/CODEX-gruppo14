@@ -19,7 +19,7 @@ public class Main {
 	        int indiceCasuale = random.nextInt(mazzo.length);
 
 	        // Restituisci la carta corrispondente all'indice casuale
-	        return mazzo[indiceCasuale];
+	        return mazzo[indiceCasuale] ;
 	    }
 
 		

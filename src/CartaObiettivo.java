@@ -1,4 +1,4 @@
-public class CartaObiettivo {
+public class CartaObiettivo  {
 	
 	
 }
