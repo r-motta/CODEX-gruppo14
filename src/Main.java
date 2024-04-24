@@ -1,8 +1,10 @@
-import java.util.Scanner;	
+import java.util.Scanner;		
 import javax.swing.*;
 import java.awt.Color;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 
 public class Main {
@@ -102,12 +104,12 @@ public class Main {
                 CartaOro co40 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", 1, "");
                 
                 
-                CartaIniziale ci1 = new CartaIniziale("fungo","foglia","farfalla","lupo");
-                CartaIniziale ci2 = new CartaIniziale("fungo","lupo","foglia","farfalla");
-                CartaIniziale ci3 = new CartaIniziale("farfalla","fungo","foglia","lupo");
-                CartaIniziale ci4 = new CartaIniziale("foglia","farfalla","lupo","fungo");
-                CartaIniziale ci5 = new CartaIniziale("farfalla","lupo","fungo","foglia");
-                CartaIniziale ci6 = new CartaIniziale("foglia","lupo","fungo","farfalla");
+                CartaIniziale ci1 = new CartaIniziale("ci1","fungo","foglia","farfalla","lupo");
+                CartaIniziale ci2 = new CartaIniziale("ci2", "fungo","lupo","foglia","farfalla");
+                CartaIniziale ci3 = new CartaIniziale("ci3", "farfalla","fungo","foglia","lupo");
+                CartaIniziale ci4 = new CartaIniziale("ci4", "foglia","farfalla","lupo","fungo");
+                CartaIniziale ci5 = new CartaIniziale("ci5", "farfalla","lupo","fungo","foglia");
+                CartaIniziale ci6 = new CartaIniziale("ci6", "foglia","lupo","fungo","farfalla");
                 
                 
                 CartaObiettivo cob1 = new CartaObiettivo();
@@ -170,6 +172,7 @@ public class Main {
 		mazzoRisorse.add(cr38);
 		mazzoRisorse.add(cr39);
 		mazzoRisorse.add(cr40);
+		
 		
 		
 		ArrayList<CartaOro> mazzoOro = new ArrayList<CartaOro>();
@@ -283,7 +286,7 @@ public class Main {
 			
 			
 			
-		MazzoIniziali.shuffle();
+		Collections.shuffle(MazzoIniziali);
 			
 			//parte grafica per mostarre le carte inziaili per fronte e retro
 			
@@ -310,7 +313,23 @@ public class Main {
 					
 					
 				    if(scelta.equals('s'))
-				    	gamers[i].getCartaInizialePropria().useRetro();
+				    {
+				    	
+				    	if(gamers[i].getCartaInizialePropria().getNome() == "ci1")
+				    		gamers[i].getCartaInizialePropria().useRetroCi1();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci2")
+				    		gamers[i].getCartaInizialePropria().useRetroCi2();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci3")
+				    		gamers[i].getCartaInizialePropria().useRetroCi3();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci4")
+				    		gamers[i].getCartaInizialePropria().useRetroCi4();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci5")
+				    		gamers[i].getCartaInizialePropria().useRetroCi5();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci6")
+				    		gamers[i].getCartaInizialePropria().useRetroCi6();
+				    		
+				    }
+				    	
 						
 					j++;		 
 			    
