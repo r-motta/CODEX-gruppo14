@@ -1,4 +1,3 @@
-
 public class Giocatore {
 	
 	private String nickname;
