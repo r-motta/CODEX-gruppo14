@@ -1,8 +1,8 @@
-import java.util.Scanner;	
-import javax.swing.*;
+import java.util.Scanner;
 import java.awt.Color;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class Main {
@@ -10,22 +10,10 @@ public class Main {
 	public static int numGiocatori;
 	
 	
- 
+
 	public static void main(String[] args) {
 
-<<<<<<< HEAD
-		public static Carta nextCarta(Carta[] mazzo) {
-	        // Generazione casuale di un indice
-	        Random random = new Random();
-	        int indiceCasuale = random.nextInt(mazzo.length);
-
-	        // Restituisci la carta corrispondente all'indice casuale
-	        return mazzo[indiceCasuale] ;
-	    }
-=======
 	Giocatore gamers[] = new Giocatore[numGiocatori];
-
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
 
 		
 			CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "https://drive.google.com/file/d/1P_3Tllh30W6Jax1v58YJPEDhSmAubbsz/view");
@@ -114,12 +102,12 @@ public class Main {
                 CartaOro co40 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", 1, "");
                 
                 
-                CartaIniziale ci1 = new CartaIniziale("fungo","foglia","farfalla","lupo");
-                CartaIniziale ci2 = new CartaIniziale("fungo","lupo","foglia","farfalla");
-                CartaIniziale ci3 = new CartaIniziale("farfalla","fungo","foglia","lupo");
-                CartaIniziale ci4 = new CartaIniziale("foglia","farfalla","lupo","fungo");
-                CartaIniziale ci5 = new CartaIniziale("farfalla","lupo","fungo","foglia");
-                CartaIniziale ci6 = new CartaIniziale("foglia","lupo","fungo","farfalla");
+                CartaIniziale ci1 = new CartaIniziale("ci1","fungo","foglia","farfalla","lupo");
+                CartaIniziale ci2 = new CartaIniziale("ci2", "fungo","lupo","foglia","farfalla");
+                CartaIniziale ci3 = new CartaIniziale("ci3", "farfalla","fungo","foglia","lupo");
+                CartaIniziale ci4 = new CartaIniziale("ci4", "foglia","farfalla","lupo","fungo");
+                CartaIniziale ci5 = new CartaIniziale("ci5", "farfalla","lupo","fungo","foglia");
+                CartaIniziale ci6 = new CartaIniziale("ci6", "foglia","lupo","fungo","farfalla");
                 
                 
                 CartaObiettivo cob1 = new CartaObiettivo();
@@ -182,6 +170,7 @@ public class Main {
 		mazzoRisorse.add(cr38);
 		mazzoRisorse.add(cr39);
 		mazzoRisorse.add(cr40);
+		
 		
 		
 		ArrayList<CartaOro> mazzoOro = new ArrayList<CartaOro>();
@@ -280,7 +269,7 @@ public class Main {
 
 
 		System.out.println("Inserite i vostri nickname: ");
-		System.out.println("(L'ordine dei giocatori in partita sar� uguale a come vi inserirete adesso)");
+		System.out.println("(L'ordine dei giocatori in partita sarï¿½ uguale a come vi inserirete adesso)");
 		
 		for(int i=0;i<numGiocatori;i++)
 		{
@@ -295,17 +284,17 @@ public class Main {
 			
 			
 			
-		MazzoIniziali.shuffle();
+		Collections.shuffle(MazzoIniziali);
 			
 			//parte grafica per mostarre le carte inziaili per fronte e retro
 			
-			
+		int j=0;
 			
 			//assegnazione delle carte inziali e decisione su fronte e retro
 			for(int i=0;i<numGiocatori;i++)
 			{
 				
-					int j;
+					
 					
 					if(i==0)
 						j=0;
@@ -322,11 +311,27 @@ public class Main {
 					
 					
 				    if(scelta.equals('s'))
-				    	gamers[i].getCartaInizialePropria().useRetro();
+				    {
+				    	
+				    	if(gamers[i].getCartaInizialePropria().getNome() == "ci1")
+				    		gamers[i].getCartaInizialePropria().useRetroCi1();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci2")
+				    		gamers[i].getCartaInizialePropria().useRetroCi2();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci3")
+				    		gamers[i].getCartaInizialePropria().useRetroCi3();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci4")
+				    		gamers[i].getCartaInizialePropria().useRetroCi4();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci5")
+				    		gamers[i].getCartaInizialePropria().useRetroCi5();
+				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci6")
+				    		gamers[i].getCartaInizialePropria().useRetroCi6();
+				    		
+				    }
+				    	
 						
 					j++;		 
 			    
-			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchè il giocatore interessa questo mazzo una sola volta
+			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchÃ¨ il giocatore interessa questo mazzo una sola volta
 			   
 				
 			}
@@ -336,12 +341,12 @@ public class Main {
 			
 			
 			
-			mazzoObiettivo.shuffle();//mischia le carte obbiettivo
+			Collections.shuffle(mazzoObiettivo);//mischia le carte obbiettivo
 			
 			//assegnazione delle carte OBIETTIVO
 			for(int i=0;i<numGiocatori;i++)
 			{
-					int j=0,k=1;
+					int y=0,k=1;
 					
 					
 
@@ -351,19 +356,22 @@ public class Main {
 					int scelta=0;
 					
 					
+					do
+					{
+						System.out.println("scegli una tra le due carte obbiettivo");
+						System.out.println("[1] prima carta");
+						System.out.println("[2] seconda carta");
+						scelta= sc.nextInt();
+					}while(scelta<1 || scelta>2);
 					
-					System.out.println("scegli una tra le due carte obbiettivo");
-					System.out.println("[1] prima carta");
-					System.out.println("[2] seconda carta");
-					scelta= sc.nextInt();
 					
 					switch(scelta)//serve per gestire la scelta delle due carte obbiettivo
 					{
 					case 1:
 					{
 
-						gamers[i].setcartaObiettivoSegreta(mazzoObiettivo.get(j));
-						
+						gamers[i].setCartaObiettivoSegreta(mazzoObiettivo.get(y));
+						mazzoObiettivo.remove(y);
 						
 						break;
 					}
@@ -371,7 +379,7 @@ public class Main {
 					case 2:
 					{
 						
-						gamers[i].setcartaObiettivoSegreta(mazzoObiettivo.get(k));
+						gamers[i].setCartaObiettivoSegreta(mazzoObiettivo.get(k));
 						
 						k++;	
 						
