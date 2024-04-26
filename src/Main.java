@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import java.util.Scanner;
+=======
+import java.util.Scanner;			
+import javax.swing.*;
+>>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
 import java.awt.Color;
 import java.util.Random;
 import java.util.ArrayList;
