@@ -270,7 +270,7 @@ public class Main {
 
 
 		System.out.println("Inserite i vostri nickname: ");
-		System.out.println("(L'ordine dei giocatori in partita sar� uguale a come vi inserirete adesso)");
+		System.out.println("(L'ordine dei giocatori in partita sara' uguale a come vi inserirete adesso)");
 		
 		for(int i=0;i<numGiocatori;i++)
 		{

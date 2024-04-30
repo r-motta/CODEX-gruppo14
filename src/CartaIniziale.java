@@ -11,6 +11,7 @@ public class CartaIniziale {
 		this.bd = bdx;
     }
     
+    
     public void useRetroCi1()
     {
         this.as = "vuoto";
