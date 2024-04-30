@@ -86,19 +86,17 @@ public class CartaIniziale {
         String simboloRetro = "fungo";
     }
 
-<<<<<<< HEAD
+
     public String getNome() {
         return nome;
     }
 
 
-
-=======
+    
 	public String getNome() {
 		return nome;
 	}
 
     
     
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
 }

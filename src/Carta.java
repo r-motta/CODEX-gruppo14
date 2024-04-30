@@ -38,8 +38,7 @@ public abstract class Carta {
         c.ad = "vuoto";
         c.bs = "vuoto";
         c.bd = "vuoto";
-
-<<<<<<< HEAD
+        
         String simboloRetro;
 
         if(c.colore == Color.RED)
@@ -55,6 +54,4 @@ public abstract class Carta {
 
 
 
-=======
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
 }
