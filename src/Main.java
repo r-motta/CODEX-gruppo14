@@ -128,8 +128,8 @@ public class Main {
         		CartaObiettivo cob15 = new CartaObiettivo();
         		CartaObiettivo cob16 = new CartaObiettivo();
                
-		
-		ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
+	
+        ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
 		
 		mazzoRisorse.add(cr1);
 		mazzoRisorse.add(cr2);
@@ -332,7 +332,7 @@ public class Main {
 						
 					j++;		 
 			    
-			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchè il giocatore interessa questo mazzo una sola volta
+			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchÃ¨ il giocatore interessa questo mazzo una sola volta
 			   
 				
 			}
