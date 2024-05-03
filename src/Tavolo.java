@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Tavolo{
 	
-	Giocatore gamers[] = new Giocatore[numGiocatori];
+	Giocatore gamers[] = new Giocatore[Main.numGiocatori];
 
 	
 				CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "https://drive.google.com/file/d/1P_3Tllh30W6Jax1v58YJPEDhSmAubbsz/view");
@@ -118,7 +118,7 @@ public class Tavolo{
 				CartaObiettivo cob16 = new CartaObiettivo();
 			       
 			
-			ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
+			private static ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
 			
 			mazzoRisorse.add(cr1);
 			mazzoRisorse.add(cr2);
@@ -165,6 +165,7 @@ public class Tavolo{
 			
 			ArrayList<CartaOro> mazzoOro = new ArrayList<CartaOro>();
 			
+		
 			mazzoOro.add(co1);
 			mazzoOro.add(co2);
 			mazzoOro.add(co3);
