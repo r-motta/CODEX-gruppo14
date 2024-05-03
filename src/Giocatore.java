@@ -9,7 +9,6 @@ public class Giocatore {
 
     private Carta[] carteInMano = new Carta[3];
 
-<<<<<<< HEAD
 
     public Giocatore(String nome)
     {
@@ -39,6 +38,4 @@ public class Giocatore {
     }
 
 
-=======
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
 }

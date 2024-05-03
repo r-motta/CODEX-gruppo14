@@ -32,11 +32,7 @@ public class CartaIniziale {
 
     public void useRetroCi3()
     {
-<<<<<<< HEAD
         this.as = "vuoto";
-=======
-    	this.as = "vuoto";
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
         this.ad = "vuoto";
         this.bs = null;
         this.bd = null;
@@ -45,11 +41,7 @@ public class CartaIniziale {
 
     public void useRetroCi4()
     {
-<<<<<<< HEAD
         this.as = "vuoto";
-=======
-    	this.as = "vuoto";
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
         this.ad = "vuoto";
         this.bs = "vuoto";
         this.bd = "vuoto";
@@ -58,11 +50,7 @@ public class CartaIniziale {
 
     public void useRetroCi5()
     {
-<<<<<<< HEAD
         this.as = "vuoto";
-=======
-    	this.as = "vuoto";
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
         this.ad = "vuoto";
         this.bs = "vuoto";
         this.bd = "vuoto";
@@ -78,19 +66,10 @@ public class CartaIniziale {
         String simboloRetro = "fungo";
     }
 
-<<<<<<< HEAD
     public String getNome() {
         return nome;
     }
 
 
 
-=======
-	public String getNome() {
-		return nome;
-	}
-
-    
-    
->>>>>>> branch 'main' of https://github.com/r-motta/CODEX-gruppo14.git
 }
