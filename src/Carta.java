@@ -38,7 +38,6 @@ public abstract class Carta {
         c.ad = "vuoto";
         c.bs = "vuoto";
         c.bd = "vuoto";
-
         String simboloRetro;
 
         if(c.colore == Color.RED)

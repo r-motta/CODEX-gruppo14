@@ -61,8 +61,8 @@ public class Main {
 
 		// colore, asx, adx, bsx, bdx, requisiti, punteggio, url
 		//
-				CartaOro co1 = new CartaOro(Color.RED, null, "vuoto", "vuoto", "piuma", "fungo fungo lupo", 1, "");
-				CartaOro co2 = new CartaOro(Color.RED, "vuoto", "bottiglia", null, "vuoto", "fungo fungo pianta", 1, "");
+		CartaOro co1 = new CartaOro(Color.RED, null, "vuoto", "vuoto", "piuma", "fungo fungo lupo", 1, "");
+		CartaOro co2 = new CartaOro(Color.RED, "vuoto", "bottiglia", null, "vuoto", "fungo fungo pianta", 1, "");
                 CartaOro co3 = new CartaOro(Color.RED, "pergamena", "vuoto", "vuoto", null, "fungo fungo farfalla", 1, "");
                 CartaOro co4 = new CartaOro(Color.RED, "vuoto", "vuoto", null, "vuoto", "fungo fungo fungo lupo", 2, "");
                 CartaOro co5 = new CartaOro(Color.RED, "vuoto", "vuoto", "vuoto", null, "fungo fungo fungo pianta", 2, "");
@@ -112,21 +112,21 @@ public class Main {
                 
                 
                 CartaObiettivo cob1 = new CartaObiettivo();
-        		CartaObiettivo cob2 = new CartaObiettivo();
-        		CartaObiettivo cob3 = new CartaObiettivo();
-        		CartaObiettivo cob4 = new CartaObiettivo();
-        		CartaObiettivo cob5 = new CartaObiettivo();
-        		CartaObiettivo cob6 = new CartaObiettivo();
-        		CartaObiettivo cob7 = new CartaObiettivo();
-        		CartaObiettivo cob8 = new CartaObiettivo();
-        		CartaObiettivo cob9 = new CartaObiettivo();
-        		CartaObiettivo cob10 = new CartaObiettivo();
-        		CartaObiettivo cob11 = new CartaObiettivo();
-        		CartaObiettivo cob12 = new CartaObiettivo();
-        		CartaObiettivo cob13 = new CartaObiettivo();
-        		CartaObiettivo cob14 = new CartaObiettivo();
-        		CartaObiettivo cob15 = new CartaObiettivo();
-        		CartaObiettivo cob16 = new CartaObiettivo();
+        	CartaObiettivo cob2 = new CartaObiettivo();
+        	CartaObiettivo cob3 = new CartaObiettivo();
+        	CartaObiettivo cob4 = new CartaObiettivo();
+        	CartaObiettivo cob5 = new CartaObiettivo();
+        	CartaObiettivo cob6 = new CartaObiettivo();
+        	CartaObiettivo cob7 = new CartaObiettivo();
+        	CartaObiettivo cob8 = new CartaObiettivo();
+        	CartaObiettivo cob9 = new CartaObiettivo();
+        	CartaObiettivo cob10 = new CartaObiettivo();
+        	CartaObiettivo cob11 = new CartaObiettivo();
+        	CartaObiettivo cob12 = new CartaObiettivo();
+        	CartaObiettivo cob13 = new CartaObiettivo();
+        	CartaObiettivo cob14 = new CartaObiettivo();
+        	CartaObiettivo cob15 = new CartaObiettivo();
+        	CartaObiettivo cob16 = new CartaObiettivo();
                
 	
         ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();

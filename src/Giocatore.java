@@ -10,6 +10,7 @@ public class Giocatore {
     private Carta[] carteInMano = new Carta[3];
 
 
+    
     public Giocatore(String nome)
     {
         this.nickname = nome;

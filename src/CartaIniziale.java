@@ -66,6 +66,7 @@ public class CartaIniziale {
         String simboloRetro = "fungo";
     }
 
+
     public String getNome() {
         return nome;
     }
