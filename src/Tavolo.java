@@ -1,4 +1,4 @@
-import java.awt.Color;
+import java.awt.Color;	
 import java.util.ArrayList;
 
 public class Tavolo{
@@ -116,9 +116,14 @@ public class Tavolo{
 				CartaObiettivo cob14 = new CartaObiettivo();
 				CartaObiettivo cob15 = new CartaObiettivo();
 				CartaObiettivo cob16 = new CartaObiettivo();
+				
+			public void creaMazzi()
+			{
 			       
 			
-			private static ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
+			ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
+			
+			
 			
 			mazzoRisorse.add(cr1);
 			mazzoRisorse.add(cr2);
@@ -241,5 +246,7 @@ public class Tavolo{
 			MazzoIniziali.add(ci4);
 			MazzoIniziali.add(ci5);
 			MazzoIniziali.add(ci6);
+			
+			}
 
 }
