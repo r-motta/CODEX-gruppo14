@@ -3,7 +3,16 @@ import java.util.ArrayList;
 
 public class Tavolo{
 	
-	Giocatore gamers[] = new Giocatore[Main.numGiocatori];
+	private Giocatore[] gamers;
+	private ArrayList <CartaRisorsa> mazzoRisorse;
+	private ArrayList <CartaIniziale> mazzoIniziali;
+	private ArrayList <CartaOro> mazzoOro;
+	private ArrayList <CartaObiettivo> mazzoObiettivo;
+	
+	public Tavolo()
+	{
+	
+				gamers = new Giocatore[Main.numGiocatori];
 
 	
 				CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "https://drive.google.com/file/d/1P_3Tllh30W6Jax1v58YJPEDhSmAubbsz/view");
@@ -117,11 +126,10 @@ public class Tavolo{
 				CartaObiettivo cob15 = new CartaObiettivo();
 				CartaObiettivo cob16 = new CartaObiettivo();
 				
-			public void creaMazzi()
-			{
+			
 			       
 			
-			ArrayList<CartaRisorsa> mazzoRisorse = new ArrayList<CartaRisorsa>();
+			mazzoRisorse = new ArrayList<CartaRisorsa>();
 			
 			
 			
@@ -168,7 +176,7 @@ public class Tavolo{
 			
 			
 			
-			ArrayList<CartaOro> mazzoOro = new ArrayList<CartaOro>();
+			mazzoOro = new ArrayList<CartaOro>();
 			
 		
 			mazzoOro.add(co1);
@@ -215,7 +223,7 @@ public class Tavolo{
 			
 			
 			
-			ArrayList<CartaObiettivo> mazzoObiettivo = new ArrayList<CartaObiettivo>();
+			mazzoObiettivo = new ArrayList<CartaObiettivo>();
 			
 			
 			mazzoObiettivo.add(cob1);
@@ -237,16 +245,26 @@ public class Tavolo{
 			
 			
 			
-			ArrayList<CartaIniziale> MazzoIniziali = new ArrayList<CartaIniziale>();
+			mazzoIniziali = new ArrayList<CartaIniziale>();
 			
 			
-			MazzoIniziali.add(ci1);
-			MazzoIniziali.add(ci2);
-			MazzoIniziali.add(ci3);
-			MazzoIniziali.add(ci4);
-			MazzoIniziali.add(ci5);
-			MazzoIniziali.add(ci6);
+			mazzoIniziali.add(ci1);
+			mazzoIniziali.add(ci2);
+			mazzoIniziali.add(ci3);
+			mazzoIniziali.add(ci4);
+			mazzoIniziali.add(ci5);
+			mazzoIniziali.add(ci6);
 			
 			}
+
+	public ArrayList<CartaRisorsa> getMazzoRisorse() {
+		return mazzoRisorse;
+	}
+
+	public Giocatore[] getGamers() {
+		return gamers;
+	}
+	
+	
 
 }

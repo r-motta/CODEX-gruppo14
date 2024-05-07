@@ -14,11 +14,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Tavolo t = new Tavolo();
-		
-		t.creaMazzi();
-
-		
 		Scanner sc = new Scanner(System.in);
 		
 		
@@ -27,6 +22,8 @@ public class Main {
 			System.out.println("Quante persone giocano? (Min: 2 - Max: 4) ");
 			numGiocatori = sc.nextInt();
 		}while(numGiocatori<2 || numGiocatori>4);
+		
+		Tavolo t = new Tavolo();
 
 
 		System.out.println("Inserite i vostri nickname: ");
@@ -35,7 +32,7 @@ public class Main {
 		for(int i=0;i<numGiocatori;i++)
 		{
 			System.out.println("Giocatore "+(i+1)+": ");
-			gamers[i] = new Giocatore(sc.next());
+			t.getGamers()[i] = new Giocatore(sc.next());
 			
 		}
 		
