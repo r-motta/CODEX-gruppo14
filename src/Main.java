@@ -107,7 +107,25 @@ public class Main {
 					int y=0,k=1;
 					
 					
-
+					
+					
+					
+					
+					System.out.println("questa é la prima carta:");
+					System.out.println("angolo sinsitro alto:,"+t.getMazzoObiettivo()[y].as);
+					System.out.println("angolo destro alto:,"+t.getMazzoObiettivo()[y].ad);
+					System.out.println("angolo sinsitro basso:,"+t.getMazzoObiettivo()[y].bs);
+					System.out.println("angolo destro basso:,"+t.getMazzoObiettivo()[y].bd);
+					
+					
+					
+					
+					System.out.println("questa é la seconda carta:");
+					System.out.println("angolo sinsitro alto:,"+t.getMazzoObiettivo()[k].as);
+					System.out.println("angolo destro alto:,"+t.getMazzoObiettivo()[k].ad);
+					System.out.println("angolo sinsitro basso:,"+t.getMazzoObiettivo()[k].bs);
+					System.out.println("angolo destro basso:,"+t.getMazzoObiettivo()[k].bd);
+             
 				  //parte grafica per mostare le carte da scegliere
 					
 					
@@ -138,7 +156,7 @@ public class Main {
 					{
 						
 						t.getGamers()[i].setCartaObiettivoSegreta(t.getMazzoObiettivo().get(k));
-						
+						t.getMazzoObiettivo().remove(k);
 						k++;	
 						
 						break;
