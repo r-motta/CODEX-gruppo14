@@ -27,7 +27,7 @@ public class Main {
 
 
 		System.out.println("Inserite i vostri nickname: ");
-		System.out.println("(L'ordine dei giocatori in partita sara' uguale a come vi inserirete adesso)");
+		System.out.println("(L'ordine dei giocatori in partita sara' uguale all'ordine in cui vi inserirete adesso)");
 		
 		for(int i=0;i<numGiocatori;i++)
 		{
@@ -59,11 +59,11 @@ public class Main {
 					
 					String scelta = null;
 					
-					gamers[i].setCartaInizialePropria(MazzoIniziali.get(j));
+					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
 					
 					do
 					{
-						System.out.println("vuoi usare il retro (si=s) e (no=n)");
+						System.out.println("vuoi usare il retro della carta? (si=s) e (no=n)");
 						scelta=sc.nextLine();
 					}while(!(scelta.equals('s') || scelta.equals('n')));
 					
@@ -71,18 +71,18 @@ public class Main {
 				    if(scelta.equals('s'))
 				    {
 				    	
-				    	if(gamers[i].getCartaInizialePropria().getNome() == "ci1")
-				    		gamers[i].getCartaInizialePropria().useRetroCi1();
-				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci2")
-				    		gamers[i].getCartaInizialePropria().useRetroCi2();
-				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci3")
-				    		gamers[i].getCartaInizialePropria().useRetroCi3();
-				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci4")
-				    		gamers[i].getCartaInizialePropria().useRetroCi4();
-				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci5")
-				    		gamers[i].getCartaInizialePropria().useRetroCi5();
-				    	else if(gamers[i].getCartaInizialePropria().getNome() == "ci6")
-				    		gamers[i].getCartaInizialePropria().useRetroCi6();
+				    	if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci1")
+				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi1();
+				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci2")
+				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi2();
+				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci3")
+				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi3();
+				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci4")
+				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi4();
+				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci5")
+				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi5();
+				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci6")
+				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi6();
 				    		
 				    }
 				    	
@@ -99,7 +99,7 @@ public class Main {
 			
 			
 			
-			Collections.shuffle(mazzoObiettivo);//mischia le carte obbiettivo
+			Collections.shuffle(t.getMazzoObiettivo());//mischia le carte obbiettivo
 			
 			//assegnazione delle carte OBIETTIVO
 			for(int i=0;i<numGiocatori;i++)
@@ -116,7 +116,7 @@ public class Main {
 					
 					do
 					{
-						System.out.println("scegli una tra le due carte obbiettivo");
+						System.out.println("scegli una tra le due carte obiettivo: ");
 						System.out.println("[1] prima carta");
 						System.out.println("[2] seconda carta");
 						scelta= sc.nextInt();
@@ -128,8 +128,8 @@ public class Main {
 					case 1:
 					{
 
-						gamers[i].setCartaObiettivoSegreta(mazzoObiettivo.get(y));
-						mazzoObiettivo.remove(y);
+						t.getGamers()[i].setCartaObiettivoSegreta(t.getMazzoObiettivo().get(y));
+						t.getMazzoObiettivo().remove(y);
 						
 						break;
 					}
@@ -137,7 +137,7 @@ public class Main {
 					case 2:
 					{
 						
-						gamers[i].setCartaObiettivoSegreta(mazzoObiettivo.get(k));
+						t.getGamers()[i].setCartaObiettivoSegreta(t.getMazzoObiettivo().get(k));
 						
 						k++;	
 						
