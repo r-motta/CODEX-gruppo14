@@ -105,26 +105,18 @@ public class Main {
 			for(int i=0;i<numGiocatori;i++)
 			{
 					int y=0,k=1;
+				
+					
+					System.out.println("questa e' la prima carta:");
+					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(y).getRequisiti());
+					System.out.println("Punti: "+ t.getMazzoObiettivo().get(y).getPunti());
 					
 					
 					
 					
-					
-					
-					System.out.println("questa é la prima carta:");
-					System.out.println("angolo sinsitro alto:,"+t.getMazzoObiettivo()[y].as);
-					System.out.println("angolo destro alto:,"+t.getMazzoObiettivo()[y].ad);
-					System.out.println("angolo sinsitro basso:,"+t.getMazzoObiettivo()[y].bs);
-					System.out.println("angolo destro basso:,"+t.getMazzoObiettivo()[y].bd);
-					
-					
-					
-					
-					System.out.println("questa é la seconda carta:");
-					System.out.println("angolo sinsitro alto:,"+t.getMazzoObiettivo()[k].as);
-					System.out.println("angolo destro alto:,"+t.getMazzoObiettivo()[k].ad);
-					System.out.println("angolo sinsitro basso:,"+t.getMazzoObiettivo()[k].bs);
-					System.out.println("angolo destro basso:,"+t.getMazzoObiettivo()[k].bd);
+					System.out.println("questa e' la seconda carta:");
+					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(k).getRequisiti());
+					System.out.println("Punti: "+ t.getMazzoObiettivo().get(k).getPunti());
              
 				  //parte grafica per mostare le carte da scegliere
 					
