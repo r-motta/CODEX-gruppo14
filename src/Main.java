@@ -61,7 +61,7 @@ public class Main {
 					
 					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
 					
-					do
+					do // FARE CONTROLLO NEL CASO METTA ANCHE LETTERA IN MAIUSCOLO
 					{
 						System.out.println("vuoi usare il retro della carta? (si=s) e (no=n)");
 						scelta=sc.nextLine();

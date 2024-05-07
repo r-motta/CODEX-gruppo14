@@ -4,9 +4,6 @@ public class Giocatore {
     private int punti=0;
     private CartaObiettivo cartaObiettivoSegreta;
     private CartaIniziale CartaInizialePropria = null;
-
-
-
     private Carta[] carteInMano = new Carta[3];
 
 
