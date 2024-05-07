@@ -42,7 +42,7 @@ public class Main {
 			
 			
 			
-		Collections.shuffle(MazzoIniziali);
+		Collections.shuffle(t.getMazzoIniziali());
 			
 			//parte grafica per mostarre le carte inziaili per fronte e retro
 			

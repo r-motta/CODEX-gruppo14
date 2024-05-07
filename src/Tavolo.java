@@ -264,6 +264,18 @@ public class Tavolo{
 	public Giocatore[] getGamers() {
 		return gamers;
 	}
+
+	public ArrayList<CartaIniziale> getMazzoIniziali() {
+		return mazzoIniziali;
+	}
+
+	public ArrayList<CartaOro> getMazzoOro() {
+		return mazzoOro;
+	}
+
+	public ArrayList<CartaObiettivo> getMazzoObiettivo() {
+		return mazzoObiettivo;
+	}
 	
 	
 
