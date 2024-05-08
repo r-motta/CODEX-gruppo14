@@ -5,7 +5,7 @@ public class Giocatore {
     private CartaObiettivo cartaObiettivoSegreta;
     private CartaIniziale CartaInizialePropria = null;
     private Carta[] carteInMano = new Carta[3];
-
+    private AreaDiGioco area;
 
     
     public Giocatore(String nome)
