@@ -9,6 +9,7 @@ public class AreaDiGioco {
 	{
 		area = new Carta[80][80];
 		posLibere = new ArrayList <Cella>();
+		//carta iniziale [40][40]
 	}
 	
 	public ArrayList <Cella> posizioniLibere()

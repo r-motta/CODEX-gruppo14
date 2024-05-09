@@ -46,7 +46,7 @@ public class Main {
 			
 			//parte grafica per mostarre le carte inziaili per fronte e retro
 			
-		int j=0;
+		int j=0; //variabile globale
 			
 			//assegnazione delle carte inziali e decisione su fronte e retro
 			for(int i=0;i<numGiocatori;i++)
@@ -149,7 +149,7 @@ public class Main {
 						
 						t.getGamers()[i].setCartaObiettivoSegreta(t.getMazzoObiettivo().get(k));
 						t.getMazzoObiettivo().remove(k);
-						k++;	
+							
 						
 						break;
 					}
@@ -164,6 +164,8 @@ public class Main {
 					//j++;		  
 				
 			}
+			
+			
 
 	
 
