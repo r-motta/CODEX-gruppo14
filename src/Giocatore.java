@@ -35,5 +35,13 @@ public class Giocatore {
         this.cartaObiettivoSegreta = cartaObiettivoSegreta;
     }
 
+	public String getNickname() {
+		return nickname;
+	}
+
+	
+    
+    
+
 
 }
