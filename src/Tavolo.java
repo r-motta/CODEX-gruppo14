@@ -109,22 +109,22 @@ public class Tavolo{
 			    CartaIniziale ci6 = new CartaIniziale("ci6", "foglia","lupo","fungo","farfalla");
 			        
 			        
-			    CartaObiettivo cob1 = new CartaObiettivo();
-				CartaObiettivo cob2 = new CartaObiettivo();
-				CartaObiettivo cob3 = new CartaObiettivo();
-				CartaObiettivo cob4 = new CartaObiettivo();
-				CartaObiettivo cob5 = new CartaObiettivo();
-				CartaObiettivo cob6 = new CartaObiettivo();
-				CartaObiettivo cob7 = new CartaObiettivo();
-				CartaObiettivo cob8 = new CartaObiettivo();
-				CartaObiettivo cob9 = new CartaObiettivo();
-				CartaObiettivo cob10 = new CartaObiettivo();
-				CartaObiettivo cob11 = new CartaObiettivo();
-				CartaObiettivo cob12 = new CartaObiettivo();
-				CartaObiettivo cob13 = new CartaObiettivo();
-				CartaObiettivo cob14 = new CartaObiettivo();
-				CartaObiettivo cob15 = new CartaObiettivo();
-				CartaObiettivo cob16 = new CartaObiettivo();
+			    CartaObiettivo cob1 = new CartaObiettivo("Diagonale dx di tre carte rosse", 2);
+				CartaObiettivo cob2 = new CartaObiettivo("Diagonale sx di tre carte verdi", 2);
+				CartaObiettivo cob3 = new CartaObiettivo("Diagonale dx di tre carte blu", 2);
+				CartaObiettivo cob4 = new CartaObiettivo("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta", 3);
+				CartaObiettivo cob5 = new CartaObiettivo("Verticale di due carte rosse e diagonale in basso a dx di una carta blu", 3);
+				CartaObiettivo cob6 = new CartaObiettivo("Diagonale sx di tre carte magenta", 2);
+				CartaObiettivo cob7 = new CartaObiettivo("Verticale di due carte blu e diagonale in alto a dx di una carta rossa", 3);
+				CartaObiettivo cob8 = new CartaObiettivo("Verticale di due carte magenta e diagonale in alto a sx di una carta blu", 3);
+				CartaObiettivo cob9 = new CartaObiettivo("Tre funghi", 2);
+				CartaObiettivo cob10 = new CartaObiettivo("Tre foglie", 2);
+				CartaObiettivo cob11 = new CartaObiettivo("Tre lupi", 2);
+				CartaObiettivo cob12 = new CartaObiettivo("Tre farfalle", 2);
+				CartaObiettivo cob13 = new CartaObiettivo("Tre oggetti differenti", 3);
+				CartaObiettivo cob14 = new CartaObiettivo("Due pergamene", 3);
+				CartaObiettivo cob15 = new CartaObiettivo("Due bottiglie", 3);
+				CartaObiettivo cob16 = new CartaObiettivo("Due piume", 3);
 				
 			
 			       
