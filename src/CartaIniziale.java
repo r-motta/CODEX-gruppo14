@@ -10,61 +10,59 @@ public class CartaIniziale {
         this.bs = bsx;
         this.bd = bdx;
     }
-
-    public void useRetroCi1()
+    
+    public void useRetro(CartaIniziale ci)
     {
-        this.as = "vuoto";
-        this.ad = "foglia";
-        this.bs = "farfalla";
-        this.bd ="vuoto";
-        String simboloRetro = "farfalla";
+    	if(ci.nome == "ci1")
+    		{
+	    		ci.as = "vuoto";
+	            ci.ad = "foglia";
+	            ci.bs = "farfalla";
+	            ci.bd ="vuoto";
+	            String simboloRetro = "farfalla";
+    		}
+    	else if(ci.nome == "ci2")
+    		{
+	    		ci.as = "vuoto";
+	            ci.ad = "vuoto";
+	            ci.bs = null;
+	            ci.bd = null;
+	            String simboloRetro = "foglia,lupo,fungo";
+    		}
+    	else if(ci.nome == "ci3")
+    		{
+	    		ci.as = "vuoto";
+	            ci.ad = "vuoto";
+	            ci.bs = null;
+	            ci.bd = null;
+	            String simboloRetro = "lupo,farfalla,foglia";
+    		}
+    	else if(ci.nome == "ci4")
+    		{
+	    		ci.as = "vuoto";
+	            ci.ad = "vuoto";
+	            ci.bs = "vuoto";
+	            ci.bd = "vuoto";
+	            String simboloRetro = "lupo,farfalla";
+    		}
+    	else if(ci.nome == "ci5")
+    		{
+	    		ci.as = "vuoto";
+	            ci.ad = "vuoto";
+	            ci.bs = "vuoto";
+	            ci.bd = "vuoto";
+	            String simboloRetro = "foglia,fungo";
+    		}
+    	else if(ci.nome == "ci6")
+    		{
+	    		ci.as = "lupo";
+	            ci.ad = "vuoto";
+	            ci.bs = "vuoto";
+	            ci.bd = "fungo";
+	            String simboloRetro = "fungo";
+    		}
     }
 
-    public void useRetroCi2()
-    {
-        this.as = "vuoto";
-        this.ad = "vuoto";
-        this.bs = null;
-        this.bd = null;
-        String simboloRetro = "foglia,lupo,fungo"; //visto che ce ne sono 3 possiamo fare spezzettamento come requisiti carte oro
-    }
-
-
-    public void useRetroCi3()
-    {
-        this.as = "vuoto";
-        this.ad = "vuoto";
-        this.bs = null;
-        this.bd = null;
-        String simboloRetro = "lupo,farfalla,foglia";
-    }
-
-    public void useRetroCi4()
-    {
-        this.as = "vuoto";
-        this.ad = "vuoto";
-        this.bs = "vuoto";
-        this.bd = "vuoto";
-        String simboloRetro = "lupo,farfalla";
-    }
-
-    public void useRetroCi5()
-    {
-        this.as = "vuoto";
-        this.ad = "vuoto";
-        this.bs = "vuoto";
-        this.bd = "vuoto";
-        String simboloRetro = "foglia,fungo";
-    }
-
-    public void useRetroCi6()
-    {
-        this.as = "lupo";
-        this.ad = "vuoto";
-        this.bs = "vuoto";
-        this.bd = "fungo";
-        String simboloRetro = "fungo";
-    }
 
 
     public String getNome() {

@@ -69,25 +69,11 @@ public class Main {
 					
 					if(scelta.equalsIgnoreCase("SI"))
 				    {
-				    	
-				    	if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci1")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi1();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci2")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi2();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci3")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi3();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci4")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi4();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci5")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi5();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci6")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi6();
+						t.getGamers()[i].getCartaInizialePropria().useRetro(t.getGamers()[i].getCartaInizialePropria());
 				    		
 				    }
 				    	
-						
 					j++;
-		 
 				
 			}
 			
