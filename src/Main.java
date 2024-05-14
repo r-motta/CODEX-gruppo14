@@ -51,7 +51,7 @@ public class Main {
 			//assegnazione delle carte inziali e decisione su fronte e retro
 			for(int i=0;i<numGiocatori;i++)
 			{
-				
+				System.out.println("--------------- GIOCATORE "+(i+1)+" ---------------");
 					
 					
 					if(i==0)
@@ -88,23 +88,29 @@ public class Main {
 			for(int i=0;i<numGiocatori;i++)
 			{
 					int y=0,k=1;
+					
+					System.out.println("--------------- GIOCATORE "+(i+1)+" ---------------");
 				
+					System.out.println("--------------------------------------------------------------|");
+					System.out.println("questa e' la prima carta obiettivo:                           |");
+					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(y).getRequisiti()+"   |");
+					System.out.println("Punti: "+ t.getMazzoObiettivo().get(y).getPunti()+"           |");
+					System.out.println("--------------------------------------------------------------|");
 					
-					System.out.println("questa e' la prima carta:");
-					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(y).getRequisiti());
-					System.out.println("Punti: "+ t.getMazzoObiettivo().get(y).getPunti());
+					System.out.println();
+					System.out.println();
 					
-					
-					
-					
-					System.out.println("questa e' la seconda carta:");
-					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(k).getRequisiti());
-					System.out.println("Punti: "+ t.getMazzoObiettivo().get(k).getPunti());
-             
-				  //parte grafica per mostare le carte da scegliere
+					System.out.println("--------------------------------------------------------------|");
+					System.out.println("questa e' la seconda carta:                                   |");
+					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(k).getRequisiti()+"   |");
+					System.out.println("Punti: "+ t.getMazzoObiettivo().get(k).getPunti()+"           |");
+					System.out.println("--------------------------------------------------------------|");
 					
 					
 					int scelta=0;
+					
+					System.out.println();
+					System.out.println();
 					
 					
 					do
@@ -142,15 +148,12 @@ public class Main {
 					
 					}
 					
-					//gamers[i].
-					
-					//j++;		  
+							  
 				
 			}
 
 	
 
-		//Frame f1 = new Frame();
 		
 		
 }
