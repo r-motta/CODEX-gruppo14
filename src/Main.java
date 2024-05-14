@@ -61,16 +61,10 @@ public class Main {
 					
 					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
 					
-					do // FARE CONTROLLO NEL CASO METTA ANCHE LETTERA IN MAIUSCOLO
-					{
-						System.out.println("vuoi usare il retro della carta? (si) e (no)");
-						scelta=sc.nextLine();
-					}while(!(scelta.equals('si') || scelta.equals('no')));
-					
 					do {
 					    System.out.println("Vuoi usare il retro della carta? (SI/NO)");
 					    scelta = sc.nextLine();
-					} while (!scelta.equalsIgnoreCase("SI") && !scelta.equalsIgnoreCase("NO"));
+					} while (!(scelta.equalsIgnoreCase("SI") || scelta.equalsIgnoreCase("NO")));
 					
 					
 					if(scelta.equalsIgnoreCase("SI"))
@@ -93,30 +87,7 @@ public class Main {
 				    	
 						
 					j++;
-					
-				    if(scelta.equals('si'))
-				    {
-				    	
-				    	if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci1")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi1();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci2")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi2();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci3")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi3();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci4")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi4();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci5")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi5();
-				    	else if(t.getGamers()[i].getCartaInizialePropria().getNome() == "ci6")
-				    		t.getGamers()[i].getCartaInizialePropria().useRetroCi6();
-				    		
-				    }
-				    	
-						
-					j++;		 
-			    
-			//per le carte ore bisogna utilizzare il remove() qua non lo abbiamo fatto perhchÃ¨ il giocatore interessa questo mazzo una sola volta
-			   
+		 
 				
 			}
 			
