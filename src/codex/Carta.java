@@ -52,6 +52,12 @@ public abstract class Carta {
 
     }
 
+	public Color getColore() {
+		return colore;
+	}
+    
+    
+
 
 
 }

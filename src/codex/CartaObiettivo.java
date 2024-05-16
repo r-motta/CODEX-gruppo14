@@ -1,4 +1,7 @@
 package codex;
+
+import java.awt.Color;
+
 public class CartaObiettivo{
 	
 	private String requisiti;
@@ -15,6 +18,35 @@ public class CartaObiettivo{
 	}
 	public int getPunti() {
 		return punti;
+	}
+	
+	public void controllo(CartaObiettivo co, Giocatore g)
+	{
+		//co1 va fatto controllo solo in basso perché quando si scorre la matrice trova sempre quella in alto a destra per prima
+		if(co.requisiti.equals("Diagonale dx di tre carte rosse"))
+		{
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.RED))
+						{
+							if(g.getAreaDiGioco().getArea()[i+1][j-1].getColore().equals(Color.RED))
+							{
+								if(g.getAreaDiGioco().getArea()[i+2][j-2].getColore().equals(Color.RED))
+								{
+									System.out.println("Diagonale dx di tre carte rosseo completata! ");
+									g.incrementaPunti(2);
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	

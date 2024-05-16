@@ -40,6 +40,18 @@ public class Giocatore {
 		return nickname;
 	}
 
+	public AreaDiGioco getAreaDiGioco() {
+		return area;
+	}
+
+	public int getPunti() {
+		return punti;
+	}
+	
+	
+	public void incrementaPunti(int valore) {
+        this.punti += valore;
+    }
 	
     
     

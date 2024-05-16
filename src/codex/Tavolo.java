@@ -122,7 +122,7 @@ public class Tavolo{
 				CartaObiettivo cob10 = new CartaObiettivo("Tre foglie", 2);
 				CartaObiettivo cob11 = new CartaObiettivo("Tre lupi", 2);
 				CartaObiettivo cob12 = new CartaObiettivo("Tre farfalle", 2);
-				CartaObiettivo cob13 = new CartaObiettivo("Tre oggetti differenti", 3);
+				CartaObiettivo cob13 = new CartaObiettivo("Piuma, bottiglia e pergamena", 3);
 				CartaObiettivo cob14 = new CartaObiettivo("Due pergamene", 3);
 				CartaObiettivo cob15 = new CartaObiettivo("Due bottiglie", 3);
 				CartaObiettivo cob16 = new CartaObiettivo("Due piume", 3);

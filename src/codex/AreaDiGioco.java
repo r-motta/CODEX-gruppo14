@@ -5,6 +5,8 @@ public class AreaDiGioco {
 	
 	private Carta[][] area;
 	private ArrayList <Cella> posLibere;
+	public static final int maxRighe=80;
+	public static final int maxColonne=80;
 	
 	public AreaDiGioco()
 	{
@@ -16,9 +18,9 @@ public class AreaDiGioco {
 	public ArrayList <Cella> posizioniLibere()
 	{
 		
-		for(int i=0;i<80;i++)
+		for(int i=0;i<maxRighe;i++)
 		{
-			for(int j=0;j<80;j++)
+			for(int j=0;j<maxColonne;j++)
 			{
 				if(area[i][j]!=null)
 				{
@@ -43,5 +45,11 @@ public class AreaDiGioco {
 		
 		return posLibere;
 	}
+
+	public Carta[][] getArea() {
+		return area;
+	}
+	
+	
 
 }
