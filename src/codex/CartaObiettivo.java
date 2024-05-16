@@ -62,11 +62,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.GREEN))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j+1].getColore().equals(Color.GREEN))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.GREEN))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+2].getColore().equals(Color.GREEN))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.GREEN))
 								{
 									System.out.println("Diagonale sx di tre carte verdi completata! ");
 									g.incrementaPunti(2);
@@ -92,11 +92,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.BLUE))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j-1].getColore().equals(Color.BLUE))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-2].getColore().equals(Color.BLUE))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
 								{
 									System.out.println("Diagonale dx di tre carte blu completata! ");
 									g.incrementaPunti(2);
@@ -122,11 +122,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.GREEN))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j].getColore().equals(Color.GREEN))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.GREEN))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-1].getColore().equals(Color.MAGENTA))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.MAGENTA))
 								{
 									System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta completata!");
 									g.incrementaPunti(3);
@@ -152,11 +152,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.RED))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j].getColore().equals(Color.RED))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.RED))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+1].getColore().equals(Color.BLUE))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.BLUE))
 								{
 									System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu completata!");
 									g.incrementaPunti(3);
@@ -182,11 +182,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.MAGENTA))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.MAGENTA))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j+1].getColore().equals(Color.MAGENTA))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+2].getColore().equals(Color.MAGENTA))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.MAGENTA))
 								{
 									System.out.println("Diagonale sx di tre carte magenta completata!");
 									g.incrementaPunti(2);
@@ -212,11 +212,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.RED))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j-1].getColore().equals(Color.BLUE))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-1].getColore().equals(Color.BLUE))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.BLUE))
 								{
 									System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa completata! ");
 									g.incrementaPunti(3);
@@ -242,11 +242,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.BLUE))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j+1].getColore().equals(Color.MAGENTA))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+1].getColore().equals(Color.MAGENTA))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.MAGENTA))
 								{
 									System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu completata! ");
 									g.incrementaPunti(3);
