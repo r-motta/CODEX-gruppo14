@@ -156,7 +156,7 @@ public class Giocatore {
 
     }
 
-    public Carta getCartaInizialePropria() {
+    public CartaIniziale getCartaInizialePropria() {
         return CartaInizialePropria;
     }
 

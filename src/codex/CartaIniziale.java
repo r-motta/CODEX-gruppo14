@@ -1,7 +1,11 @@
 package codex;
-public class CartaIniziale extends Carta{
+
+import java.awt.Color;
+
+public class CartaIniziale{
 
     private String nome,as,ad,bs,bd;
+    
 
     public CartaIniziale(String nome, String asx, String adx, String bsx, String bdx)
     {

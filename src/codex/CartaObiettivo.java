@@ -31,11 +31,11 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j].getColore().equals(Color.RED))
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
 						{
-							if(g.getAreaDiGioco().getArea()[i+1][j-1].getColore().equals(Color.RED))
+							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.RED))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-2].getColore().equals(Color.RED))
+								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
 								{
 									System.out.println("Diagonale dx di tre carte rosseo completata! ");
 									g.incrementaPunti(2);

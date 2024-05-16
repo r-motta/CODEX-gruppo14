@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class AreaDiGioco {
 	
-	private Carta[][] area;
+	private Object[][] area;
 	private ArrayList <Cella> posLibere;
 	public static final int maxRighe=80;
 	public static final int maxColonne=80;
@@ -11,9 +11,8 @@ public class AreaDiGioco {
 	public AreaDiGioco(Giocatore g)
 	{
 		area = new Carta[80][80];
-		area[40][40] = g.getCartaInizialePropria();
+		area[40][40] = (CartaIniziale) g.getCartaInizialePropria();
 		posLibere = new ArrayList <Cella>();
-		//carta iniziale [40][40]
 	}
 	
 	public ArrayList <Cella> posizioniLibere()
@@ -47,7 +46,7 @@ public class AreaDiGioco {
 		return posLibere;
 	}
 
-	public Carta[][] getArea() {
+	public Object[][] getArea() {
 		return area;
 	}
 	
