@@ -264,7 +264,7 @@ public class CartaObiettivo{
 				}
 			}
 		}
-		else if
+		
 	}
 	
 	
