@@ -1,3 +1,4 @@
+package codex;
 import java.util.Scanner;			
 import javax.swing.*;
 import java.awt.Color;

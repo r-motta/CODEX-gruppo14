@@ -1,3 +1,4 @@
+package codex;
 public class CartaObiettivo{
 	
 	private String requisiti;

@@ -1,3 +1,4 @@
+package codex;
 public class CartaIniziale {
 
     private String nome,as,ad,bs,bd;
