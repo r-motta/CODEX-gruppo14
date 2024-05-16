@@ -14,9 +14,9 @@ public class Giocatore {
         this.nickname = nome;
     }
 
-    public boolean pesca()
+    public void pesca()
     {
-        return false;
+        
 
     }
 
