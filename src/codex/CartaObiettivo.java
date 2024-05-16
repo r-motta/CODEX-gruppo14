@@ -47,6 +47,11 @@ public class CartaObiettivo{
 				}
 			}
 		}
+		//seconda carta
+		else if
+		{
+			
+		}
 	}
 	
 	
