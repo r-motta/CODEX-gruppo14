@@ -42,8 +42,14 @@ public class CartaObiettivo{
 									
 								}
 							}
+							else
+								System.out.println("Diagonale dx di tre carte rosseo NON completata! ");
 						}
+						else
+							System.out.println("Diagonale dx di tre carte rosseo NON completata! ");
 					}
+					else
+						System.out.println("Diagonale dx di tre carte rosseo NON completata! ");
 				}
 			}
 		}

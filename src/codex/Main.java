@@ -144,7 +144,11 @@ public class Main {
 						break;
 					}
 					
-					
+					default:
+					{
+						System.out.println("Errore, riprova! ");
+						break;
+					}
 					
 					
 					}
@@ -153,7 +157,9 @@ public class Main {
 				
 			}
 
-	
+			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa
+			Collections.shuffle(t.getMazzoOro());//mischia le carte oro
+
 
 		
 		

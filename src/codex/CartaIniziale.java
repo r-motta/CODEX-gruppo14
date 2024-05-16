@@ -1,5 +1,5 @@
 package codex;
-public class CartaIniziale {
+public class CartaIniziale extends Carta{
 
     private String nome,as,ad,bs,bd;
 

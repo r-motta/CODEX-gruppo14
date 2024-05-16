@@ -10,6 +10,13 @@ public class CartaRisorsa extends Carta{
 		int puntoVittoria = p; //una carta risorsa può non avere punti oppure un 1 punto vittoria
 	}
 
+	@Override
+	public String toString() {
+		return "CartaRisorsa [toString()=" + super.toString() + "]";
+	}
+
+	
+
 			// colore, asx, adx, bsx, bdx, punteggio, url
 			
 	

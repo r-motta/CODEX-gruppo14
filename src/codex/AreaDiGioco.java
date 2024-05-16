@@ -8,9 +8,10 @@ public class AreaDiGioco {
 	public static final int maxRighe=80;
 	public static final int maxColonne=80;
 	
-	public AreaDiGioco()
+	public AreaDiGioco(Giocatore g)
 	{
 		area = new Carta[80][80];
+		area[40][40] = g.getCartaInizialePropria();
 		posLibere = new ArrayList <Cella>();
 		//carta iniziale [40][40]
 	}
