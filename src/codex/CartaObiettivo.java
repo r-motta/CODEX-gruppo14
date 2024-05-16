@@ -54,7 +54,7 @@ public class CartaObiettivo{
 			}
 		}
 		//seconda carta
-		else if (co.requisiti.equals("Diagonale dx di tre carte rosse"))
+		else if (co.requisiti.equals("Diagonale sx di tre carte verdi"))
 		{
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
