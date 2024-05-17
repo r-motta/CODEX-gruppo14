@@ -6,7 +6,7 @@ public class AreaDiGioco {
 	
 	private Object[][] area;
 	private List <Cella> posLibere;
-	public static final int maxRighe=80;
+	public static final int maxRighe=80; //static perché le usiamo in CartaObiettivo per scorrere la matrice
 	public static final int maxColonne=80;
 	
 	public AreaDiGioco(Giocatore g)

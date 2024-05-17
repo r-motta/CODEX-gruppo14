@@ -8,7 +8,8 @@ public class CartaObiettivo{
 	
 	private String requisiti;
 	private int punti;
-	private Set<Cella> posCarteCompletate = new HashSet<Cella>();
+	private Set<Cella> posCartaDiagonale = new HashSet<Cella>();
+	private Set<Cella> posCartaVerticale = new HashSet<Cella>();
 	
 	public CartaObiettivo(String req, int punt)
 	{
@@ -23,11 +24,14 @@ public class CartaObiettivo{
 		return punti;
 	}
 	
+	
 	public void controllo(CartaObiettivo co, Giocatore g)
 	{
 		//prima carta obiettivo
 		if(co.requisiti.equals("Diagonale dx di tre carte rosse"))
 		{
+			boolean completato=false;
+			
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
@@ -39,14 +43,15 @@ public class CartaObiettivo{
 								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
 								{
 									
-									if(posCarteCompletate.add(new Cella(i,j))==true)
+									if(posCartaDiagonale.add(new Cella(i,j))==true)
 									{
-										if(posCarteCompletate.add(new Cella(i+1,j-1))==true)
+										if(posCartaDiagonale.add(new Cella(i+1,j-1))==true)
 										{
-											if(posCarteCompletate.add(new Cella(i+2,j-2))==true)
+											if(posCartaDiagonale.add(new Cella(i+2,j-2))==true)
 											{
 												System.out.println("Diagonale dx di tre carte rosse COMPLETATA! ");
 												g.incrementaPunti(2);
+												completato = true;
 											}
 										}
 									}
@@ -54,14 +59,15 @@ public class CartaObiettivo{
 									
 								}
 							}
-							else
-								System.out.println("Diagonale dx di tre carte rosse NON completata! ");
 					}
-					else
-						System.out.println("Diagonale dx di tre carte rosse NON completata! ");
+						
 				}
 			}
+			if(completato == false)
+				System.out.println("Diagonale dx di tre carte rosse NON completata! ");
 		}
+		
+		
 		//seconda carta
 		else if (co.requisiti.equals("Diagonale sx di tre carte verdi"))
 		{
@@ -274,7 +280,54 @@ public class CartaObiettivo{
 			}
 		}
 		
+		
+		//nona carta
+		else if(co.requisiti.equals("Tre funghi"))
+		{
+			int contaFunghi=0;
+			
+			boolean completato = false;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						contaFunghi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							contaFunghi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+							contaFunghi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							contaFunghi++;
+						
+						
+					}
+					
+						
+				}
+			}
+			
+			if(contaFunghi<3)
+				System.out.println("Tre funghi NON completato! ");
+			else
+			{
+				g.incrementaPunti(((int)(contaFunghi/3)) * 2);
+				System.out.println("Tre funghi completato "+(((int)(contaFunghi/3)) * 2)+" volta/e! ");
+			}
+			
+			
+				
+		}
+		
 	}
+
+	
 	
 	
 }

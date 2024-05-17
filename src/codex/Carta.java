@@ -55,6 +55,38 @@ public abstract class Carta {
 	public Color getColore() {
 		return colore;
 	}
+
+	public String getAs() {
+		return as;
+	}
+
+	public void setAs(String as) {
+		this.as = as;
+	}
+
+	public String getAd() {
+		return ad;
+	}
+
+	public void setAd(String ad) {
+		this.ad = ad;
+	}
+
+	public String getBs() {
+		return bs;
+	}
+
+	public void setBs(String bs) {
+		this.bs = bs;
+	}
+
+	public String getBd() {
+		return bd;
+	}
+
+	public void setBd(String bd) {
+		this.bd = bd;
+	}
     
     
 

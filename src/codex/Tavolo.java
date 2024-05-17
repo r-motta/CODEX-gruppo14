@@ -129,7 +129,7 @@ public class Tavolo{
 				CartaObiettivo cob16 = new CartaObiettivo("Due piume", 3);
 				
 			
-			       
+			    
 			
 			mazzoRisorse = new ArrayList<CartaRisorsa>();
 			
