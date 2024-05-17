@@ -1,11 +1,14 @@
 package codex;
 
 import java.awt.Color;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CartaObiettivo{
 	
 	private String requisiti;
 	private int punti;
+	private Set<Cella> posCarteCompletate = new HashSet<Cella>();
 	
 	public CartaObiettivo(String req, int punt)
 	{
@@ -22,31 +25,37 @@ public class CartaObiettivo{
 	
 	public void controllo(CartaObiettivo co, Giocatore g)
 	{
-		//co1 va fatto controllo solo in basso perch� quando si scorre la matrice trova sempre quella in alto a destra per prima
+		//prima carta obiettivo
 		if(co.requisiti.equals("Diagonale dx di tre carte rosse"))
 		{
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.RED))
+							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.RED))
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
+								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
 								{
-									System.out.println("Diagonale dx di tre carte rosse completata! ");
-									g.incrementaPunti(2);
+									
+									if(posCarteCompletate.add(new Cella(i,j))==true)
+									{
+										if(posCarteCompletate.add(new Cella(i+1,j-1))==true)
+										{
+											if(posCarteCompletate.add(new Cella(i+2,j-2))==true)
+											{
+												System.out.println("Diagonale dx di tre carte rosse COMPLETATA! ");
+												g.incrementaPunti(2);
+											}
+										}
+									}
+									
 									
 								}
 							}
 							else
 								System.out.println("Diagonale dx di tre carte rosse NON completata! ");
-						}
-						else
-							System.out.println("Diagonale dx di tre carte rosse NON completata! ");
 					}
 					else
 						System.out.println("Diagonale dx di tre carte rosse NON completata! ");
@@ -64,9 +73,9 @@ public class CartaObiettivo{
 					{
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.GREEN))
+							if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.GREEN))
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.GREEN))
+								if(g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.GREEN))
 								{
 									System.out.println("Diagonale sx di tre carte verdi completata! ");
 									g.incrementaPunti(2);
@@ -94,9 +103,9 @@ public class CartaObiettivo{
 					{
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
+							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
+								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
 								{
 									System.out.println("Diagonale dx di tre carte blu completata! ");
 									g.incrementaPunti(2);

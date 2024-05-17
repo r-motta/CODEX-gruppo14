@@ -1,14 +1,15 @@
 package codex;
 import java.awt.Color;	
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tavolo{
 	
 	private Giocatore[] gamers;
-	private ArrayList <CartaRisorsa> mazzoRisorse;
-	private ArrayList <CartaIniziale> mazzoIniziali;
-	private ArrayList <CartaOro> mazzoOro;
-	private ArrayList <CartaObiettivo> mazzoObiettivo;
+	private List <CartaRisorsa> mazzoRisorse;
+	private List <CartaIniziale> mazzoIniziali;
+	private List <CartaOro> mazzoOro;
+	private List <CartaObiettivo> mazzoObiettivo;
 	
 	public Tavolo()
 	{
@@ -259,7 +260,7 @@ public class Tavolo{
 			}
 
 	public ArrayList<CartaRisorsa> getMazzoRisorse() {
-		return mazzoRisorse;
+		return (ArrayList<CartaRisorsa>) mazzoRisorse;
 	}
 
 	public Giocatore[] getGamers() {
@@ -267,15 +268,15 @@ public class Tavolo{
 	}
 
 	public ArrayList<CartaIniziale> getMazzoIniziali() {
-		return mazzoIniziali;
+		return (ArrayList<CartaIniziale>) mazzoIniziali;
 	}
 
 	public ArrayList<CartaOro> getMazzoOro() {
-		return mazzoOro;
+		return (ArrayList<CartaOro>) mazzoOro;
 	}
 
 	public ArrayList<CartaObiettivo> getMazzoObiettivo() {
-		return mazzoObiettivo;
+		return (ArrayList<CartaObiettivo>) mazzoObiettivo;
 	}
 	
 	

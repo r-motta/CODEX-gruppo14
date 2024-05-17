@@ -1,10 +1,11 @@
 package codex;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AreaDiGioco {
 	
 	private Object[][] area;
-	private ArrayList <Cella> posLibere;
+	private List <Cella> posLibere;
 	public static final int maxRighe=80;
 	public static final int maxColonne=80;
 	
@@ -43,7 +44,7 @@ public class AreaDiGioco {
 			}
 		}
 		
-		return posLibere;
+		return (ArrayList<Cella>) posLibere;
 	}
 
 	public Object[][] getArea() {
