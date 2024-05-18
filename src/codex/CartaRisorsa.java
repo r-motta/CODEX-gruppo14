@@ -12,7 +12,7 @@ public class CartaRisorsa extends Carta{
 
 	@Override
 	public String toString() {
-		return "CartaRisorsa [toString()=" + super.toString() + "]";
+		return super.toString();
 	}
 
 	

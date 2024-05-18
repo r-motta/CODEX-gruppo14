@@ -15,5 +15,10 @@ public class CartaOro extends Carta{
 		//i punti faccio funzione controllo per ogni carta e non uno generale nel costruttore
 		
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 }

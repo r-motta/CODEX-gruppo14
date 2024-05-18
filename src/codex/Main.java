@@ -61,6 +61,7 @@ public class Main {
 					String scelta = null;
 					
 					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
+					//far vedere davanti e retro della carta
 					
 					do {
 					    System.out.println("Vuoi usare il retro della carta? (SI/NO)");
@@ -160,7 +161,23 @@ public class Main {
 			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa
 			Collections.shuffle(t.getMazzoOro());//mischia le carte oro
 
-
+			//assegnazione 1 carta oro e 2 carta risorsa ad inizio partita
+			
+			for(int i=0;i<numGiocatori;i++)
+			{
+				t.getGamers()[i].getCarteInMano()[0] = t.getMazzoOro().get(0);
+				t.getMazzoOro().remove(0);
+				
+				t.getGamers()[i].getCarteInMano()[1] = t.getMazzoRisorse().get(0);
+				t.getGamers()[i].getCarteInMano()[2] = t.getMazzoRisorse().get(1);
+				
+				t.getMazzoRisorse().remove(0);
+				t.getMazzoRisorse().remove(1);
+				
+				
+				
+				
+			}
 		
 		
 }
