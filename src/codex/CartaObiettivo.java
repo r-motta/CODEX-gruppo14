@@ -116,305 +116,285 @@ public class CartaObiettivo{
 		}
 		
 		//terza carta
-		else if (co.requisiti.equals("Diagonale dx di tre carte blu"))
+		
+		if(co.requisiti.equals("Diagonale dx di tre carte blu"))
 		{
+			Set<Cella> posDiagDxBlu = new HashSet<Cella>();
+		
+			int conta=0;
+			
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
-						{
 							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
 							{
 								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
 								{
-									System.out.println("Diagonale dx di tre carte blu completata! ");
-									g.incrementaPunti(2);
+									
+									if(posDiagDxBLU.add(new Cella(i,j))==true)
+									{
+										if(posDiagDxBLU.add(new Cella(i+1,j-1))==true)
+										{
+											if(posDiagDxBLU.add(new Cella(i+2,j-2))==true)
+											{
+												conta++;
+												g.incrementaPunti(2);
+											}
+										}
+									}
+									
 									
 								}
 							}
-							else
-								System.out.println("Diagonale dx di tre carte blu NON completata! ");
-						}
-						else
-							System.out.println("Diagonale dx di tre carte blu NON completata! ");
 					}
-					else
-						System.out.println("Diagonale dx di tre carte blu NON completata! ");
+						
 				}
 			}
+			if(conta==0)
+				System.out.println("Diagonale dx di tre carte blu NON completata! ");
+			else
+				System.out.println("Diagonale dx di tre carte blu COMPLETATA "+ conta +" volta/e ! ");
 		}
-		else if (co.requisiti.equals("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta"))
+		//quarta carta
+		
+		
+		
+		if(co.requisiti.equals("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta"))
 		{
+			Set<Cella> posTorreVerdeMagenta = new HashSet<Cella>();
+		
+			int conta=0;
+			
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.GREEN))
+							if(g.getAreaDiGioco().getArea()[i+1][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.GREEN))
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.MAGENTA))
+								if(g.getAreaDiGioco().getArea()[i+2][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.MAGENTA))
 								{
-									System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta completata!");
-									g.incrementaPunti(3);
+									
+									if(posTorreVerdeMagenta .add(new Cella(i,j))==true)
+									{
+										if(posTorreVerdeMagenta .add(new Cella(i+1,j))==true)
+										{
+											if(posTorreVerdeMagenta .add(new Cella(i+2,j-1))==true)
+											{
+												conta++;
+												g.incrementaPunti(3);
+											}
+										}
+									}
+									
 									
 								}
 							}
-							else
-								System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta NON completata! ");
-						}
-						else
-							System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta NON completata! ");
 					}
-					else
-						System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta NON completata! ");
+						
 				}
 			}
-		}
-		else if (co.requisiti.equals("Verticale di due carte rosse e diagonale in basso a dx di una carta blu"))
-		{
-			for(int i=0;i<AreaDiGioco.maxRighe; i++)
-			{
-				for(int j=0; j<AreaDiGioco.maxColonne; j++)
-				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
-					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.RED))
-							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.BLUE))
-								{
-									System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu completata!");
-									g.incrementaPunti(3);
-									
-								}
-							}
-							else
-								System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu NON completata! ");
-						}
-						else
-							System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu NON completata! ");
-					}
-					else
-						System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu NON completata! ");
-				}
-			}
-		}
-		else if (co.requisiti.equals("Diagonale sx di tre carte magenta"))
-		{
-			for(int i=0;i<AreaDiGioco.maxRighe; i++)
-			{
-				for(int j=0; j<AreaDiGioco.maxColonne; j++)
-				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
-					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.MAGENTA))
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
-							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.MAGENTA))
-								{
-									System.out.println("Diagonale sx di tre carte magenta completata!");
-									g.incrementaPunti(2);
-									
-								}
-							}
-							else
-								System.out.println("Diagonale sx di tre carte magenta NON completata! ");
-						}
-						else
-							System.out.println("Diagonale sx di tre carte magenta NON completata! ");
-					}
-					else
-						System.out.println("Diagonale sx di tre carte magenta NON completata! ");
-				}
-			}
-		}
-		else if (co.requisiti.equals("Verticale di due carte blu e diagonale in alto a dx di una carta rossa"))
-		{
-			for(int i=0;i<AreaDiGioco.maxRighe; i++)
-			{
-				for(int j=0; j<AreaDiGioco.maxColonne; j++)
-				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
-					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
-							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.BLUE))
-								{
-									System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa completata! ");
-									g.incrementaPunti(3);
-									
-								}
-							}
-							else
-								System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa NON completata! ");
-						}
-						else
-							System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa NON completata! ");
-					}
-					else
-						System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa NON completata! ");
-				}
-			}
-		}
-		else if (co.requisiti.equals("Verticale di due carte magenta e diagonale in alto a sx di una carta blu"))
-		{
-			for(int i=0;i<AreaDiGioco.maxRighe; i++)
-			{
-				for(int j=0; j<AreaDiGioco.maxColonne; j++)
-				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
-					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
-							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.MAGENTA))
-								{
-									System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu completata! ");
-									g.incrementaPunti(3);
-									
-								}
-							}
-							else
-								System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu NON completata! ");
-						}
-						else
-							System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu NON completata! ");
-					}
-					else
-						System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu NON completata! ");
-				}
-			}
+			if(conta==0)
+				System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta NON completata! ");
+			else
+				System.out.println("Verticale di due carte verdi e diagonale in basso a sx di una carta magenta COMPLETATA "+ conta +" volta/e ! ");
 		}
 		
-		 // terza carta obbietivo
-	    if (co.requisiti.equals("Diagonale Blu")) {
-	        boolean diagonaleValida = true;
-	        for (Cella cella : co.getPosCartaDiagonale()) {
-	            if (g.getAreaDiGioco().getArea()[cella.getRigha()][cella.getColonna()] == null ||
-	                !((Carta) g.getAreaDiGioco().getArea()[cella.getRigha()][cella.getColonna()]).getColore().equals(Color.BLUE)) {
-	                diagonaleValida = false;
-	                break;
-	            }
-	        }
-
-	        if (diagonaleValida) {
-	            boolean angoliCoperti = true;
-	            Cella angoloSinistroBasso = new Cella(co.getPosCartaDiagonale().get(0).getRigha() + 2, co.getPosCartaDiagonale().get(0).getColonna() - 2);
-	            Cella angoloDestroAlto = new Cella(co.getPosCartaDiagonale().get(0).getRigha() - 2, co.getPosCartaDiagonale().get(0).getColonna() + 2);
-
-	            if (g.getAreaDiGioco().getArea()[angoloSinistroBasso.getRigha()][angoloSinistroBasso.getColonna()] != null) {
-	                angoliCoperti = false;
-	            }
-
-	            if (g.getAreaDiGioco().getArea()[angoloDestroAlto.getRigha()][angoloDestroAlto.getColonna()] != null) {
-	                angoliCoperti = false;
-	            }
-
-	            if (diagonaleValida && angoliCoperti) {
-	                g.incrementaPunti(2);
-	                System.out.println("Diagonale Blu completata! +2 punti");
-	            } else {
-	                System.out.println("Diagonale Blu non completata");
-	            }
-	        } else {
-	            System.out.println("Diagonale Blu non completata");
-	        }
-	    }
+		
+		//quinta carta:
+			
+		if(co.requisiti.equals("Verticale di due carte rosse e diagonale in basso a dx di una carta blu"))
+		{
+			Set<Cella> posTorreRossadxBlu = new HashSet<Cella>();
+		
+			int conta=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.RED))
+							{
+								if(g.getAreaDiGioco().getArea()[i+2][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.BLUE))
+								{
+									
+									if(posTorreRossadxBlu.add(new Cella(i,j))==true)
+									{
+										if(posTorreRossadxBlu.add(new Cella(i+1,j))==true)
+										{
+											if(posTorreRossadxBlu.add(new Cella(i+2,j+1))==true)
+											{
+												conta++;
+												g.incrementaPunti(3);
+											}
+										}
+									}
+									
+									
+								}
+							}
+					}
+						
+				}
+			}
+			if(conta==0)
+				System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu NON completata! ");
+			else
+				System.out.println("Verticale di due carte rosse e diagonale in basso a dx di una carta blu COMPLETATA "+ conta +" volta/e ! ");
+		}
+		
+		
+		
+		
+		//sesta carta
+		
+		
+		
+		else if(co.requisiti.equals("Diagonale sx di tre carte verdi"))
+		{
+			Set<Cella> posDiagSxMagenta = new HashSet<Cella>();
+		
+			int conta=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.MAGENTA))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
+							{
+								if(g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.MAGENTA))
+								{
+									
+									if(posDiagSxMagenta.add(new Cella(i,j))==true)
+									{
+										if(posDiagSxMagenta.add(new Cella(i+1,j+1))==true)
+										{
+											if(posDiagSxMagenta.add(new Cella(i+2,j+2))==true)
+											{
+												conta++;
+												g.incrementaPunti(2);
+											}
+										}
+									}
+									
+									
+								}
+							}
+					}
+						
+				}
+			}
+			if(conta==0)
+				System.out.println("Diagonale sx di tre carte magenta NON completata! ");
+			else
+				System.out.println("Diagonale sx di tre carte magenta COMPLETATA "+ conta +" volta/e ! ");
+		}
+		
+		//settima carta
+		
+		
+		if(co.requisiti.equals("Verticale di due carte blu e diagonale in alto a dx di una carta rossa"))
+		{
+			Set<Cella> posTorreBluDxRossa = new HashSet<Cella>();
+		
+			int conta=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+				
+							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
+							{
+								if(g.getAreaDiGioco().getArea()[i+2][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.BLUE))
+								{
+									
+									if(posTorreBluDxRossa.add(new Cella(i,j))==true)
+									{
+										if(posTorreBluDxRossa.add(new Cella(i+1,j-1))==true)
+										{
+											if(posTorreBluDxRossa.add(new Cella(i+2,j-1))==true)
+											{
+												conta++;
+												g.incrementaPunti(3);
+											}
+										}
+									}
+									
+									
+								}
+							}
+					}
+						
+				}
+			}
+			if(conta==0)
+				System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa NON completata! ");
+			else
+				System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossaCOMPLETATA "+ conta +" volta/e ! ");
+		}
+		
+		
+		
+		//ottava carta
+		
+		
+		
+	if(co.requisiti.equals("Verticale di due carte magenta e diagonale in alto a sx di una carta blu"))
+	{
+		Set<Cella> posSxBluTorreMagenta = new HashSet<Cella>();
+	
+		int conta=0;
+		
+		for(int i=0;i<AreaDiGioco.maxRighe; i++)
+		{
+			for(int j=0; j<AreaDiGioco.maxColonne; j++)
+			{
+				if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
+				{
+						if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
+						{
+							if(g.getAreaDiGioco().getArea()[i+2][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.MAGENTA))
+							{
+								
+								if(posSxBluTorreMagenta.add(new Cella(i,j))==true)
+								{
+									if(posSxBluTorreMagenta.add(new Cella(i+1,j+1))==true)
+									{
+										if(posSxBluTorreMagenta.add(new Cella(i+2,j+1))==true)
+										{
+											conta++;
+											g.incrementaPunti(3);
+										}
+									}
+								}
+								
+								
+							}
+						}
+				}
+					
+			}
+		}
+		if(conta==0)
+			System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu NON completata! ");
+		else
+			System.out.println("Verticale di due carte magenta e diagonale in alto a sx di una carta blu COMPLETATA "+ conta +" volta/e ! ");
 	}
-		
-	// Quarta carta
-    if (co.requisiti.equals("Torre Verde")) {
-        boolean torreValida = true;
-
-        // Controlla la carta in alto
-        Carta cartaInAlto = g.getAreaDiGioco().getArea()[0][0];
-        if (cartaInAlto == null || !cartaInAlto.getColore().equals(Color.VERDE)) {
-            torreValida = false;
-        }
-
-        // Controlla la carta centrale
-        Carta cartaCentrale = g.getAreaDiGioco().getArea()[1][0];
-        if (cartaCentrale == null || !cartaCentrale.getColore().equals(Color.VERDE)) {
-            torreValida = false;
-        }
-
-        // Controlla la carta viola e la sua posizione
-        Carta cartaViola = g.getAreaDiGioco().getArea()[2][0];
-        if (cartaViola == null || !cartaViola.getColore().equals(Color.VIOLA)) {
-            torreValida = false;
-        }
-
-        // Controlla la sovrapposizione degli angoli
-        if (g.getAreaDiGioco().getArea()[1][1] != null || g.getAreaDiGioco().getArea()[2][1] != null) {
-            torreValida = false;
-        }
-
-        if (torreValida) {
-            g.incrementaPunti(3);
-            System.out.println("Torre Verde completata! +3 punti");
-        } else {
-            System.out.println("Torre Verde non completata");
-        }
-    }
-}
-		
-    // Quinta carta
-    if (co.requisiti.equals("Torre Rossa")) {
-        boolean triangoloValido = true;
-
-        // Controlla la carta in alto
-        Carta cartaInAlto = g.getAreaDiGioco().getArea()[0][0];
-        if (cartaInAlto == null || !cartaInAlto.getColore().equals(Color.ROSSO)) {
-            triangoloValido = false;
-        }
-
-        // Controlla la carta centrale e la sua connessione
-        Carta cartaCentrale = g.getAreaDiGioco().getArea()[1][0];
-        if (cartaCentrale == null || !cartaCentrale.getColore().equals(Color.ROSSO)) {
-            triangoloValido = false;
-        }
-
-        Cella cellaBlu = g.getAreaDiGioco().getCellaCarta(cartaCentrale.getColore(), Color.BLU);
-        if (cellaBlu == null || !g.getAreaDiGioco().isConnessa(cartaCentrale, g.getAreaDiGioco().getArea()[1][1], true)) {
-            triangoloValido = false;
-        }
-
-        // Controlla la carta blu e i suoi angoli
-        Carta cartaBlu = g.getAreaDiGioco().getArea()[cellaBlu.getRigha()][cellaBlu.getColonna()];
-        if (cartaBlu == null || !cartaBlu.getColore().equals(Color.BLU)) {
-            triangoloValido = false;
-        }
-
-        if (g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() - 1][cellaBlu.getColonna() - 1], true) ||
-            g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() - 1][cellaBlu.getColonna() + 1], true) ||
-            g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() + 1][cellaBlu.getColonna() - 1], true) ||
-            g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() + 1][cellaBlu.getColonna() + 1], true)) {
-            triangoloValido = false;
-        }
-
-        if (triangoloValido) {
-            g.incrementaPunti(3);
-            System.out.println("Torre Rossa completato! +3 punti");
-        } else {
-            System.out.println("Torre Rossa non completata");
-        }
-    }
-}
-
 	
 
 		//nona carta
+	
+	
 		else if(co.requisiti.equals("Tre funghi"))
 		{
 			int contaFunghi=0;
