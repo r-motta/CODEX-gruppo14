@@ -8,7 +8,7 @@ public class CartaObiettivo{
 	
 	private String requisiti;
 	private int punti;
-	private Set<Cella> posCartaDiagonale = new HashSet<Cella>();
+	
 	private Set<Cella> posCartaVerticale = new HashSet<Cella>();
 	
 	public CartaObiettivo(String req, int punt)
@@ -27,10 +27,13 @@ public class CartaObiettivo{
 	
 	public void controllo(CartaObiettivo co, Giocatore g)
 	{
+		
 		//prima carta obiettivo
 		if(co.requisiti.equals("Diagonale dx di tre carte rosse"))
 		{
-			boolean completato=false;
+			Set<Cella> posDiagDxRossa = new HashSet<Cella>();
+		
+			int conta=0;
 			
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
@@ -43,15 +46,14 @@ public class CartaObiettivo{
 								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
 								{
 									
-									if(posCartaDiagonale.add(new Cella(i,j))==true)
+									if(posDiagDxRossa.add(new Cella(i,j))==true)
 									{
-										if(posCartaDiagonale.add(new Cella(i+1,j-1))==true)
+										if(posDiagDxRossa.add(new Cella(i+1,j-1))==true)
 										{
-											if(posCartaDiagonale.add(new Cella(i+2,j-2))==true)
+											if(posDiagDxRossa.add(new Cella(i+2,j-2))==true)
 											{
-												System.out.println("Diagonale dx di tre carte rosse COMPLETATA! ");
+												conta++;
 												g.incrementaPunti(2);
-												completato = true;
 											}
 										}
 									}
@@ -63,42 +65,57 @@ public class CartaObiettivo{
 						
 				}
 			}
-			if(completato == false)
+			if(conta==0)
 				System.out.println("Diagonale dx di tre carte rosse NON completata! ");
+			else
+				System.out.println("Diagonale dx di tre carte rosse COMPLETATA "+ conta +" volta/e ! ");
 		}
 		
 		
 		//seconda carta
-		else if (co.requisiti.equals("Diagonale sx di tre carte verdi"))
+		else if(co.requisiti.equals("Diagonale sx di tre carte verdi"))
 		{
+			Set<Cella> posDiagSxVerde = new HashSet<Cella>();
+		
+			int conta=0;
+			
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
-						{
 							if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.GREEN))
 							{
 								if(g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.GREEN))
 								{
-									System.out.println("Diagonale sx di tre carte verdi completata! ");
-									g.incrementaPunti(2);
+									
+									if(posDiagSxVerde.add(new Cella(i,j))==true)
+									{
+										if(posDiagSxVerde.add(new Cella(i+1,j+1))==true)
+										{
+											if(posDiagSxVerde.add(new Cella(i+2,j+2))==true)
+											{
+												conta++;
+												g.incrementaPunti(2);
+											}
+										}
+									}
+									
 									
 								}
 							}
-							else
-								System.out.println("Diagonale sx di tre carte verdi NON completata! ");
-						}
-						else
-							System.out.println("Diagonale sx di tre carte verdi NON completata! ");
 					}
-					else
-						System.out.println("Diagonale sx di tre carte verdi NON completata! ");
+						
 				}
 			}
+			if(conta==0)
+				System.out.println("Diagonale sx di tre carte verdi NON completata! ");
+			else
+				System.out.println("Diagonale sx di tre carte verdi COMPLETATA "+ conta +" volta/e ! ");
 		}
+		
+		//terza carta
 		else if (co.requisiti.equals("Diagonale dx di tre carte blu"))
 		{
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
@@ -402,8 +419,6 @@ public class CartaObiettivo{
 		{
 			int contaFunghi=0;
 			
-			boolean completato = false;
-			
 			for(int i=0;i<AreaDiGioco.maxRighe; i++)
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
@@ -428,6 +443,7 @@ public class CartaObiettivo{
 						
 				}
 			}
+			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
 			
 			if(contaFunghi<3)
 				System.out.println("Tre funghi NON completato! ");

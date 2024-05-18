@@ -155,6 +155,18 @@ public class Giocatore {
         
 
     }
+    
+    public void posizionaCarta(Tavolo t, int i)
+    {
+    	System.out.println("Quale carta vuoi posizionare? ");
+    	System.out.println("CARTA [1]: ");
+    	t.getGamers()[i].getCarteInMano()[0].toString();
+    	System.out.println("CARTA [2]: ");
+    	System.out.println("CARTA [3]: ");
+    	
+    	
+    	System.out.println("Dove vuoi posizionare la carta");
+    }
 
     public CartaIniziale getCartaInizialePropria() {
         return CartaInizialePropria;
@@ -188,6 +200,12 @@ public class Giocatore {
 	public void incrementaPunti(int valore) {
         this.punti += valore;
     }
+
+	public Carta[] getCarteInMano() {
+		return carteInMano;
+	}
+	
+	
 	
     
     

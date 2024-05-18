@@ -25,7 +25,7 @@ public class AreaDiGioco {
 			{
 				if(area[i][j]!=null)
 				{
-					//controllo alto destra
+					//controllo basso sinistra
 					if(area[i+1][j-1]==null)
 						posLibere.add(new Cella(i+1,j-1));
 					
@@ -37,7 +37,7 @@ public class AreaDiGioco {
 					if(area[i+1][j+1]==null)
 						posLibere.add(new Cella(i+1,j+1));
 					
-					//controllo basso sinistra
+					//controllo alto destra
 					if(area[i-1][j+1]==null)
 						posLibere.add(new Cella(i-1,j+1));
 				}

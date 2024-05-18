@@ -88,6 +88,11 @@ public abstract class Carta {
 		this.bd = bd;
 	}
     
+    @Override
+	public String toString() {
+		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd;
+	}
+    
     
 
 
