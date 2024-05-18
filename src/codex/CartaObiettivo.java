@@ -280,7 +280,121 @@ public class CartaObiettivo{
 			}
 		}
 		
+		 // terza carta obbietivo
+	    if (co.requisiti.equals("Diagonale Blu")) {
+	        boolean diagonaleValida = true;
+	        for (Cella cella : co.getPosCartaDiagonale()) {
+	            if (g.getAreaDiGioco().getArea()[cella.getRigha()][cella.getColonna()] == null ||
+	                !((Carta) g.getAreaDiGioco().getArea()[cella.getRigha()][cella.getColonna()]).getColore().equals(Color.BLUE)) {
+	                diagonaleValida = false;
+	                break;
+	            }
+	        }
+
+	        if (diagonaleValida) {
+	            boolean angoliCoperti = true;
+	            Cella angoloSinistroBasso = new Cella(co.getPosCartaDiagonale().get(0).getRigha() + 2, co.getPosCartaDiagonale().get(0).getColonna() - 2);
+	            Cella angoloDestroAlto = new Cella(co.getPosCartaDiagonale().get(0).getRigha() - 2, co.getPosCartaDiagonale().get(0).getColonna() + 2);
+
+	            if (g.getAreaDiGioco().getArea()[angoloSinistroBasso.getRigha()][angoloSinistroBasso.getColonna()] != null) {
+	                angoliCoperti = false;
+	            }
+
+	            if (g.getAreaDiGioco().getArea()[angoloDestroAlto.getRigha()][angoloDestroAlto.getColonna()] != null) {
+	                angoliCoperti = false;
+	            }
+
+	            if (diagonaleValida && angoliCoperti) {
+	                g.incrementaPunti(2);
+	                System.out.println("Diagonale Blu completata! +2 punti");
+	            } else {
+	                System.out.println("Diagonale Blu non completata");
+	            }
+	        } else {
+	            System.out.println("Diagonale Blu non completata");
+	        }
+	    }
+	}
 		
+	// Quarta carta
+    if (co.requisiti.equals("Torre Verde")) {
+        boolean torreValida = true;
+
+        // Controlla la carta in alto
+        Carta cartaInAlto = g.getAreaDiGioco().getArea()[0][0];
+        if (cartaInAlto == null || !cartaInAlto.getColore().equals(Color.VERDE)) {
+            torreValida = false;
+        }
+
+        // Controlla la carta centrale
+        Carta cartaCentrale = g.getAreaDiGioco().getArea()[1][0];
+        if (cartaCentrale == null || !cartaCentrale.getColore().equals(Color.VERDE)) {
+            torreValida = false;
+        }
+
+        // Controlla la carta viola e la sua posizione
+        Carta cartaViola = g.getAreaDiGioco().getArea()[2][0];
+        if (cartaViola == null || !cartaViola.getColore().equals(Color.VIOLA)) {
+            torreValida = false;
+        }
+
+        // Controlla la sovrapposizione degli angoli
+        if (g.getAreaDiGioco().getArea()[1][1] != null || g.getAreaDiGioco().getArea()[2][1] != null) {
+            torreValida = false;
+        }
+
+        if (torreValida) {
+            g.incrementaPunti(3);
+            System.out.println("Torre Verde completata! +3 punti");
+        } else {
+            System.out.println("Torre Verde non completata");
+        }
+    }
+}
+		
+    // Quinta carta
+    if (co.requisiti.equals("Torre Rossa")) {
+        boolean triangoloValido = true;
+
+        // Controlla la carta in alto
+        Carta cartaInAlto = g.getAreaDiGioco().getArea()[0][0];
+        if (cartaInAlto == null || !cartaInAlto.getColore().equals(Color.ROSSO)) {
+            triangoloValido = false;
+        }
+
+        // Controlla la carta centrale e la sua connessione
+        Carta cartaCentrale = g.getAreaDiGioco().getArea()[1][0];
+        if (cartaCentrale == null || !cartaCentrale.getColore().equals(Color.ROSSO)) {
+            triangoloValido = false;
+        }
+
+        Cella cellaBlu = g.getAreaDiGioco().getCellaCarta(cartaCentrale.getColore(), Color.BLU);
+        if (cellaBlu == null || !g.getAreaDiGioco().isConnessa(cartaCentrale, g.getAreaDiGioco().getArea()[1][1], true)) {
+            triangoloValido = false;
+        }
+
+        // Controlla la carta blu e i suoi angoli
+        Carta cartaBlu = g.getAreaDiGioco().getArea()[cellaBlu.getRigha()][cellaBlu.getColonna()];
+        if (cartaBlu == null || !cartaBlu.getColore().equals(Color.BLU)) {
+            triangoloValido = false;
+        }
+
+        if (g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() - 1][cellaBlu.getColonna() - 1], true) ||
+            g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() - 1][cellaBlu.getColonna() + 1], true) ||
+            g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() + 1][cellaBlu.getColonna() - 1], true) ||
+            g.getAreaDiGioco().isConnessa(cartaBlu, g.getAreaDiGioco().getArea()[cellaBlu.getRigha() + 1][cellaBlu.getColonna() + 1], true)) {
+            triangoloValido = false;
+        }
+
+        if (triangoloValido) {
+            g.incrementaPunti(3);
+            System.out.println("Torre Rossa completato! +3 punti");
+        } else {
+            System.out.println("Torre Rossa non completata");
+        }
+    }
+}
+
 		//nona carta
 		else if(co.requisiti.equals("Tre funghi"))
 		{
