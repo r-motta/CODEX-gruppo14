@@ -395,6 +395,8 @@ public class CartaObiettivo{
     }
 }
 
+	
+
 		//nona carta
 		else if(co.requisiti.equals("Tre funghi"))
 		{
