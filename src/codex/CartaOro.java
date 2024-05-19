@@ -7,7 +7,9 @@ public class CartaOro extends Carta{
 	private String nome;
 	private String requisiti;
 	
-	public CartaOro(Color colore, String asx, String adx, String bsx, String bdx, String req, int p, String percorsoImmagine)
+	
+	
+	public CartaOro(Color colore, String asx, String adx, String bsx, String bdx, String req, String percorsoImmagine)
 	{
 		super(colore, asx, adx, bsx, bdx, percorsoImmagine);
 		
@@ -22,6 +24,19 @@ public class CartaOro extends Carta{
 	public String getRequisiti() {
 		return requisiti;
 	}
+	
+	
+	
+	
+	public static CartaOro clonaCarta(CartaOro c)
+	{
+		CartaOro temp = new CartaOro(c.getColore(), c.getAs(), c.getAd(), c.getBs(), c.getBd(), c.getRequisiti(), c.getPercorsoImmagine());
+		
+		return temp;
+		
+		//ho bisogno di clonare questi attributi in modo da poter richiamare sempre il to string 
+	}
+	
 	
 	@Override
 	public String toString() {

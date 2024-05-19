@@ -34,6 +34,8 @@ public abstract class Carta {
 
         return image;
     }
+    
+    
 
     public Carta useRetro(Carta c)
     {
@@ -54,6 +56,10 @@ public abstract class Carta {
         return c; //no metodo voi ma ritorna carta perché ci serve nel metodo posiziona carta in Giocatore
 
     }
+    
+    public String getSimboloRetro() {
+		return simboloRetro;
+	}
     
     
 
@@ -97,7 +103,11 @@ public abstract class Carta {
 	public String toString() {
 		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n"+ " Simbolo retro = " + simboloRetro+"\n";
 	}
-   
+
+	public String getPercorsoImmagine() {
+		return percorsoImmagine;
+	}
+
 
 
 

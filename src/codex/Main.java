@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 
 
 public class Main {
@@ -32,8 +33,16 @@ public class Main {
 		
 		for(int i=0;i<numGiocatori;i++)
 		{
-			System.out.println("Giocatore "+(i+1)+": ");
-			t.getGamers()[i] = new Giocatore(sc.next());
+			try
+			{
+				System.out.println("Giocatore "+(i+1)+": ");
+				t.getGamers()[i] = new Giocatore(sc.next());
+			}
+			catch(InputMismatchException e)
+			{
+				System.out.println("Errore: per favore scrivi una parola.");
+                sc.nextLine();
+			}
 			
 		}
 		
@@ -64,9 +73,18 @@ public class Main {
 					//far vedere davanti e retro della carta
 					
 					do {
-					    System.out.println("Vuoi usare il retro della carta? (SI/NO)");
-					    scelta = sc.nextLine();
-					} while (!(scelta.equalsIgnoreCase("SI") || scelta.equalsIgnoreCase("NO")));
+						try
+						{
+							System.out.println("Vuoi usare il retro della carta? (SI/NO)");
+						    scelta = sc.next();
+						}
+						catch(InputMismatchException e)
+            			{
+            				System.out.println("Errore: per favore scrivi si oppure no in maiuscolo o minuscolo.");
+                            sc.nextLine();
+            			}
+					    
+					}while(!(scelta.equalsIgnoreCase("SI") || scelta.equalsIgnoreCase("NO")));
 					
 					
 					if(scelta.equalsIgnoreCase("SI"))
