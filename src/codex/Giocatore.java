@@ -188,8 +188,8 @@ public class Giocatore {
             		{
             			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
             			System.out.println("Vuoi usare il retro della carta? ");
-            			t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
-            			String rispostaRetro = sc.next() 
+            			t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).toString();
+            			String rispostaRetro = sc.next();
             		}
             	}
             	
@@ -255,6 +255,12 @@ public class Giocatore {
         	
     	
     	//se è una carta risorsa con i punti, incrementa punti
+    	
+    	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
+    	{
+    		if(((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).getPuntoVittoria()>0)
+    			t.getGamers()[i].incrementaPunti(1);
+    	}
     	
     }
 

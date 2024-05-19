@@ -7,7 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public abstract class Carta {
-
+	
     private Color colore;
     private String as; // sui vari angoli ci sarà una parola/stringa corrispondente al simbolo 
     private String ad; // fungo, lupo, foglia, farfalla, pergamena, piuma, bottiglia
@@ -16,6 +16,7 @@ public abstract class Carta {
     private Image image;
     private String percorsoImmagine;
     private String immRetro;
+    private String simboloRetro;
 
     public Carta(Color colore, String asx, String adx, String bsx, String bdx, String percorsoImmagine)
     {
@@ -24,6 +25,7 @@ public abstract class Carta {
         this.ad = adx;
         this.bs = bsx;
         this.bd = bdx;
+        this.simboloRetro = "vuoto";
         this.percorsoImmagine = percorsoImmagine;
     }
 
@@ -39,7 +41,6 @@ public abstract class Carta {
         c.ad = "vuoto";
         c.bs = "vuoto";
         c.bd = "vuoto";
-        String simboloRetro;
 
         if(c.colore == Color.RED)
             simboloRetro = "fungo";
@@ -92,12 +93,9 @@ public abstract class Carta {
     
     @Override
 	public String toString() {
-		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n";
+		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n"+ " Simbolo retro = " + simboloRetro+"\n";
 	}
-
-	public abstract boolean controllo();
-    
-    
+   
 
 
 
