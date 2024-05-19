@@ -30,7 +30,7 @@ public class CartaOro extends Carta{
 		return super.toString();
 	}
 	
-	public boolean controllo(CartaOro c, Giocatore g)
+	public boolean controlloRequisiti(CartaOro c, Giocatore g)
 	{
 		if(c.getNome().equals("fungo fungo lupo"))
 		{
@@ -71,7 +71,37 @@ public class CartaOro extends Carta{
 			}
 			
 			if(contaFunghi>=2 && contaLupi>=1)
+			{
+				int contaPiume =0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+								contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+									contaPiume++;
+						}
+					}
+					
+				}
+				
+				g.incrementaPunti(contaPiume);
+				
+				
 				return true;
+			}
+				
 			
 			return false;
 		}
@@ -80,6 +110,13 @@ public class CartaOro extends Carta{
 		else if() {
 			
 		}
+	}
+	
+	
+	
+	public void controlloPunti()
+	{
+		
 	}
 
 
