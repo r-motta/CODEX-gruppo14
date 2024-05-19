@@ -217,7 +217,7 @@ public class Giocatore {
     	
     	t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()] = t.getGamers()[i].getCarteInMano()[sceltaCartaInMano];                
     	
-    	//
+    	//mettere angolo = "vuoto" alla carta prima
     	
     	
     }
