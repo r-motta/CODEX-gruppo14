@@ -423,7 +423,7 @@ public class CartaObiettivo{
 						
 				}
 			}
-			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
 			
 			if(contaFunghi<3)
 				System.out.println("Tre funghi NON completato! ");
@@ -465,7 +465,7 @@ public class CartaObiettivo{
 						
 				}
 			}
-			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
 			
 			if(contaFoglie<3)
 				System.out.println("Tre foglie NON completato! ");
@@ -507,7 +507,7 @@ public class CartaObiettivo{
 						
 				}
 			}
-			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
 			
 			if(contaLupi<3)
 				System.out.println("Tre lupi NON completato! ");
@@ -549,7 +549,7 @@ public class CartaObiettivo{
 						
 				}
 			}
-			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
 			
 			if(contaFarfalle<3)
 				System.out.println("Tre farfalle NON completato! ");
@@ -562,6 +562,80 @@ public class CartaObiettivo{
 			
 				
 		}
+	
+		//tredicesima carta
+	
+		else if(co.requisiti.equals("Piuma, bottiglia e pergamena"))
+		{
+			int contaPiume=0;
+			int contaBottiglie=0;
+			int contaPergamene=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+							contaPiume++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+							contaBottiglie++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+							contaPergamene++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+							contaPiume++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+							contaBottiglie++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+							contaPergamene++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+							contaPiume++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+							contaBottiglie++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+							contaPergamene++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+							contaPiume++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+							contaBottiglie++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+							contaPergamene++;
+						
+						
+					}
+					
+						
+				}
+			}
+			
+			if(contaPiume==0 || contaBottiglie==0 || contaPergamene==0)
+				System.out.println("Piuma, bottiglia e pergamena NON completato! ");
+			else
+			{
+				int min=100000;
+				
+				if(contaPiume<min)
+					min = contaPiume;
+				
+				if(contaBottiglie < min)
+					min = contaBottiglie;
+				
+				if(contaPergamene<min)
+					min = contaPergamene;
+				
+				g.incrementaPunti(min * 3);
+				System.out.println("Piuma, bottiglia e pergamena "+min+" volta/e! ");
+			}
+		}
+	
+	
 	    // quattordicesima carta
 		else if(co.requisiti.equals("Due pergamene"))
 		{
