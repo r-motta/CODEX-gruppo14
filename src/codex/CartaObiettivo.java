@@ -562,7 +562,7 @@ public class CartaObiettivo{
 			
 				
 		}
-	
+	    // quattordicesima carta
 		else if(co.requisiti.equals("Due pergamene"))
 		{
 			int contaPergamene=0;
@@ -603,7 +603,89 @@ public class CartaObiettivo{
 			
 				
 		}
-		
+	        // quindicesima carta
+			else if(co.requisiti.equals("Due bottiglie"))
+			{
+				int contaBottiglie=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe; i++)
+				{
+					for(int j=0; j<AreaDiGioco.maxColonne; j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+								contaBottiglie++;
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+								contaBottiglie++;
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+								contaBottiglie++;
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+								contaBottiglie++;
+							
+							
+						}
+						
+							
+					}
+				}
+				
+				if(contaBottiglie<2)
+					System.out.println("Due pergamene NON completato! ");
+				else
+				{
+					g.incrementaPunti(((int)(contaBottiglie/2)) * 2);
+					System.out.println("Due pergamene completato "+(((int)(contaBottiglie/2)))+" volta/e! ");
+				}
+				
+				
+					
+			}
+	            // sedicesima carta
+				else if(co.requisiti.equals("Due piume"))
+				{
+					int contaPiume=0;
+					
+					for(int i=0;i<AreaDiGioco.maxRighe; i++)
+					{
+						for(int j=0; j<AreaDiGioco.maxColonne; j++)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j]!=null)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+									contaPiume++;
+								
+								
+							}
+							
+								
+						}
+					}
+					
+					if(contaPiume<2)
+						System.out.println("Due piume NON completato! ");
+					else
+					{
+						g.incrementaPunti(((int)(contaPiume/2)) * 2);
+						System.out.println("Due piume completato "+(((int)(contaPiume/2)))+" volta/e! ");
+					}
+					
+					
+						
+				}
+			
 	
 	}
 
