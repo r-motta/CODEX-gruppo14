@@ -430,7 +430,7 @@ public class CartaObiettivo{
 			else
 			{
 				g.incrementaPunti(((int)(contaFunghi/3)) * 2);
-				System.out.println("Tre funghi completato "+(((int)(contaFunghi/3)) * 2)+" volta/e! ");
+				System.out.println("Tre funghi completato "+(((int)(contaFunghi/3)))+" volta/e! ");
 			}
 			
 			
@@ -472,7 +472,7 @@ public class CartaObiettivo{
 			else
 			{
 				g.incrementaPunti(((int)(contaFoglie/3)) * 2);
-				System.out.println("Tre foglie completato "+(((int)(contaFoglie/3)) * 2)+" volta/e! ");
+				System.out.println("Tre foglie completato "+(((int)(contaFoglie/3)))+" volta/e! ");
 			}
 			
 			
@@ -514,7 +514,7 @@ public class CartaObiettivo{
 			else
 			{
 				g.incrementaPunti(((int)(contaLupi/3)) * 2);
-				System.out.println("Tre lupi completato "+(((int)(contaLupi/3)) * 2)+" volta/e! ");
+				System.out.println("Tre lupi completato "+(((int)(contaLupi/3)))+" volta/e! ");
 			}
 			
 			
@@ -556,7 +556,7 @@ public class CartaObiettivo{
 			else
 			{
 				g.incrementaPunti(((int)(contaFarfalle/3)) * 2);
-				System.out.println("Tre farfalle completato "+(((int)(contaFarfalle/3)) * 2)+" volta/e! ");
+				System.out.println("Tre farfalle completato "+(((int)(contaFarfalle/3)))+" volta/e! ");
 			}
 			
 			
