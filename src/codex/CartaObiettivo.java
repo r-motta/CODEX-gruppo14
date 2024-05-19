@@ -436,7 +436,132 @@ public class CartaObiettivo{
 			
 				
 		}
-		
+	// decima carta
+		else if(co.requisiti.equals("Tre foglie"))
+		{
+			int contaFoglie=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+						contaFoglie++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+							contaFoglie++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+							contaFoglie++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+							contaFoglie++;
+						
+						
+					}
+					
+						
+				}
+			}
+			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
+			if(contaFoglie<3)
+				System.out.println("Tre foglie NON completato! ");
+			else
+			{
+				g.incrementaPunti(((int)(contaFoglie/3)) * 2);
+				System.out.println("Tre foglie completato "+(((int)(contaFoglie/3)) * 2)+" volta/e! ");
+			}
+			
+			
+				
+		}
+	    // undicesima carta
+		else if(co.requisiti.equals("Tre lupi"))
+		{
+			int contaLupi=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+						contaLupi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+							contaLupi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+							contaLupi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+							contaLupi++;
+						
+						
+					}
+					
+						
+				}
+			}
+			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
+			if(contaLupi<3)
+				System.out.println("Tre lupi NON completato! ");
+			else
+			{
+				g.incrementaPunti(((int)(contaLupi/3)) * 2);
+				System.out.println("Tre lupi completato "+(((int)(contaLupi/3)) * 2)+" volta/e! ");
+			}
+			
+			
+				
+		}
+	    // dodicesima carta
+		else if(co.requisiti.equals("Tre farfalle"))
+		{
+			int contaFarfalle=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+						    contaFarfalle++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+							contaFarfalle++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+							contaFarfalle++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+							contaFarfalle++;
+						
+						
+					}
+					
+						
+				}
+			}
+			//bisogna tener conto di angoli nascosti e contare anche simboli carta iniziale
+			
+			if(contaFarfalle<3)
+				System.out.println("Tre farfalle NON completato! ");
+			else
+			{
+				g.incrementaPunti(((int)(contaFarfalle/3)) * 2);
+				System.out.println("Tre farfalle completato "+(((int)(contaFarfalle/3)) * 2)+" volta/e! ");
+			}
+			
+			
+				
+		}
 	}
 
 	
