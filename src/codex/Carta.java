@@ -51,6 +51,8 @@ public abstract class Carta {
             simboloRetro = "foglia";
 
     }
+    
+    
 
 	public Color getColore() {
 		return colore;
@@ -92,6 +94,8 @@ public abstract class Carta {
 	public String toString() {
 		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n";
 	}
+
+	public abstract boolean controllo();
     
     
 

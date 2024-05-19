@@ -179,12 +179,29 @@ public class Giocatore {
             System.out.print("Inserisci un numero: ");
             try {
             	sceltaCartaInMano = sc.nextInt();
-                validInput = true;
+            	
+            	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaOro)
+            	{
+            		if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].controllo() == true)
+            			validInput = true;
+            		else
+            		{
+            			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
+            			System.out.println("Vuoi usare il retro della carta? ");
+            			String rispostaRetro = sc.p 
+            		}
+            	}
+            	
+                
             } catch (InputMismatchException e) {
                 System.out.println("Errore: per favore inserisci un numero tra 0 e 2.");
                 sc.next(); // Consuma l'input non valido per evitare un loop infinito
             }
         }
+    	
+    	//se è carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro
+    	
+    	
     	
     	
     	validInput = false;
@@ -213,12 +230,30 @@ public class Giocatore {
             }
         }
     	
-    	//se è carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro
+    	
     	
     	t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()] = t.getGamers()[i].getCarteInMano()[sceltaCartaInMano];                
     	
-    	//mettere angolo = "vuoto" alla carta prima
+    	//mettere angolo = "vuoto" alla/e carta/e prima
     	
+    	//controllo se c'è carta in alto a destra rispetto a dove posiziono io la carta. se c'è, angolo basso sinitro = "vuoto"
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1] != null)
+    	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1]).getBs().equals("vuoto");
+    	
+    	//controllo se c'è carta in alto a sinistra rispetto a dove posiziono io la carta. se c'è, angolo basso destro = "vuoto"
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1] != null)
+        	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1]).getBs().equals("vuoto");
+        	
+    	//controllo se c'è carta in basso a sinistra rispetto a dove posiziono io la carta. se c'è, angolo alto destro = "vuoto"
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1] != null)
+        	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1]).getBs().equals("vuoto");
+    	
+    	//controllo se c'è carta in basso a destra rispetto a dove posiziono io la carta. se c'è, angolo alto sinistro = "vuoto"
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1] != null)
+        	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1]).getBs().equals("vuoto");
+        	
+    	
+    	//se è una carta risorsa con i punti, incrementa punti
     	
     }
 

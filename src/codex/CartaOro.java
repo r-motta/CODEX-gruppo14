@@ -21,4 +21,12 @@ public class CartaOro extends Carta{
 		return super.toString();
 	}
 
+	public boolean controllo()
+	{
+		return false;
+		
+	}
+	
+	
+
 }

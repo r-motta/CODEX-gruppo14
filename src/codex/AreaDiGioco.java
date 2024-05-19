@@ -44,7 +44,7 @@ public class AreaDiGioco {
 					}
 					
 					//controllo che ci sia angolo basso destro della carta
-					if(((Carta) area[i][j]).getAd() != null)
+					if(((Carta) area[i][j]).getBd() != null)
 					{	
 						//controllo basso destra
 						if(area[i+1][j+1]==null)
@@ -54,7 +54,7 @@ public class AreaDiGioco {
 					}
 					
 					//controllo che ci sia angolo basso sinistro della carta
-					if(((Carta) area[i][j]).getAd() != null)
+					if(((Carta) area[i][j]).getBs() != null)
 					{
 						//controllo basso sinistra
 						if(area[i+1][j-1]==null)

@@ -14,10 +14,12 @@ public class CartaRisorsa extends Carta{
 	public String toString() {
 		return super.toString();
 	}
-
 	
-
-			// colore, asx, adx, bsx, bdx, punteggio, url
+	public boolean controllo()
+	{
+		return false;
+		
+	}
 			
 	
 }
