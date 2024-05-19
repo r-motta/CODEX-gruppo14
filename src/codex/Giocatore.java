@@ -188,14 +188,15 @@ public class Giocatore {
             		{
             			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
             			System.out.println("Vuoi usare il retro della carta? ");
-            			String rispostaRetro = sc.p 
+            			t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            			String rispostaRetro = sc.next() 
             		}
             	}
             	
                 
             } catch (InputMismatchException e) {
                 System.out.println("Errore: per favore inserisci un numero tra 0 e 2.");
-                sc.next(); // Consuma l'input non valido per evitare un loop infinito
+                sc.nextLine(); // Consuma l'input non valido
             }
         }
     	

@@ -562,6 +562,49 @@ public class CartaObiettivo{
 			
 				
 		}
+	
+		else if(co.requisiti.equals("Due pergamene"))
+		{
+			int contaPergamene=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe; i++)
+			{
+				for(int j=0; j<AreaDiGioco.maxColonne; j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+							contaPergamene++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+							contaPergamene++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+							contaPergamene++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+							contaPergamene++;
+						
+						
+					}
+					
+						
+				}
+			}
+			
+			if(contaPergamene<2)
+				System.out.println("Due pergamene NON completato! ");
+			else
+			{
+				g.incrementaPunti(((int)(contaPergamene/2)) * 2);
+				System.out.println("Due pergamene completato "+(((int)(contaPergamene/2)))+" volta/e! ");
+			}
+			
+			
+				
+		}
+		
+	
 	}
 
 	
