@@ -5,15 +5,13 @@ import java.awt.Image;
 public class CartaOro extends Carta{
 	
 	private String nome;
+	private String requisiti;
 	
-	public CartaOro(String nome, Color colore, String asx, String adx, String bsx, String bdx, String req, int p, String percorsoImmagine)
+	public CartaOro(Color colore, String asx, String adx, String bsx, String bdx, String req, int p, String percorsoImmagine)
 	{
 		super(colore, asx, adx, bsx, bdx, percorsoImmagine);
 		
-		this.nome = nome;
-		
-		
-		String requisiti = req; //una stringa tipo: farfalla farfalla foglia
+		requisiti = req; //una stringa tipo: farfalla farfalla foglia
 		// quando la vado ad usare, spezzetto questa stringa tra i vari spazi e conto le parole 
 		// (2 farfalle e 1 foglia) e faccio controllo  
 		
@@ -21,8 +19,8 @@ public class CartaOro extends Carta{
 		
 	}
 	
-	public String getNome() {
-		return nome;
+	public String getRequisiti() {
+		return requisiti;
 	}
 	
 	@Override
@@ -32,7 +30,7 @@ public class CartaOro extends Carta{
 	
 	public boolean controlloRequisiti(CartaOro c, Giocatore g)
 	{
-		if(c.getNome().equals("fungo fungo lupo"))
+		if(c.getRequisiti().equals("fungo fungo lupo"))
 		{
 			int contaFunghi=0;
 			int contaLupi=0;
@@ -111,15 +109,6 @@ public class CartaOro extends Carta{
 			
 		}
 	}
-	
-	
-	
-	public void controlloPunti()
-	{
-		
-	}
-
-
 
 	
 	

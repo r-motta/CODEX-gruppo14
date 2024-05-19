@@ -35,7 +35,7 @@ public abstract class Carta {
         return image;
     }
 
-    public void useRetro(Carta c)
+    public Carta useRetro(Carta c)
     {
         c.as = "vuoto";
         c.ad = "vuoto";
@@ -50,6 +50,8 @@ public abstract class Carta {
             simboloRetro = "lupo";
         else if(c.colore == Color.GREEN)
             simboloRetro = "foglia";
+        
+        return c; //no metodo voi ma ritorna carta perché ci serve nel metodo posiziona carta in Giocatore
 
     }
     

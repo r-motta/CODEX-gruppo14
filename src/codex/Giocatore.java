@@ -188,7 +188,10 @@ public class Giocatore {
             		{
             			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
             			System.out.println("Vuoi usare il retro della carta? ");
-            			t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).toString();
+            			
+            			CartaOro tempRetro = (CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano];
+            			
+            			((CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano])).toString();
             			String rispostaRetro = sc.next();
             		}
             	}
