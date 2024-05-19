@@ -134,11 +134,11 @@ public class CartaObiettivo{
 								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
 								{
 									
-									if(posDiagDxBLU.add(new Cella(i,j))==true)
+									if(posDiagDxBlu.add(new Cella(i,j))==true)
 									{
-										if(posDiagDxBLU.add(new Cella(i+1,j-1))==true)
+										if(posDiagDxBlu.add(new Cella(i+1,j-1))==true)
 										{
-											if(posDiagDxBLU.add(new Cella(i+2,j-2))==true)
+											if(posDiagDxBlu.add(new Cella(i+2,j-2))==true)
 											{
 												conta++;
 												g.incrementaPunti(2);
@@ -336,7 +336,7 @@ public class CartaObiettivo{
 					}
 						
 				}
-			}
+			
 			if(conta==0)
 				System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa NON completata! ");
 			else
@@ -439,7 +439,6 @@ public class CartaObiettivo{
 		
 	}
 
-	
 	
 	
 }

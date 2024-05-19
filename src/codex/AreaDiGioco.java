@@ -25,21 +25,42 @@ public class AreaDiGioco {
 			{
 				if(area[i][j]!=null)
 				{
-					//controllo basso sinistra
-					if(area[i+1][j-1]==null)
-						posLibere.add(new Cella(i+1,j-1));
+					//controllo che ci sia angolo alto destro della carta
+					if(((Carta) area[i][j]).getAd() != null)
+					{
+						//controllo alto destra
+						if(area[i-1][j+1]==null)
+							posLibere.add(new Cella(i-1,j+1));
+					}
 					
-					//controllo alto sinistra
-					if(area[i-1][j-1]==null)
-						posLibere.add(new Cella(i-1,j-1));
+					//controllo che ci sia angolo alto sinistro della carta
+					if(((Carta) area[i][j]).getAs() != null)
+					{
+						
+						//controllo alto sinistra
+						if(area[i-1][j-1]==null)
+							posLibere.add(new Cella(i-1,j-1));
+
+					}
 					
-					//controllo basso destra
-					if(area[i+1][j+1]==null)
-						posLibere.add(new Cella(i+1,j+1));
+					//controllo che ci sia angolo basso destro della carta
+					if(((Carta) area[i][j]).getAd() != null)
+					{	
+						//controllo basso destra
+						if(area[i+1][j+1]==null)
+							posLibere.add(new Cella(i+1,j+1));
+						
+
+					}
 					
-					//controllo alto destra
-					if(area[i-1][j+1]==null)
-						posLibere.add(new Cella(i-1,j+1));
+					//controllo che ci sia angolo basso sinistro della carta
+					if(((Carta) area[i][j]).getAd() != null)
+					{
+						//controllo basso sinistra
+						if(area[i+1][j-1]==null)
+							posLibere.add(new Cella(i+1,j-1));
+					}
+					
 				}
 			}
 		}

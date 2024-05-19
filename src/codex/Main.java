@@ -178,6 +178,13 @@ public class Main {
 				
 				
 			}
+			
+			//assegno ad ogni giocatore la propria area di gioco con al centro la carta iniziale 
+			
+			for(int i=0;i<numGiocatori;i++)
+			{
+				t.getGamers()[i].setArea(t.getGamers()[i]);
+			}
 		
 		
 }

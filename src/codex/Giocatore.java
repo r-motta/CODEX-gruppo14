@@ -1,6 +1,7 @@
 package codex;
 
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Giocatore {
@@ -158,14 +159,67 @@ public class Giocatore {
     
     public void posizionaCarta(Tavolo t, int i)
     {
-    	System.out.println("Quale carta vuoi posizionare? ");
-    	System.out.println("CARTA [1]: ");
-    	t.getGamers()[i].getCarteInMano()[0].toString();
-    	System.out.println("CARTA [2]: ");
-    	System.out.println("CARTA [3]: ");
+    	boolean validInput = false;
+    	Scanner sc = new Scanner(System.in);
+    	int sceltaCartaInMano = 0;
     	
+    	System.out.println("Quale carta vuoi posizionare? ");
+    	System.out.println();
+    	System.out.println("CARTA [0]: ");
+    	t.getGamers()[i].getCarteInMano()[0].toString();
+    	System.out.println();
+    	System.out.println("CARTA [1]: ");
+    	t.getGamers()[i].getCarteInMano()[1].toString();
+    	System.out.println();
+    	System.out.println("CARTA [2]: ");
+    	t.getGamers()[i].getCarteInMano()[2].toString();
+    	System.out.println();
+    	
+    	while (!validInput) {
+            System.out.print("Inserisci un numero: ");
+            try {
+            	sceltaCartaInMano = sc.nextInt();
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Errore: per favore inserisci un numero tra 0 e 2.");
+                sc.next(); // Consuma l'input non valido per evitare un loop infinito
+            }
+        }
+    	
+    	
+    	validInput = false;
     	
     	System.out.println("Dove vuoi posizionare la carta");
+    	for(int j=0;j<t.getGamers()[i].getAreaDiGioco().posizioniLibere().size();j++)
+    	{
+    		//esempio stampa: [posizione 1] --> x: 1   y: 3
+    		System.out.println("------------------------------------------- ");
+    		System.out.println("[Posizione "+(j)+"] --->  x: "+t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(j).getX() + "    y: " + t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(j).getY());
+    		System.out.println("------------------------------------------- ");
+    		System.out.println();
+    	}
+    	
+    	System.out.println();
+    	int sceltaPosizioneCarta = 0;
+    	
+    	while (!validInput) {
+            System.out.print("Inserisci una posizone: ");
+            try {
+            	sceltaPosizioneCarta = sc.nextInt();
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Errore: per favore inserisci un numero tra 0 e "+t.getGamers()[i].getAreaDiGioco().posizioniLibere().size());
+                sc.next(); // Consuma l'input non valido per evitare un loop infinito
+            }
+        }
+    	
+    	//se è carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro
+    	
+    	t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()] = t.getGamers()[i].getCarteInMano()[sceltaCartaInMano];                
+    	
+    	//
+    	
+    	
     }
 
     public CartaIniziale getCartaInizialePropria() {
@@ -191,6 +245,8 @@ public class Giocatore {
 	public AreaDiGioco getAreaDiGioco() {
 		return area;
 	}
+	
+	
 
 	public int getPunti() {
 		return punti;
@@ -204,11 +260,10 @@ public class Giocatore {
 	public Carta[] getCarteInMano() {
 		return carteInMano;
 	}
-	
-	
-	
-    
-    
 
+	public void setArea(Giocatore g) {
+		area = new AreaDiGioco(g);
+	}
+	
 
 }
