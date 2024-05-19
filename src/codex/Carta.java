@@ -99,9 +99,9 @@ public abstract class Carta {
 		this.bd = bd;
 	}
     
-    @Override
+    
 	public String toString() {
-		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n"+ " Simbolo retro = " + simboloRetro+"\n";
+		return "Colore = " + colore +"\n"+ "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n"+ " Simbolo retro = " + simboloRetro+"\n";
 	}
 
 	public String getPercorsoImmagine() {

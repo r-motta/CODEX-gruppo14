@@ -162,6 +162,12 @@ public class Giocatore {
     	boolean validInput = false;
     	Scanner sc = new Scanner(System.in);
     	int sceltaCartaInMano = 0;
+    	boolean haScelto = false;
+    	
+    	do
+    	{
+    		
+    	
     	
     	System.out.println("Quale carta vuoi posizionare? ");
     	System.out.println();
@@ -176,14 +182,19 @@ public class Giocatore {
     	System.out.println();
     	
     	while (!validInput) {
-            System.out.print("Inserisci un numero: ");
+            
             try {
+            	
+            	System.out.print("Inserisci un numero: ");
             	sceltaCartaInMano = sc.nextInt();
             	
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaOro)
             	{
             		if(((CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).controlloRequisiti((CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano], t.getGamers()[i]) == true)
+            		{
             			validInput = true;
+            			haScelto = true;
+            		}	
             		else
             		{
             			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
@@ -191,32 +202,41 @@ public class Giocatore {
             			
             			CartaOro tempRetro = CartaOro.clonaCarta((CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
             			
+            			
             			//creo carta temporanea uguale a cui applico il metodo retro cosi da poter fare il to string.
             			// se facessi metodo retro su originale e utente mi dice che non vuole usare il retro della carta ma sceglierne 
             			// un'altra, non posso settarla frontale di nuovo
             			
             			tempRetro.useRetro(tempRetro).toString();
-            			int rispostaRetro = null;
+            			String rispostaRetro = null;
             			
             			do
             			{
             				try
                 			{
-                				System.out.println("[0] = SI");
-                    			System.out.println("[1] = NO");
+                				System.out.println("SI oppure NO? ");
                     			System.out.println("Risposta: ");
-                    			rispostaRetro = sc.nextInt();
+                    			rispostaRetro = sc.next();
                 			}
                 			catch(InputMismatchException e)
                 			{
                 				System.out.println("Errore: per favore scrivi si oppure no in maiuscolo o minuscolo.");
                                 sc.nextLine();
                 			}
-            			}while(rispostaRetro<0 || rispostaRetro>1);
+            			}while(!(rispostaRetro.equalsIgnoreCase("SI") || rispostaRetro.equalsIgnoreCase("NO")));
+            			
+            			if(rispostaRetro.equalsIgnoreCase("SI"))
+            			{
+            				t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            				haScelto = true;
+            			}
             			
             			
             		}
             	}
+            	
+            	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
+            		haScelto = true;
             	
                 
             } catch (InputMismatchException e) {
@@ -225,7 +245,9 @@ public class Giocatore {
             }
         }
     	
-    	//se è carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro
+    	}while(haScelto != true);
+    	
+    	//se è carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro --> se non vuole, richiedere che carta vuole giocare
     	
     	
     	
@@ -246,18 +268,19 @@ public class Giocatore {
     	int sceltaPosizioneCarta = 0;
     	
     	while (!validInput) {
-            System.out.print("Inserisci una posizone: ");
+            
             try {
+            	System.out.print("Inserisci una posizone: ");
             	sceltaPosizioneCarta = sc.nextInt();
                 validInput = true;
             } catch (InputMismatchException e) {
                 System.out.println("Errore: per favore inserisci un numero tra 0 e "+t.getGamers()[i].getAreaDiGioco().posizioniLibere().size());
-                sc.next(); // Consuma l'input non valido per evitare un loop infinito
+                sc.nextLine(); // Consuma l'input non valido per evitare un loop infinito
             }
         }
     	
     	
-    	
+    	//POSIZIONA CARTA SCELTA IN POSIZIONE SCELTA
     	t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()] = t.getGamers()[i].getCarteInMano()[sceltaCartaInMano];                
     	
     	//mettere angolo = "vuoto" alla/e carta/e prima

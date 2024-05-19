@@ -21,8 +21,17 @@ public class Main {
 		
 		do
 		{
-			System.out.println("Quante persone giocano? (Min: 2 - Max: 4) ");
-			numGiocatori = sc.nextInt();
+			try
+			{
+				System.out.println("Quante persone giocano? (Min: 2 - Max: 4) ");
+				numGiocatori = sc.nextInt();
+			}
+			catch(InputMismatchException e)
+			{
+				System.out.println("Errore: per favore un numero tra 2 e 4.");
+                sc.nextLine();
+			}
+			
 		}while(numGiocatori<2 || numGiocatori>4);
 		
 		Tavolo t = new Tavolo();
@@ -45,11 +54,6 @@ public class Main {
 			}
 			
 		}
-		
-		Random random = new Random();
-			
-			
-			
 			
 			
 		Collections.shuffle(t.getMazzoIniziali());
@@ -58,7 +62,7 @@ public class Main {
 			
 		int j=0;
 			
-			//assegnazione delle carte inziali e decisione su fronte e retro
+			//assegnazione delle carte inziali e decisione su fronte o retro
 			for(int i=0;i<numGiocatori;i++)
 			{
 				System.out.println("--------------- GIOCATORE "+(i+1)+" ---------------");
@@ -70,7 +74,17 @@ public class Main {
 					String scelta = null;
 					
 					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
-					//far vedere davanti e retro della carta
+
+					System.out.println("---------- PARTE FRONTALE DELLA CARTA ---------- ");
+					t.getGamers()[i].getCartaInizialePropria().toString();
+					System.out.println();
+					System.out.println("---------- PARTE RETRO DELLA CARTA ---------- ");
+					
+					CartaIniziale tempRetroIniziale = CartaIniziale.clonaCarta(t.getGamers()[i].getCartaInizialePropria());
+					
+					tempRetroIniziale.useRetro(tempRetroIniziale).toString();
+					
+					System.out.println();
 					
 					do {
 						try
@@ -113,8 +127,8 @@ public class Main {
 				
 					System.out.println("--------------------------------------------------------------|");
 					System.out.println("questa e' la prima carta obiettivo:                           |");
-					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(y).getRequisiti()+"   |");
-					System.out.println("Punti: "+ t.getMazzoObiettivo().get(y).getPunti()+"           |");
+					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(y).getRequisiti());
+					System.out.println("Punti: "+ t.getMazzoObiettivo().get(y).getPunti());
 					System.out.println("--------------------------------------------------------------|");
 					
 					System.out.println();
@@ -122,8 +136,8 @@ public class Main {
 					
 					System.out.println("--------------------------------------------------------------|");
 					System.out.println("questa e' la seconda carta:                                   |");
-					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(k).getRequisiti()+"   |");
-					System.out.println("Punti: "+ t.getMazzoObiettivo().get(k).getPunti()+"           |");
+					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(k).getRequisiti());
+					System.out.println("Punti: "+ t.getMazzoObiettivo().get(k).getPunti());
 					System.out.println("--------------------------------------------------------------|");
 					
 					
@@ -135,10 +149,19 @@ public class Main {
 					
 					do
 					{
-						System.out.println("scegli una tra le due carte obiettivo: ");
-						System.out.println("[1] prima carta");
-						System.out.println("[2] seconda carta");
-						scelta= sc.nextInt();
+						try
+						{
+							System.out.println("scegli una tra le due carte obiettivo: ");
+							System.out.println("[1] prima carta");
+							System.out.println("[2] seconda carta");
+							scelta= sc.nextInt();
+						}
+						catch(InputMismatchException e)
+						{
+							System.out.println("Errore, per favore inserire un numero compreso tra 1 e 2");
+							sc.nextLine();
+						}
+						
 					}while(scelta<1 || scelta>2);
 					
 					
