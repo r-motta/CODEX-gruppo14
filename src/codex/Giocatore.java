@@ -384,7 +384,8 @@ public class Giocatore {
 				System.out.println("[1] Carte in mano ");
 				System.out.println("[2] Carta obiettivo segreta ");
 				System.out.println("[3] Carte obiettivo comuni ");
-				System.out.println("[4] no ");
+				System.out.println("[4] Punteggio ");
+				System.out.println("[5] no ");
 				System.out.println("Risposta: ");
 				scelta = sc.nextInt();
 			}
@@ -430,6 +431,12 @@ public class Giocatore {
 					break;
 				}
 				case 4:
+				{
+					t.getGamers()[i].getPunti();
+					break;
+				}
+				
+				case 5:
 				{
 					break;
 				}
