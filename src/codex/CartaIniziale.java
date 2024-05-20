@@ -78,7 +78,7 @@ public class CartaIniziale{
     }
     
     public String toString() {
-		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n"+ " Simbolo retro = " + simboloRetro+"\n";
+		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra = " + bs +"\n"+ "Angolo basso destra = " + bd+"\n"+ "Simbolo retro = " + simboloRetro+"\n";
 	}
 
     public static CartaIniziale clonaCarta(CartaIniziale c)

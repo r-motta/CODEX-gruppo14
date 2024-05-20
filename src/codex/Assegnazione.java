@@ -15,18 +15,39 @@ public class Assegnazione {
 		System.out.println("Inserite i vostri nickname: ");
 		System.out.println("(L'ordine dei giocatori in partita sara' uguale all'ordine in cui vi inserirete adesso)");
 		
+		
 		for(int i=0;i<Main.numGiocatori;i++)
 		{
-			try
+			boolean nicknameValido;
+			
+			do
 			{
-				System.out.println("Giocatore "+(i+1)+": ");
-				t.getGamers()[i] = new Giocatore(sc.next());
-			}
-			catch(InputMismatchException e)
-			{
-				System.out.println("Errore: per favore scrivi una parola.");
-                sc.nextLine();
-			}
+				nicknameValido = true;
+				
+				try
+				{
+					System.out.println("Giocatore "+(i+1)+": ");
+					t.getGamers()[i] = new Giocatore(sc.next());
+					
+					// Verifica se il nickname contiene numeri
+					for(int p=0;p<t.getGamers()[i].getNickname().length();p++)
+			        {
+			            if(!Character.isLetter(t.getGamers()[i].getNickname().charAt(p)))
+			            {
+			            	nicknameValido = false;
+			                break;
+			            }
+			        }
+					
+				}
+				catch(Exception e)
+				{
+					System.out.println("Errore: per favore scrivi una parola. Il nickname non può contenere numeri ");
+	                sc.nextLine();
+				}
+				
+			}while(!nicknameValido);
+			
 			
 		}
 			
@@ -40,7 +61,7 @@ public class Assegnazione {
 			//assegnazione delle carte inziali e decisione su fronte o retro
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
-				System.out.println("--------------- GIOCATORE "+(i+1)+" ---------------");
+				System.out.println("--------------- GIOCATORE: "+t.getGamers()[i].getNickname()+" ---------------");
 					
 					
 					if(i==0)
@@ -51,13 +72,13 @@ public class Assegnazione {
 					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
 
 					System.out.println("---------- PARTE FRONTALE DELLA CARTA ---------- ");
-					t.getGamers()[i].getCartaInizialePropria().toString();
+					System.out.println(t.getGamers()[i].getCartaInizialePropria().toString()); 
 					System.out.println();
 					System.out.println("---------- PARTE RETRO DELLA CARTA ---------- ");
 					
 					CartaIniziale tempRetroIniziale = CartaIniziale.clonaCarta(t.getGamers()[i].getCartaInizialePropria());
 					
-					tempRetroIniziale.useRetro(tempRetroIniziale).toString();
+					System.out.println(tempRetroIniziale.useRetro(tempRetroIniziale).toString()); 
 					
 					System.out.println();
 					
@@ -98,7 +119,7 @@ public class Assegnazione {
 			{
 					int y=0,k=1;
 					
-					System.out.println("--------------- GIOCATORE "+(i+1)+" ---------------");
+					System.out.println("--------------- GIOCATORE "+t.getGamers()[i].getNickname()+" ---------------");
 				
 					System.out.println("--------------------------------------------------------------|");
 					System.out.println("questa e' la prima carta obiettivo:                           |");

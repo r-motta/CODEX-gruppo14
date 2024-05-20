@@ -28,7 +28,7 @@ public class Main {
 			}
 			catch(InputMismatchException e)
 			{
-				System.out.println("Errore: per favore un numero tra 2 e 4.");
+				System.out.println("Errore: per favore inserisci un numero tra 2 e 4.");
                 sc.nextLine();
 			}
 			

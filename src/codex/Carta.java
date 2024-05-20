@@ -101,7 +101,7 @@ public abstract class Carta {
     
     
 	public String toString() {
-		return "Colore = " + colore +"\n"+ "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra =" + bs +"\n"+ " Angolo basso destra = " + bd+"\n"+ " Simbolo retro = " + simboloRetro+"\n";
+		return "Colore = " + colore +"\n"+ "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra = " + bs +"\n"+ "Angolo basso destra = " + bd+"\n"+ "Simbolo retro = " + simboloRetro+"\n";
 	}
 
 	public String getPercorsoImmagine() {
