@@ -123,8 +123,7 @@ public class Assegnazione {
 				
 					System.out.println("--------------------------------------------------------------|");
 					System.out.println("questa e' la prima carta obiettivo:                           |");
-					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(y).getRequisiti());
-					System.out.println("Punti: "+ t.getMazzoObiettivo().get(y).getPunti());
+					System.out.println(t.getMazzoObiettivo().get(y).toString());
 					System.out.println("--------------------------------------------------------------|");
 					
 					System.out.println();
@@ -132,8 +131,7 @@ public class Assegnazione {
 					
 					System.out.println("--------------------------------------------------------------|");
 					System.out.println("questa e' la seconda carta:                                   |");
-					System.out.println("Requisiti: "+ t.getMazzoObiettivo().get(k).getRequisiti());
-					System.out.println("Punti: "+ t.getMazzoObiettivo().get(k).getPunti());
+					System.out.println(t.getMazzoObiettivo().get(k).toString());
 					System.out.println("--------------------------------------------------------------|");
 					
 					
@@ -196,8 +194,11 @@ public class Assegnazione {
 			}
 			
 			//fa vedere carte obiettivo comuni
-			
-			System.out.println("");
+			System.out.println("Questa e' la prima carta obiettivo comune: ");
+			System.out.println(Main.cobPubblica1.toString());
+			System.out.println();
+			System.out.println("Questa e' la seconda carta obiettivo comune: ");
+			System.out.println(Main.cobPubblica2.toString());
 
 			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa
 			Collections.shuffle(t.getMazzoOro());//mischia le carte oro

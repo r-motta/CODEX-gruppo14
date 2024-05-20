@@ -25,6 +25,11 @@ public class CartaObiettivo{
 	}
 	
 	
+	public String toString()
+	{
+		return "Requisiti: "+requisiti+"\n"+"Punti: "+punti;
+	}
+	
 	public void controllo(CartaObiettivo co, Giocatore g)
 	{
 		

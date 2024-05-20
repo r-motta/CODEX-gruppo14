@@ -366,5 +366,78 @@ public class Giocatore {
 		area = new AreaDiGioco(g);
 	}
 	
+	public void visualizza(Tavolo t, int i)
+	{
+		int scelta =0;
+		
+		do
+		{
+			try
+			{
+				System.out.println("Vuoi visualizzare altro? ");
+				System.out.println("[1] Carte in mano ");
+				System.out.println("[2] Carta obiettivo segreta ");
+				System.out.println("[3] Carte obiettivo comuni ");
+				System.out.println("[4] no ");
+				System.out.println("Risposta: ");
+				scelta = sc.nextInt();
+			}
+			catch(InputMismatchException e)
+			{
+				System.out.println("Errore: per favore inserisci un numero tra 1 e 4.");
+                sc.nextLine();
+			}
+			
+			switch(scelta)
+			{
+				case 1:
+				{
+						System.out.println("PRIMA CARTA IN MANO: ");
+						t.getGamers()[i].getCarteInMano()[0].toString();
+						System.out.println();
+						System.out.println("SECONDA CARTA IN MANO: ");
+						t.getGamers()[i].getCarteInMano()[1].toString();
+						System.out.println();
+						System.out.println("TERZA CARTA IN MANO: ");
+						t.getGamers()[i].getCarteInMano()[2].toString();
+						System.out.println();
+						
+						break;
+				}
+				case 2:
+				{
+					
+					System.out.println("CARTA OBIETTIVO SEGRETA: ");
+					t.getGamers()[i].getCartaObiettivoSegreta().toString();
+					System.out.println();
+					
+					break;
+				}
+				case 3:
+				{
+					System.out.println("Questa e' la prima carta obiettivo comune: ");
+					System.out.println(Main.cobPubblica1.toString());
+					System.out.println();
+					System.out.println("Questa e' la seconda carta obiettivo comune: ");
+					System.out.println(Main.cobPubblica2.toString());
+					
+					break;
+				}
+				case 4:
+				{
+					break;
+				}
+				
+				default:
+				{
+					System.out.println("Errore, riprova ");
+					break;
+				}
+				
+		
+			}
+	
 
+		}while(scelta!=4);
+	}
 }
