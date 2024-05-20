@@ -202,11 +202,24 @@ public class Assegnazione {
 			
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
+				System.out.println("--------------- GIOCATORE "+t.getGamers()[i].getNickname()+" ---------------");
+				
+				
 				t.getGamers()[i].getCarteInMano()[0] = t.getMazzoOro().get(0);
+				System.out.println("Questa è la tua carta oro: ");
+				System.out.println(t.getMazzoOro().get(0).toString());
+				System.out.println();
 				t.getMazzoOro().remove(0);
 				
 				t.getGamers()[i].getCarteInMano()[1] = t.getMazzoRisorse().get(0);
+				System.out.println("Questa è la tua prima carta risorsa: ");
+				System.out.println(t.getMazzoRisorse().get(0).toString());
+				System.out.println();
+				
 				t.getGamers()[i].getCarteInMano()[2] = t.getMazzoRisorse().get(1);
+				System.out.println("Questa è la tua prima carta risorsa: ");
+				System.out.println(t.getMazzoRisorse().get(1).toString());
+				System.out.println();
 				
 				t.getMazzoRisorse().remove(0);
 				t.getMazzoRisorse().remove(1);
