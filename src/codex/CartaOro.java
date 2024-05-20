@@ -78,6 +78,28 @@ public class CartaOro extends Carta{
 						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
 							contaLupi++;
 						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+							contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+								contaLupi++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("fungo"))
+										contaFunghi++;
+									else if(simboli[i].equals("lupo"))
+										contaLupi++;
+									
+								}
+							}
+						}
+						
 						
 					}
 				}
