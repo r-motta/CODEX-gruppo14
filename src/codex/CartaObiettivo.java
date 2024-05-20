@@ -417,6 +417,24 @@ public class CartaObiettivo{
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
 							contaFunghi++;
 						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+							contaFunghi++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("fungo"))
+										contaFunghi++;
+									
+								}
+							}
+						}
+						
 						
 					}
 					
@@ -458,6 +476,26 @@ public class CartaObiettivo{
 						
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
 							contaFoglie++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+							contaFoglie++;
+						
+						//simbolo retro della carta iniziale è tipo: foglia,foglia,lupo quindi vado a spezzettare parola grazie alla virgola e conto se ci sono foglie
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("foglia"))
+									contaFoglie++;
+									
+								}
+							}
+						}
 						
 						
 					}
@@ -501,6 +539,24 @@ public class CartaObiettivo{
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
 							contaLupi++;
 						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+							contaLupi++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("lupo"))
+										contaLupi++;
+									
+								}
+							}
+						}
+						
 						
 					}
 					
@@ -542,6 +598,24 @@ public class CartaObiettivo{
 						
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
 							contaFarfalle++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
+							contaFarfalle++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("farfalla"))
+										contaFarfalle++;
+									
+								}
+							}
+						}
 						
 						
 					}
