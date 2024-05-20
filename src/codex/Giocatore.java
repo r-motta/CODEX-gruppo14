@@ -166,27 +166,31 @@ public class Giocatore {
     	
     	do
     	{
-    		
-    	
     	
     	System.out.println("Quale carta vuoi posizionare? ");
     	System.out.println();
     	System.out.println("CARTA [0]: ");
-    	t.getGamers()[i].getCarteInMano()[0].toString();
+    	System.out.println(t.getGamers()[i].getCarteInMano()[0].toString());
     	System.out.println();
     	System.out.println("CARTA [1]: ");
-    	t.getGamers()[i].getCarteInMano()[1].toString();
+    	System.out.println(t.getGamers()[i].getCarteInMano()[1].toString());
     	System.out.println();
     	System.out.println("CARTA [2]: ");
-    	t.getGamers()[i].getCarteInMano()[2].toString();
+    	System.out.println(t.getGamers()[i].getCarteInMano()[2].toString());
     	System.out.println();
     	
     	while (!validInput) {
-            
+    		
+    		
             try {
             	
-            	System.out.print("Inserisci un numero: ");
-            	sceltaCartaInMano = sc.nextInt();
+            	do
+        		{
+            	
+	            	System.out.print("Inserisci un numero: ");
+	            	sceltaCartaInMano = sc.nextInt();
+            	
+        		}while(sceltaCartaInMano<0 || sceltaCartaInMano>2);
             	
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaOro)
             	{
@@ -243,6 +247,8 @@ public class Giocatore {
                 System.out.println("Errore: per favore inserisci un numero tra 0 e 2.");
                 sc.nextLine(); // Consuma l'input non valido
             }
+            
+    		
         }
     	
     	}while(haScelto != true);

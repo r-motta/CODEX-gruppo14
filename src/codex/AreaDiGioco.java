@@ -11,7 +11,7 @@ public class AreaDiGioco {
 	
 	public AreaDiGioco(Giocatore g)
 	{
-		area = new Carta[80][80];
+		area = new Object[AreaDiGioco.maxRighe][AreaDiGioco.maxColonne];
 		area[40][40] = (CartaIniziale) g.getCartaInizialePropria();
 		posLibere = new ArrayList <Cella>();
 	}
