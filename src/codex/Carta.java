@@ -98,10 +98,24 @@ public abstract class Carta {
 	public void setBd(String bd) {
 		this.bd = bd;
 	}
+	
+	public static String stampaColore(Color colore)
+	{
+		if(colore == Color.RED)
+            return "rosso";
+        else if(colore == Color.MAGENTA)
+        	return "magenta";
+        else if(colore == Color.BLUE)
+        	return "blu";
+        else if(colore == Color.GREEN)
+        	return "verde";
+		
+		return null;
+	}
     
     
 	public String toString() {
-		return "Colore = " + colore +"\n"+ "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra = " + bs +"\n"+ "Angolo basso destra = " + bd+"\n"+ "Simbolo retro = " + simboloRetro+"\n";
+		return "Colore = " + Carta.stampaColore(colore) +"\n"+ "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra = " + bs +"\n"+ "Angolo basso destra = " + bd+"\n"+ "Simbolo retro = " + simboloRetro+"\n";
 	}
 
 	public String getPercorsoImmagine() {

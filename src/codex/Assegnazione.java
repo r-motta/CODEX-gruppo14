@@ -194,6 +194,10 @@ public class Assegnazione {
 							  
 				
 			}
+			
+			//fa vedere carte obiettivo comuni
+			
+			System.out.println("");
 
 			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa
 			Collections.shuffle(t.getMazzoOro());//mischia le carte oro

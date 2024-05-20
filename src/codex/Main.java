@@ -38,7 +38,50 @@ public class Main {
 
 		Assegnazione a = new Assegnazione(t);
 		
+		boolean finito = false;
 		
+		while(finito == false)
+		{
+			for(int i=0;i<Main.numGiocatori;i++)
+			{
+				if(t.getGamers()[i].getPunti()<20)
+				{
+					t.getGamers()[i].posizionaCarta(t, i);
+					t.getGamers()[i].pesca(t);
+					t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
+					//scegliere se vedere le carte obiettivo comuni e sua personale
+				}
+				else
+					finito = true;
+				
+			
+			}
+			
+		}
+		
+		int pos=0;
+		
+		for(int i=0;i<Main.numGiocatori;i++)
+		{
+			if(t.getGamers()[i].getPunti()>20)
+			{
+				pos = i;
+				break;
+			}
+		}
+		
+		//turno addizionale per i giocatori rimanenti per concludere il giro, dopo che un giocatore ha raggiunto i 20 punti
+		for(int i=pos+1; i<Main.numGiocatori;i++)
+		{
+			t.getGamers()[i].posizionaCarta(t, i);
+			t.getGamers()[i].pesca(t);
+			t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
+		}
+		
+		for(int i=0;i<Main.numGiocatori;i++)
+		{
+			t.get
+		}
 		
 		
 		
