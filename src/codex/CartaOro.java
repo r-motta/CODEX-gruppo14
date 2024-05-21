@@ -255,4 +255,5 @@ public class CartaOro extends Carta{
 			return false; // Carta non giocabile
 		}
 	}
+	
 }
