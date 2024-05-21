@@ -287,13 +287,15 @@ public class Giocatore {
     	//stampa matrice prima
     	
     	
-    	
+    	t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
     	
     	
     	System.out.println("Dove vuoi posizionare la carta");
     	for(int j=0;j<t.getGamers()[i].getAreaDiGioco().posizioniLibere().size();j++)
     	{
     		
+    		
+    	
     		//esempio stampa: [posizione 1] --> x: 1   y: 3
     		System.out.println("------------------------------------------- ");
     		System.out.println("[Posizione "+(j)+"] --->  x: "+t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(j).getX() + "    y: " + t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(j).getY());
