@@ -332,12 +332,9 @@ public class CartaOro extends Carta{
 				
 			return false;
 		}
+		return false;
 	}
 	
-	//quarta carta
-	else if
-	{
-		
-	}
+	
 	
 }
