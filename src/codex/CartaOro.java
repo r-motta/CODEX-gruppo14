@@ -491,8 +491,8 @@ public class CartaOro extends Carta{
 			}
 			if(contaFunghi>=3 && contaLupi>=1)
 			{
-			
-				//inserire parte controllo angoli coperti
+				
+				
 					
 			
 			    
