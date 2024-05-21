@@ -263,6 +263,57 @@ public class Giocatore {
             		}
             	}
             	
+            	//richiesta del retro per unacarta risorsa
+            	
+            	
+            	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
+            	{
+            		if(((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).controlloRequisiti((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano], t.getGamers()[i]) == true)
+            		{
+            			validInput = true;
+            			haScelto = true;
+            		}	
+            		else
+            		{
+            			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
+            			System.out.println("Vuoi usare il retro della carta? ");
+            			
+            			CartaRisorsa tempRetro = CartaRisorsa.clonaCarta((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            			
+            			
+            			//creo carta temporanea uguale a cui applico il metodo retro cosi da poter fare il to string.
+            			// se facessi metodo retro su originale e utente mi dice che non vuole usare il retro della carta ma sceglierne 
+            			// un'altra, non posso settarla frontale di nuovo
+            			
+            			tempRetro.useRetro(tempRetro).toString();
+            			String rispostaRetro = null;
+            			
+            			do
+            			{
+            				try
+                			{
+                				System.out.println("SI oppure NO? ");
+                    			System.out.println("Risposta: ");
+                    			rispostaRetro = sc.next();
+                			}
+                			catch(InputMismatchException e)
+                			{
+                				System.out.println("Errore: per favore scrivi si oppure no in maiuscolo o minuscolo.");
+                                sc.nextLine();
+                			}
+            			}while(!(rispostaRetro.equalsIgnoreCase("SI") || rispostaRetro.equalsIgnoreCase("NO")));
+            			
+            			if(rispostaRetro.equalsIgnoreCase("SI"))
+            			{
+            				t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            				haScelto = true;
+            			}
+            			
+            			
+            		}
+            	}
+            	
+            	
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
             		haScelto = true;
             	
@@ -277,8 +328,7 @@ public class Giocatore {
     	
     	}while(haScelto != true);
     	
-    	//se � carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro --> se non vuole, richiedere che carta vuole giocare
-    	
+    	//se � carta risorsa deve fare controllo --> se non va bene --> chiedere se vuole usare retro --> se non vuole, richiedere che carta vuole giocare
     	
     	
     	
