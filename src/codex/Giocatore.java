@@ -157,6 +157,17 @@ public class Giocatore {
 
     }
     
+    public void stampaAreaDiGioco(Giocatore g)
+    {
+    	for(int i=0;i<AreaDiGioco.maxRighe;i++)
+    	{
+    		for(int j=0;j<AreaDiGioco.maxColonne;j++)
+    		{
+    			System.out.println(g.getAreaDiGioco().getArea()[i][j]);
+    		}
+    	}
+    }
+    
     public void posizionaCarta(Tavolo t, int i)
     {
     	boolean validInput = false;
@@ -260,6 +271,8 @@ public class Giocatore {
     	
     	validInput = false;
     	
+    	//stampa matrice prima
+    	
     	System.out.println("Dove vuoi posizionare la carta");
     	for(int j=0;j<t.getGamers()[i].getAreaDiGioco().posizioniLibere().size();j++)
     	{
@@ -318,16 +331,7 @@ public class Giocatore {
     	
     }
     
-    public void stampaAreaDiGioco(Giocatore g)
-    {
-    	for(int i=0;i<AreaDiGioco.maxRighe;i++)
-    	{
-    		for(int j=0;j<AreaDiGioco.maxColonne;j++)
-    		{
-    			System.out.println(g.getAreaDiGioco().getArea()[i][j]);
-    		}
-    	}
-    }
+    
 
     public CartaIniziale getCartaInizialePropria() {
         return CartaInizialePropria;
