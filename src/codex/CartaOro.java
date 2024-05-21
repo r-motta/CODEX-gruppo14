@@ -56,36 +56,63 @@ public class CartaOro extends Carta{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-						contaFunghi++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-							contaLupi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
-							contaFunghi++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-							contaLupi++;
-						
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-							contaFunghi++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-							contaLupi++;
-						
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
-							contaFunghi++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-							contaLupi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
-							contaFunghi++;
-							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
-								contaLupi++;
-						
-						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								contaFunghi++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+									contaFunghi++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+									contaFunghi++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+									contaFunghi++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+									contaFunghi++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+										contaLupi++;
+						}
+						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								contaFunghi++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+									contaFunghi++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+									contaFunghi++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+									contaFunghi++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaLupi++;
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+									contaFunghi++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+										contaLupi++;
 							
 							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
@@ -115,7 +142,7 @@ public class CartaOro extends Carta{
 				{
 					for(int j=0;j<AreaDiGioco.maxColonne;j++)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
 							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
 								contaPiume++;
