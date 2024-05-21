@@ -163,7 +163,20 @@ public class Giocatore {
     	{
     		for(int j=0;j<AreaDiGioco.maxColonne;j++)
     		{
-    			System.out.println(g.getAreaDiGioco().getArea()[i][j]);
+    			
+    		if(g.getAreaDiGioco().getArea()[i][j]!=null)
+    		{
+    			System.out.println("|X|");
+    			System.out.println("-");
+    		}
+    		else
+    		{
+    			System.out.println("|O|");
+    			System.out.println("-");
+    		}
+    		
+    		
+    			
     		}
     	}
     }
@@ -264,7 +277,7 @@ public class Giocatore {
     	
     	}while(haScelto != true);
     	
-    	//se è carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro --> se non vuole, richiedere che carta vuole giocare
+    	//se ï¿½ carta oro deve fare controllo --> se non va bene --> chiedere se vuole usare retro --> se non vuole, richiedere che carta vuole giocare
     	
     	
     	
@@ -273,9 +286,14 @@ public class Giocatore {
     	
     	//stampa matrice prima
     	
+    	
+    	
+    	
+    	
     	System.out.println("Dove vuoi posizionare la carta");
     	for(int j=0;j<t.getGamers()[i].getAreaDiGioco().posizioniLibere().size();j++)
     	{
+    		
     		//esempio stampa: [posizione 1] --> x: 1   y: 3
     		System.out.println("------------------------------------------- ");
     		System.out.println("[Posizione "+(j)+"] --->  x: "+t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(j).getX() + "    y: " + t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(j).getY());
@@ -304,24 +322,24 @@ public class Giocatore {
     	
     	//mettere angolo = "vuoto" alla/e carta/e prima
     	
-    	//controllo se c'è carta in alto a destra rispetto a dove posiziono io la carta. se c'è, angolo basso sinitro = "vuoto"
+    	//controllo se c'ï¿½ carta in alto a destra rispetto a dove posiziono io la carta. se c'ï¿½, angolo basso sinitro = "vuoto"
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1] != null)
     	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1]).getBs().equals("vuoto");
     	
-    	//controllo se c'è carta in alto a sinistra rispetto a dove posiziono io la carta. se c'è, angolo basso destro = "vuoto"
+    	//controllo se c'ï¿½ carta in alto a sinistra rispetto a dove posiziono io la carta. se c'ï¿½, angolo basso destro = "vuoto"
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1] != null)
         	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1]).getBs().equals("vuoto");
         	
-    	//controllo se c'è carta in basso a sinistra rispetto a dove posiziono io la carta. se c'è, angolo alto destro = "vuoto"
+    	//controllo se c'ï¿½ carta in basso a sinistra rispetto a dove posiziono io la carta. se c'ï¿½, angolo alto destro = "vuoto"
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1] != null)
         	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()-1]).getBs().equals("vuoto");
     	
-    	//controllo se c'è carta in basso a destra rispetto a dove posiziono io la carta. se c'è, angolo alto sinistro = "vuoto"
+    	//controllo se c'ï¿½ carta in basso a destra rispetto a dove posiziono io la carta. se c'ï¿½, angolo alto sinistro = "vuoto"
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1] != null)
         	((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere().get(sceltaPosizioneCarta).getY()+1]).getBs().equals("vuoto");
         	
     	
-    	//se è una carta risorsa con i punti, incrementa punti
+    	//se ï¿½ una carta risorsa con i punti, incrementa punti
     	
     	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
     	{
