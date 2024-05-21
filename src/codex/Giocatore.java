@@ -158,9 +158,13 @@ public class Giocatore {
         
 
     }
+    //stampa della matrice del giocatore
+    
     
     public void stampaAreaDiGioco(Giocatore g) {
         // Stampa i numeri delle colonne
+    	
+    	System.out.println(g.getNickname());
         System.out.print("    "); // spazio iniziale per allineare i numeri delle colonne
         for (int k = 0; k <AreaDiGioco.maxColonne; k++) {
             System.out.printf("%3d ", k);
@@ -309,8 +313,8 @@ public class Giocatore {
     	
     	validInput = false;
     
-    	
-    	
+    	//nome giocatore sopra la matrice
+    	t.getGamers()[i].getNickname();
     	t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
     	
     	List<Cella> tempPosLibere = new ArrayList<Cella>();
