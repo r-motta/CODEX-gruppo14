@@ -46,7 +46,7 @@ public class Main {
 		t.getMazzoObiettivo().remove(0);
 		t.getMazzoObiettivo().remove(1);
 
-		Assegnazione a = new Assegnazione(t);//assegna aree
+		Assegnazione a = new Assegnazione(t);
 		
 		boolean finito = false;
 		
@@ -58,7 +58,7 @@ public class Main {
 				{
 					
 					t.getGamers()[i].posizionaCarta(t, i);
-					t.getGamers()[i].pesca(t,i);
+					t.getGamers()[i].pesca(t);
 					t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
 					t.getGamers()[i].visualizza(t,i);
 				}
@@ -83,7 +83,7 @@ public class Main {
 		for(int i=pos+1; i<Main.numGiocatori;i++)
 		{
 			t.getGamers()[i].posizionaCarta(t, i);
-			t.getGamers()[i].pesca(t,i);
+			t.getGamers()[i].pesca(t);
 			t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
 			t.getGamers()[i].visualizza(t,i);
 		}

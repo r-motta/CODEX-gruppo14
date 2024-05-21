@@ -137,13 +137,11 @@ public class CartaOro extends Carta{
 				
 				return true;
 			}
-				
+			
 			return false;
 		}
 		
-	
 	//seconda carta
-	
 		if(c.getRequisiti().equals("fungo fungo foglia"))
 		{
 			int contaFunghi=0;
@@ -238,9 +236,7 @@ public class CartaOro extends Carta{
 			return false;
 		}
 	
-	
 	//terza carta
-	
 		if(c.getRequisiti().equals("fungo fungo farfalla"))
 		{
 			int contaFunghi=0;
@@ -334,9 +330,350 @@ public class CartaOro extends Carta{
 				
 			return false;
 		}
-		return false;
+
+
+	//quarta carta
+		if(c.getRequisiti().equals("fungo fungo fungo lupo"))
+		{
+			int contaFunghi=0;
+			int contaLupi=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe;i++)
+			{
+				for(int j=0;j<AreaDiGioco.maxColonne;j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+							contaLupi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+							contaLupi++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+							contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+							contaLupi++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+							contaLupi++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+							contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+								contaLupi++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("fungo"))
+										contaFunghi++;
+									else if(simboli[i].equals("lupo"))
+										contaLupi++;
+									
+								}
+							}
+						}
+						
+						
+					}
+				}
+			}
+			if(contaFunghi>=3 && contaLupi>=1)
+			{
+			
+				//inserire parte controllo angoli coperti
+					
+			
+			    
+			
+				return true;
+			}
+				
+			return false;
 	}
+		
+    //quinta carta
+			if(c.getRequisiti().equals("fungo fungo fungo foglia"))
+			{
+				int contaFunghi=0;
+				int contaFoglie=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							    contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								contaFoglie++;
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								contaFoglie++;
+							
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+								contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								contaFoglie++;
+							
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+								contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								contaFoglie++;
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+								contaFunghi++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+							    contaFoglie++;
+							
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+								{
+									String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+									
+									for(int k=0;k<simboli.length;k++)
+									{
+										if(simboli[i].equals("fungo"))
+											contaFunghi++;
+										else if(simboli[i].equals("lupo"))
+											contaFoglie++;
+										
+									}
+								}
+							}
+							
+							
+						}
+					}
+				}
+				if(contaFunghi>=3 && contaFoglie>=1)
+				{
+				
+					//inserire parte controllo angoli coperti
+						
+				
+				    
+				
+					return true;
+				}
+					
+				return false;
+             }
+			
+	//sesta carta
+		if(c.getRequisiti().equals("fungo fungo fungo farfalla"))
+			{
+			 int contaFunghi=0;
+			 int contaFarfalle=0;
+					
+			for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+				 for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+					 if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+						 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 contaFunghi++;
+						 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 contaFarfalle++;
+								
+						 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								 contaFunghi++;
+						 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 contaFarfalle++;
+								
+						 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+								 contaFunghi++;
+						 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 contaFarfalle++;
+								
+						 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+									contaFunghi++;
+						 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									contaFarfalle++;
+								
+						 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+									contaFunghi++;
+						 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+									contaFarfalle++;
+								
+					       if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+								{
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+									{
+										String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+										
+										for(int k=0;k<simboli.length;k++)
+										{
+											if(simboli[i].equals("fungo"))
+												contaFunghi++;
+											else if(simboli[i].equals("lupo"))
+												contaFarfalle++;
+											
+										}
+									}
+								}
+								
+								
+							}
+						}
+					}
+		if(contaFunghi>=3 && contaFarfalle>=1)
+		  {
+					
+				//inserire parte controllo angoli coperti  
+					
+		return true;
+	 }
+						
+		return false;
+	}				
+				
+	//settima, ottava e nona carta
+	if(c.getRequisiti().equals("fungo fungo fungo"))
+	{
+		int contaFunghi=0;
+		
+		for(int i=0;i<AreaDiGioco.maxRighe;i++)
+		{
+			for(int j=0;j<AreaDiGioco.maxColonne;j++)
+			{
+				if(g.getAreaDiGioco().getArea()[i][j]!=null)
+				{
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+					    contaFunghi++;
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+						contaFunghi++;
+					
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+						contaFunghi++;
+					
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+						contaFunghi++;
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+						contaFunghi++;
+					
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+						{
+							String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+							
+							for(int k=0;k<simboli.length;k++)
+							{
+								if(simboli[i].equals("fungo"))
+									contaFunghi++;
+								
+							}
+						}
+					}
+					
+					
+				}
+			}
+		}
+		
+		if(contaFunghi>=3)
+		{
+			
+			g.incrementaPunti(3);
+			
+			return true;
+		}
+			
+		return false;	
+     }
+	
+	//decima carta
+	if(c.getRequisiti().equals("fungo fungo fungo fungo fungo"))
+	{
+		int contaFunghi=0;
+		
+		for(int i=0;i<AreaDiGioco.maxRighe;i++)
+		{
+			for(int j=0;j<AreaDiGioco.maxColonne;j++)
+			{
+				if(g.getAreaDiGioco().getArea()[i][j]!=null)
+				{
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+					    contaFunghi++;
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+						contaFunghi++;
+					
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+						contaFunghi++;
+					
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+						contaFunghi++;
+					
+					
+					if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+						contaFunghi++;
+						
+					
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+						{
+							String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+							
+							for(int k=0;k<simboli.length;k++)
+							{
+								if(simboli[i].equals("fungo"))
+									contaFunghi++;
+								
+							}
+						}
+					}
+					
+					
+				}
+			}
+		}
+		
+		if(contaFunghi>=5)
+		{
+			
+			g.incrementaPunti(5);
+			
+			return true;
+		}
+			
+		return false;	
+     }
+	
+	//undicesima carta
 	
 	
+	
+  }
 	
 }
+	
