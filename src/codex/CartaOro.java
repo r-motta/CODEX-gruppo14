@@ -139,121 +139,205 @@ public class CartaOro extends Carta{
 			return false;
 		}
 		
-	}
+	
 	//seconda carta
-	public boolean controlloRequisiti(CartaOroBonus c, Giocatore g) {
-		if (c.getRequisiti().equals("fungo fungo foglia")) {
-			int contaFunghi = 0;
-			int contaFoglie = 0;
-			int contaBarattoliOro = 0; // Variabile per il conteggio dei barattoli d'oro
-
-			for (int i = 0; i < AreaDiGioco.maxRighe; i++) {
-				for (int j = 0; j < AreaDiGioco.maxColonne; j++) {
-					if (g.getAreaDiGioco().getArea()[i][j] != null) {
-						// Controllo funghi
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo")) {
-							contaFunghi++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia")) {
+	
+		if(c.getRequisiti().equals("fungo fungo foglia"))
+		{
+			int contaFunghi=0;
+			int contaFoglie=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe;i++)
+			{
+				for(int j=0;j<AreaDiGioco.maxColonne;j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
 							contaFoglie++;
-						}
-
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo")) {
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
 							contaFunghi++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia")) {
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
 							contaFoglie++;
-						}
-
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo")) {
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
 							contaFunghi++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia")) {
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
 							contaFoglie++;
-						}
-
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo")) {
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
 							contaFunghi++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia")) {
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
 							contaFoglie++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+							contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+								contaFoglie++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("fungo"))
+										contaFunghi++;
+									else if(simboli[i].equals("foglia"))
+										contaFoglie++;
+									
+								}
+							}
 						}
-
-						// Controllo barattoli d'oro (aggiunto)
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloBonus().equals("barattolo_oro")) {
-							contaBarattoliOro++;
-							// Assegna 1 punto bonus per ogni barattolo d'oro
-							g.aggiungiPunti(1);
-						}
+						
+						
 					}
 				}
 			}
-
-			// Controllo requisiti
-			if (contaFunghi >= 2 && contaFoglie >= 1) {
-				return true; // Requisiti soddisfatti
-			} else {
-				return false; // Requisiti non soddisfatti
+			
+			if(contaFunghi>=2 && contaFoglie>=1)
+			{
+				int contaBottiglie =0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+								contaBottiglie++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+									contaBottiglie++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+									contaBottiglie++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+									contaBottiglie++;
+						}
+					}
+					
+				}
+				
+				g.incrementaPunti(contaBottiglie);
+				
+				return true;
 			}
-		} else {
-			// Se i requisiti non corrispondono a "fungo fungo foglia"
-			return false; // Carta non giocabile
+				
+			return false;
+		}
+	
+	
+	//terza carta
+	
+		if(c.getRequisiti().equals("fungo fungo farfalla"))
+		{
+			int contaFunghi=0;
+			int contaFarfalle=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe;i++)
+			{
+				for(int j=0;j<AreaDiGioco.maxColonne;j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							contaFarfalle++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							contaFarfalle++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+							contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							contaFarfalle++;
+						
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							contaFunghi++;
+						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							contaFarfalle++;
+						
+						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+							contaFunghi++;
+							else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
+								contaFarfalle++;
+						
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("fungo"))
+										contaFunghi++;
+									else if(simboli[i].equals("farfalla"))
+										contaFarfalle++;
+									
+								}
+							}
+						}
+						
+						
+					}
+				}
+			}
+			
+			if(contaFunghi>=2 && contaFarfalle>=1)
+			{
+				int contaPergamene =0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+								contaPergamene++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+									contaPergamene++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+									contaPergamene++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+									contaPergamene++;
+						}
+					}
+					
+				}
+				
+				g.incrementaPunti(contaPergamene);
+				
+				return true;
+			}
+				
+			return false;
 		}
 	}
 	
-	//terza carta
-	public boolean controlloRequisiti(CartaOroBonus c, Giocatore g) {
-		if (c.getRequisiti().equals("fungo fungo farfalla")) { // Modifica dei requisiti
-			int contaFunghi = 0;
-			int contaFarfalle = 0; // Modifica per contare le farfalle
-			int contaPergameneOro = 0; // Variabile per il conteggio delle pergamene d'orata
-
-			for (int i = 0; i < AreaDiGioco.maxRighe; i++) {
-				for (int j = 0; j < AreaDiGioco.maxColonne; j++) {
-					if (g.getAreaDiGioco().getArea()[i][j] != null) {
-						// Controllo funghi
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo")) {
-							contaFunghi++;
-						}
-
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo")) {
-							contaFunghi++;
-						}
-
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo")) {
-							contaFunghi++;
-						}
-
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo")) {
-							contaFunghi++;
-						}
-
-						// Controllo farfalle (modifica)
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla")) {
-							contaFarfalle++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla")) {
-							contaFarfalle++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla")) {
-							contaFarfalle++;
-						} else if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla")) {
-							contaFarfalle++;
-						}
-
-						// Controllo pergamene d'orata (aggiunto)
-						if (((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloBonus().equals("pergamena_oro")) {
-							contaPergameneOro++;
-							g.aggiungiPunti(1); // Assegna 1 punto bonus per ogni pergamena d'orata
-						}
-					}
-				}
-			}
-
-			// Controllo requisiti
-			if (contaFunghi >= 2 && contaFarfalle >= 1) {
-				return true; // Requisiti soddisfatti
-			} else {
-				return false; // Requisiti non soddisfatti
-			}
-		} else {
-			// Se i requisiti non corrispondono a "fungo fungo farfalla"
-			return false; // Carta non giocabile
-		}
+	//quarta carta
+	else if
+	{
+		
 	}
 	
 }
