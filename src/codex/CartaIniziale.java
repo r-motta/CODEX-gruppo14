@@ -115,4 +115,12 @@ public class CartaIniziale{
 	}
 
 
+
+	public String getSimboloRetro() {
+		return simboloRetro;
+	}
+	
+	
+
+
 }

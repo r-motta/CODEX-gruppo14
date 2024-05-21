@@ -85,9 +85,11 @@ public class CartaOro extends Carta{
 						
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							
+							
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
-								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
 								
 								for(int k=0;k<simboli.length;k++)
 								{
@@ -182,9 +184,9 @@ public class CartaOro extends Carta{
 						
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
-								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
 								
 								for(int k=0;k<simboli.length;k++)
 								{
