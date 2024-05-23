@@ -851,9 +851,940 @@ public class CartaOro extends Carta{
      }
 	
 	//undicesima carta
+		if(c.getRequisiti().equals("foglia foglia farfalla"))
+		{
+			int contaFoglia=0;
+			int contaFarfalla=0;
+			
+			for(int i=0;i<AreaDiGioco.maxRighe;i++)
+			{
+				for(int j=0;j<AreaDiGioco.maxColonne;j++)
+				{
+					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								contaFoglia++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									contaFoglia++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									contaFoglia++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									contaFoglia++;
+								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+									contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
+										contaFarfalla++;
+						}
+						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								contaFoglia++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									contaFoglia++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									contaFoglia++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+								
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									contaFoglia++;
+								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+									contaFarfalla++;
+						
+							
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							{
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								
+								for(int k=0;k<simboli.length;k++)
+								{
+									if(simboli[i].equals("foglia"))
+										contaFoglia++;
+									else if(simboli[i].equals("farfalla"))
+										contaFarfalla++;
+									
+								}
+							}
+						}
+						
+						
+					}
+				}
+			}
+			
+			if(contaFoglia>=2 && contaFarfalla>=1)
+			{
+				int contaPiume =0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+						{
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+								contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+									contaPiume++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+									contaPiume++;
+						}
+					}
+					
+				}
+				
+				g.incrementaPunti(contaPiume);
+				
+				return true;
+			}
+			
+			return false;
+		}
 	
 	
-	
+		
+		//dodicessima carta
+			if(c.getRequisiti().equals("foglia foglia fungo"))
+			{
+				int contaFoglia=0;
+				int contaFungo=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+										contaFoglia++;
+										else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+											contaFungo++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+										contaFungo++;
+							
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+								{
+									String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+									
+									for(int k=0;k<simboli.length;k++)
+									{
+										if(simboli[i].equals("foglia"))
+											contaFoglia++;
+										else if(simboli[i].equals("fungo"))
+											contaFungo++;
+										
+									}
+								}
+							}
+							
+							
+						}
+					}
+				}
+				
+				if(contaFoglia>=2 && contaFungo>=1)
+				{
+					int contaPergamene =0;
+					
+					for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+						for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+									contaPergamene++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+										contaPergamene++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+										contaPergamene++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+										contaPergamene++;
+							}
+						}
+						
+					}
+					
+					g.incrementaPunti(contaPergamene);
+					
+					return true;
+				}
+				
+				return false;
+			}
+
+			//tredicesima carta
+			if(c.getRequisiti().equals("foglia foglia Lupo"))
+			{
+				int contaFoglia=0;
+				int contaLupi=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+										contaFoglia++;
+										else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+											contaLupi++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+										contaLupi++;
+									
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+								{
+									String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+									
+									for(int k=0;k<simboli.length;k++)
+									{
+										if(simboli[i].equals("foglia"))
+											contaFoglia++;
+										else if(simboli[i].equals("lupo"))
+											contaLupi++;
+										
+									}
+								}
+							}
+							
+							
+						}
+					}
+				}
+				
+				if(contaFoglia>=2 && contaLupi>=1)
+				{
+					int contaBottiglie =0;
+					
+					for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+						for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j]!=null)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+									contaBottiglie++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+										contaBottiglie++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+										contaBottiglie++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+										contaBottiglie++;
+							}
+						}
+						
+					}
+					
+					g.incrementaPunti(contaBottiglie);
+					
+					return true;
+				}
+					
+				return false;
+			}
+			
+			
+			//quatordicesima carta
+			if(c.getRequisiti().equals("foglia foglia foglia farfalla"))
+				{
+				 int contaFoglia=0;
+				 int contaFarfalle=0;
+						
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+					 for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+						 if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+										 contaFarfalle++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+										 contaFarfalle++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+										 contaFarfalle++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+											contaFarfalle++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
+											contaFarfalle++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+										 contaFarfalle++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+										 contaFarfalle++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+										 contaFarfalle++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+											contaFarfalle++;
+								 
+										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+										{
+											String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+											
+											for(int k=0;k<simboli.length;k++)
+											{
+												if(simboli[i].equals("foglia"))
+													contaFoglia++;
+												else if(simboli[i].equals("lupo"))
+													contaFarfalle++;
+												
+											}
+										}
+									}
+									
+									
+								}
+							}
+						}
+			if(contaFoglia>=3 && contaFarfalle>=1)
+			  {
+						
+					//inserire parte controllo angoli coperti  
+						
+			return true;
+		 }
+							
+			return false;
+		}
+			
+			
+			//quindicesima carta
+			if(c.getRequisiti().equals("foglia foglia foglia lupo"))
+				{
+				 int contaFoglia=0;
+				 int contaLupi=0;
+						
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+					 for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+						 if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+									 contaLupi++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									 contaLupi++;
+								 
+										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+										{
+											String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+											
+											for(int k=0;k<simboli.length;k++)
+											{
+												if(simboli[i].equals("foglia"))
+													contaFoglia++;
+												else if(simboli[i].equals("lupo"))
+													contaLupi++;
+												
+											}
+										}
+									}
+									
+									
+								}
+							}
+						}
+			if(contaFoglia>=3 && contaLupi>=1)
+			  {
+						
+					//inserire parte controllo angoli coperti  
+						
+			return true;
+		 }
+							
+			return false;
+		}
+			
+			//sedicesima carta
+			if(c.getRequisiti().equals("foglia foglia foglia fungo"))
+				{
+				 int contaFoglia=0;
+				 int contafunghi=0;
+						
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+					 for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+						 if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+									 contaFoglia++;
+								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+									 contafunghi++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+										
+								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									 contaFoglia++;
+								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									 contafunghi++;
+								 
+										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+										{
+											String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+											
+											for(int k=0;k<simboli.length;k++)
+											{
+												if(simboli[i].equals("foglia"))
+													contafunghi++;
+												else if(simboli[i].equals("fungo"))
+													contafunghi++;
+												
+											}
+										}
+									}
+									
+									
+								}
+							}
+						}
+			if(contaFoglia>=3 && contafunghi>=1)
+			  {
+						
+					//inserire parte controllo angoli coperti  
+						
+			return true;
+		 }
+							
+			return false;
+		}
+			
+			
+			//diciasettesima carta
+			if(c.getRequisiti().equals("foglia foglia foglia"))
+			{
+				int contaFoglia=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+										contaFoglia++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+							
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+								{
+									String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+									
+									for(int k=0;k<simboli.length;k++)
+									{
+										if(simboli[i].equals("foglia"))
+											contaFoglia++;
+										
+									}
+								}
+							}
+							
+							
+						}
+					}
+				}
+				
+				if(contaFoglia>=3)
+				{
+					int contaPiume =0;
+					
+					for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+						for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+									contaPiume++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+										contaPiume++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+										contaPiume++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+										contaPiume++;
+							}
+						}
+						
+					}
+					
+					g.incrementaPunti(contaPiume);
+					
+					return true;
+				}
+				
+				return false;
+			}
+			
+			//diciasettesima carta
+			if(c.getRequisiti().equals("foglia foglia foglia"))
+			{
+				int contaFoglia=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+										contaFoglia++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+							
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+								{
+									String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+									
+									for(int k=0;k<simboli.length;k++)
+									{
+										if(simboli[i].equals("foglia"))
+											contaFoglia++;
+										
+									}
+								}
+							}
+							
+							
+						}
+					}
+				}
+				
+				if(contaFoglia>=3)
+				{
+					int contaPergamene =0;
+					
+					for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+						for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+									contaPergamene++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+										contaPergamene++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+										contaPergamene++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+										contaPergamene++;
+							}
+						}
+						
+					}
+					
+					g.incrementaPunti(contaPergamene);
+					
+					return true;
+				}
+				
+				return false;
+			}
+			
+			//diciasettesima carta
+			if(c.getRequisiti().equals("foglia foglia foglia"))
+			{
+				int contaFoglia=0;
+				
+				for(int i=0;i<AreaDiGioco.maxRighe;i++)
+				{
+					for(int j=0;j<AreaDiGioco.maxColonne;j++)
+					{
+						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+										contaFoglia++;
+							}
+							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+							{
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									contaFoglia++;
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+										contaFoglia++;
+									
+									
+									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+										contaFoglia++;
+							
+								
+								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+								{
+									String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+									
+									for(int k=0;k<simboli.length;k++)
+									{
+										if(simboli[i].equals("foglia"))
+											contaFoglia++;
+										
+									}
+								}
+							}
+							
+							
+						}
+					}
+				}
+				
+				if(contaFoglia>=3)
+				{
+					int contaBottiglia =0;
+					
+					for(int i=0;i<AreaDiGioco.maxRighe;i++)
+					{
+						for(int j=0;j<AreaDiGioco.maxColonne;j++)
+						{
+							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
+							{
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+									contaBottiglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+										contaBottiglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+										contaBottiglia++;
+									
+									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+										contaBottiglia++;
+							}
+						}
+						
+					}
+					
+					g.incrementaPunti(contaBottiglia);
+					
+					return true;
+				}
+				
+				return false;
+			}
+			
   }
 	
 }
