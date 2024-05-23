@@ -452,7 +452,8 @@ public class Giocatore {
 				System.out.println("[2] Carta obiettivo segreta ");
 				System.out.println("[3] Carte obiettivo comuni ");
 				System.out.println("[4] Punteggio ");
-				System.out.println("[5] no ");
+				System.out.println("[5] posizione carta nella matrice);");
+				System.out.println("[6] no ");
 				System.out.println("Risposta: ");
 				scelta = sc.nextInt();
 			}
@@ -503,8 +504,54 @@ public class Giocatore {
 					break;
 				}
 				
+				
 				case 5:
 				{
+					
+					        // Acquisizione della riga
+					        System.out.println("Inserire riga i:");
+					        int riga = sc.nextInt(); 
+
+					        // Acquisizione della colonna
+					        System.out.println("Inserire colonna j:");
+					        int colonna = sc.nextInt(); 
+
+					        // Controlla che i valori siano entro i limiti della matrice
+					        if (riga >= 0 && riga < t.getGamers()[i].getAreaDiGioco().getMaxRighe() &&
+					            colonna >= 0 && colonna < t.getGamers()[i].getAreaDiGioco().getMaxColonne())
+					        {
+
+					          
+
+          // Recupera la carta alla posizione specificata
+            Carta carta = t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna];
+            if (carta != null) {
+                
+                if (carta instanceof CartaIniziale) {
+                    CartaIniziale cartaIniziale = (CartaIniziale) carta;
+                    System.out.println(cartaIniziale.toString());
+                } else if (carta instanceof CartaRisorsa) {
+                    CartaRisorsa cartaRisorsa = (CartaRisorsa) carta;
+                    System.out.println(cartaRisorsa.toString()); 
+                } else {
+                    System.out.println(carta.toString()); 
+                }
+            } else {
+                System.out.println("Nessuna carta presente nella cella specificata.");
+            }
+        } else {
+            System.out.println("Le coordinate inserite sono fuori dai limiti della matrice.");
+        }
+
+       
+					        break;
+}
+
+					
+				
+				case 6:
+				{
+					
 					break;
 				}
 				
@@ -518,6 +565,6 @@ public class Giocatore {
 			}
 	
 
-		}while(scelta!=4);
+		}while(scelta!=6);//qua ho messo 67 orima cera quattro forse avete modificato lo switch e non avete mdoficato la condizione di uscitq proavte a vedere
 	}
 }
