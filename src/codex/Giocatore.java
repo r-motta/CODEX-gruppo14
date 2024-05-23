@@ -263,52 +263,36 @@ public class Giocatore {
             		}
             	}
             	
-            	//richiesta del retro per unacarta risorsa
             	
-            	/*
+            	
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
             	{
-          
-            			System.out.println("Vuoi usare il retro della carta? ");
-            			
-            			CartaRisorsa tempRetro = CartaRisorsa.clonaCarta((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
-            			
-            			
-            			//creo carta temporanea uguale a cui applico il metodo retro cosi da poter fare il to string.
-            			// se facessi metodo retro su originale e utente mi dice che non vuole usare il retro della carta ma sceglierne 
-            			// un'altra, non posso settarla frontale di nuovo
-            			
-            			tempRetro.useRetro(tempRetro).toString();
-            			String rispostaRetro = null;
-            			
-            			do
+            		String rispostaRetroRisorsa=null;
+            		do
+        			{
+        				try
             			{
-            				try
-                			{
-                				System.out.println("SI oppure NO? ");
-                    			System.out.println("Risposta: ");
-                    			rispostaRetro = sc.next();
-                			}
-                			catch(InputMismatchException e)
-                			{
-                				System.out.println("Errore: per favore scrivi si oppure no in maiuscolo o minuscolo.");
-                                sc.nextLine();
-                			}
-            			}while(!(rispostaRetro.equalsIgnoreCase("SI") || rispostaRetro.equalsIgnoreCase("NO")));
-            			
-            			if(rispostaRetro.equalsIgnoreCase("SI"))
-            			{
-            				t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
-            				haScelto = true;
+        					System.out.println("Vuoi usare il retro della carta? ");
+            				System.out.println("SI oppure NO? ");
+                			System.out.println("Risposta: ");
+                			rispostaRetroRisorsa = sc.next();
             			}
-            			
-            			
+            			catch(InputMismatchException e)
+            			{
+            				System.out.println("Errore: per favore scrivi si oppure no in maiuscolo o minuscolo.");
+                            sc.nextLine();
+            			}
+        			}while(!(rispostaRetroRisorsa.equalsIgnoreCase("SI") || rispostaRetroRisorsa.equalsIgnoreCase("NO")));
             		
-            	}*/
-            	
-            	
-            	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
+            		if(rispostaRetroRisorsa.equalsIgnoreCase("NO"))
             		haScelto = true;
+            		else
+            		{
+            			t.getGamers()[i].getCarteInMano()[sceltaCartaInMano].useRetro(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            			haScelto = true;
+            		}
+            	}
+            		
             	
                 
             } catch (InputMismatchException e) {
@@ -452,14 +436,14 @@ public class Giocatore {
 				System.out.println("[2] Carta obiettivo segreta ");
 				System.out.println("[3] Carte obiettivo comuni ");
 				System.out.println("[4] Punteggio ");
-				System.out.println("[5] posizione carta nella matrice);");
+				System.out.println("[5] Descrizione di una specifica carta nell'area di gioco ");
 				System.out.println("[6] no ");
 				System.out.println("Risposta: ");
 				scelta = sc.nextInt();
 			}
 			catch(InputMismatchException e)
 			{
-				System.out.println("Errore: per favore inserisci un numero tra 1 e 4.");
+				System.out.println("Errore: per favore inserisci un numero tra 1 e 6.");
                 sc.nextLine();
 			}
 			
@@ -507,45 +491,48 @@ public class Giocatore {
 				
 				case 5:
 				{
+					boolean verificato = false;
+					int riga=0, colonna=0;
 					
-					        // Acquisizione della riga
-					        System.out.println("Inserire riga i:");
-					        int riga = sc.nextInt(); 
-
-					        // Acquisizione della colonna
-					        System.out.println("Inserire colonna j:");
-					        int colonna = sc.nextInt(); 
-
-					        // Controlla che i valori siano entro i limiti della matrice
-					        if (riga >= 0 && riga < t.getGamers()[i].getAreaDiGioco().getMaxRighe() &&
-					            colonna >= 0 && colonna < t.getGamers()[i].getAreaDiGioco().getMaxColonne())
+					do
+					{
+						
+					
+					        try
 					        {
-
+					        	System.out.println("Inserire la riga in cui si trova la carta: ");
+						        riga = sc.nextInt(); 
+					        }catch(InputMismatchException e)
+					        {
+					        	System.out.println("Errore, inserisci un numero ");
+					        	sc.nextLine();
+					        }
+					   
+					        
+					        try
+					        {
+					        	System.out.println("Inserire la colonna in cui si trova la carta: ");
+						        colonna = sc.nextInt(); 
+					        }catch(InputMismatchException e)
+					        {
+					        	System.out.println("Errore, inserisci un numero ");
+					        	sc.nextLine();
+					        }
+					        
+					        if(t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]!=null)
+					        	verificato = true;
+					        
+					}while(verificato!=true);
 					          
 
-          // Recupera la carta alla posizione specificata
-            Carta carta = t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna];
-            if (carta != null) {
-                
-                if (carta instanceof CartaIniziale) {
-                    CartaIniziale cartaIniziale = (CartaIniziale) carta;
-                    System.out.println(cartaIniziale.toString());
-                } else if (carta instanceof CartaRisorsa) {
-                    CartaRisorsa cartaRisorsa = (CartaRisorsa) carta;
-                    System.out.println(cartaRisorsa.toString()); 
-                } else {
-                    System.out.println(carta.toString()); 
-                }
-            } else {
-                System.out.println("Nessuna carta presente nella cella specificata.");
-            }
-        } else {
-            System.out.println("Le coordinate inserite sono fuori dai limiti della matrice.");
-        }
+			         if(t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna] instanceof Carta)
+			        	 ((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]).toString();
+			         else
+			        	 ((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]).toString();
 
        
-					        break;
-}
+					   break;
+				}
 
 					
 				
@@ -565,6 +552,6 @@ public class Giocatore {
 			}
 	
 
-		}while(scelta!=6);//qua ho messo 67 orima cera quattro forse avete modificato lo switch e non avete mdoficato la condizione di uscitq proavte a vedere
+		}while(scelta!=6);
 	}
 }
