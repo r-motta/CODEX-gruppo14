@@ -265,17 +265,10 @@ public class Giocatore {
             	
             	//richiesta del retro per unacarta risorsa
             	
-            	
+            	/*
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
             	{
-            		if(((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).controlloRequisiti((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano], t.getGamers()[i]) == true)
-            		{
-            			validInput = true;
-            			haScelto = true;
-            		}	
-            		else
-            		{
-            			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
+          
             			System.out.println("Vuoi usare il retro della carta? ");
             			
             			CartaRisorsa tempRetro = CartaRisorsa.clonaCarta((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
@@ -310,8 +303,8 @@ public class Giocatore {
             			}
             			
             			
-            		}
-            	}
+            		
+            	}*/
             	
             	
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
