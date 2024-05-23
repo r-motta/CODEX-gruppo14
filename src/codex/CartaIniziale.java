@@ -119,6 +119,32 @@ public class CartaIniziale{
 	public String getSimboloRetro() {
 		return simboloRetro;
 	}
+
+
+
+	public void setAs(String as) {
+		this.as = as;
+	}
+
+
+
+	public void setAd(String ad) {
+		this.ad = ad;
+	}
+
+
+
+	public void setBs(String bs) {
+		this.bs = bs;
+	}
+
+
+
+	public void setBd(String bd) {
+		this.bd = bd;
+	}
+	
+	
 	
 	
 

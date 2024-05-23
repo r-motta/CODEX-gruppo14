@@ -20,14 +20,16 @@ public class AreaDiGioco {
 		return area;
 	}
 
-
-
+	
 	public List<Cella> getPosLibere() {
 		return posLibere;
 	}
 	
+	
 	public ArrayList <Cella> posizioniLibere(Giocatore g)
 	{
+		
+		g.getAreaDiGioco().getPosLibere().clear();
 		
 		for(int i=0;i<maxRighe;i++)
 		{
@@ -73,7 +75,7 @@ public class AreaDiGioco {
 								g.getAreaDiGioco().getPosLibere().add(new Cella(i+1,j-1));
 						}
 					}
-					else if(area[i][j] instanceof CartaIniziale)
+					else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 					{
 						//controllo che ci sia angolo alto destro della carta
 						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd() != null)
@@ -117,8 +119,10 @@ public class AreaDiGioco {
 			}
 		}
 		
-		return (ArrayList<Cella>) posLibere;
+		return (ArrayList<Cella>) g.getAreaDiGioco().getPosLibere();
 	}
+
+	
 
 	
 	

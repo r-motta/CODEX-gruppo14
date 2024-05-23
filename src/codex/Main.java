@@ -22,12 +22,14 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("______________ CODEX NATURALIS ______________");
+		System.out.println();
 		
 		do
 		{
 			try
 			{
-				System.out.println("Quante persone giocano? (Min: 2 - Max: 4) ");
+				System.out.print("Quante persone giocano (Min: 2 - Max: 4):  ");
 				numGiocatori = sc.nextInt();
 			}
 			catch(InputMismatchException e)
@@ -58,8 +60,7 @@ public class Main {
 				{
 					
 					t.getGamers()[i].posizionaCarta(t, i);
-					t.getGamers()[i].pesca(t);
-					t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
+					t.getGamers()[i].pesca(t,i);
 					t.getGamers()[i].visualizza(t,i);
 				}
 				else
@@ -83,8 +84,7 @@ public class Main {
 		for(int i=pos+1; i<Main.numGiocatori;i++)
 		{
 			t.getGamers()[i].posizionaCarta(t, i);
-			t.getGamers()[i].pesca(t);
-			t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
+			t.getGamers()[i].pesca(t,i);
 			t.getGamers()[i].visualizza(t,i);
 		}
 		

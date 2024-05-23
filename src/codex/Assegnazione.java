@@ -12,8 +12,10 @@ public class Assegnazione {
 	{
 		this.sc = new Scanner(System.in);
 		
+		System.out.println();
 		System.out.println("Inserite i vostri nickname: ");
 		System.out.println("(L'ordine dei giocatori in partita sara' uguale all'ordine in cui vi inserirete adesso)");
+		System.out.println();
 		
 		
 		for(int i=0;i<Main.numGiocatori;i++)
@@ -26,8 +28,9 @@ public class Assegnazione {
 				
 				try
 				{
-					System.out.println("Giocatore "+(i+1)+": ");
+					System.out.print("Giocatore "+(i+1)+": ");
 					t.getGamers()[i] = new Giocatore(sc.next());
+					System.out.println();
 					
 					// Verifica se il nickname contiene numeri
 					for(int p=0;p<t.getGamers()[i].getNickname().length();p++)
@@ -61,8 +64,11 @@ public class Assegnazione {
 			//assegnazione delle carte inziali e decisione su fronte o retro
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
-				System.out.println("--------------- GIOCATORE: "+t.getGamers()[i].getNickname()+" ---------------");
-					
+				System.out.println("@@@@@@@@@@@@@ GIOCATORE: "+t.getGamers()[i].getNickname()+" @@@@@@@@@@@@@");
+				
+				System.out.println();
+				System.out.println("Ciao "+t.getGamers()[i].getNickname()+", questa è la carta iniziale che ti è stata assegnata: ");
+				System.out.println();
 					
 					if(i==0)
 						j=0;
@@ -71,21 +77,25 @@ public class Assegnazione {
 					
 					t.getGamers()[i].setCartaInizialePropria(t.getMazzoIniziali().get(j));
 
-					System.out.println("---------- PARTE FRONTALE DELLA CARTA ---------- ");
-					System.out.println(t.getGamers()[i].getCartaInizialePropria().toString()); 
+					System.out.println("______________ PARTE FRONTALE DELLA CARTA ______________ ");
 					System.out.println();
-					System.out.println("---------- PARTE RETRO DELLA CARTA ---------- ");
+					System.out.println(t.getGamers()[i].getCartaInizialePropria().toString()); 
+					System.out.println("_____________________________________________________");
+					System.out.println();
+					System.out.println("______________ PARTE RETRO DELLA CARTA ______________ ");
+					System.out.println();
 					
 					CartaIniziale tempRetroIniziale = CartaIniziale.clonaCarta(t.getGamers()[i].getCartaInizialePropria());
 					
 					System.out.println(tempRetroIniziale.useRetro(tempRetroIniziale).toString()); 
+					System.out.println("_____________________________________________________");
 					
 					System.out.println();
 					
 					do {
 						try
 						{
-							System.out.println("Vuoi usare il retro della carta? (SI/NO)");
+							System.out.print("Vuoi usare il retro della carta? (SI/NO): ");
 						    scelta = sc.next();
 						}
 						catch(InputMismatchException e)
@@ -104,6 +114,8 @@ public class Assegnazione {
 				    }
 				    	
 					j++;
+					
+					System.out.println();
 				
 			}
 			
@@ -119,21 +131,23 @@ public class Assegnazione {
 			{
 					int y=0,k=1;
 					
-					System.out.println("--------------- GIOCATORE "+t.getGamers()[i].getNickname()+" ---------------");
-				
-					System.out.println("--------------------------------------------------------------|");
-					System.out.println("questa e' la prima carta obiettivo:                           |");
+					System.out.println("@@@@@@@@@@@@@ GIOCATORE: "+t.getGamers()[i].getNickname()+" @@@@@@@@@@@@@");
+					System.out.println();
+					System.out.println(t.getGamers()[i].getNickname()+", scelgi una tra le due carte obiettivo proposte: ");
+					System.out.println();
+					
+					System.out.println("__________________________ Questa e' la prima carta obiettivo ________________________");
+					System.out.println();
 					System.out.println(t.getMazzoObiettivo().get(y).toString());
-					System.out.println("--------------------------------------------------------------|");
+					System.out.println("______________________________________________________________________________________|");
 					
 					System.out.println();
 					System.out.println();
 					
-					System.out.println("--------------------------------------------------------------|");
-					System.out.println("questa e' la seconda carta:                                   |");
+					System.out.println("__________________________ Questa e' la seconda carta obiettivo ______________________");
+					System.out.println();
 					System.out.println(t.getMazzoObiettivo().get(k).toString());
-					System.out.println("--------------------------------------------------------------|");
-					
+					System.out.println("______________________________________________________________________________________|");					
 					
 					int scelta=0;
 					
@@ -145,9 +159,10 @@ public class Assegnazione {
 					{
 						try
 						{
-							System.out.println("scegli una tra le due carte obiettivo: ");
+							System.out.println("Scegli una tra le due carte obiettivo: ");
 							System.out.println("[1] prima carta");
 							System.out.println("[2] seconda carta");
+							System.out.print("Risposta: ");
 							scelta= sc.nextInt();
 						}
 						catch(InputMismatchException e)
@@ -192,13 +207,22 @@ public class Assegnazione {
 							  
 				
 			}
-			
+			System.out.println();
+			System.out.println("Queste invece sono le due carte obiettivo comuni a tutti i giocatori: ");
 			//fa vedere carte obiettivo comuni
-			System.out.println("Questa e' la prima carta obiettivo comune: ");
+			System.out.println("____________ Questa e' la prima carta obiettivo comune ____________________");
+			System.out.println();
 			System.out.println(Main.cobPubblica1.toString());
+			System.out.println("_____________________________________________________________________|");					
+
+			System.out.println();
+			
+			System.out.println("____________ Questa e' la seconda carta obiettivo comune ____________________");
 			System.out.println();
 			System.out.println("Questa e' la seconda carta obiettivo comune: ");
 			System.out.println(Main.cobPubblica2.toString());
+			System.out.println("_____________________________________________________________________|");					
+
 
 			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa
 			Collections.shuffle(t.getMazzoOro());//mischia le carte oro
@@ -207,23 +231,35 @@ public class Assegnazione {
 			
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
-				System.out.println("--------------- GIOCATORE "+t.getGamers()[i].getNickname()+" ---------------");
-				
-				
+				System.out.println();
+				System.out.println("@@@@@@@@@@@@@ GIOCATORE: "+t.getGamers()[i].getNickname()+" @@@@@@@@@@@@@");
+				System.out.println();
+				System.out.println(t.getGamers()[i].getNickname()+", queste sono le tue carte in mano ad inizio partita: ");
+				System.out.println();
+			
 				t.getGamers()[i].getCarteInMano()[0] = t.getMazzoOro().get(0);
-				System.out.println("Questa è la tua carta oro: ");
+				System.out.println("_____________ Questa è la tua carta oro iniziale ____________________");
+				System.out.println();
 				System.out.println(t.getMazzoOro().get(0).toString());
+				System.out.println("_____________________________________________________________________|");					
+
 				System.out.println();
 				t.getMazzoOro().remove(0);
 				
 				t.getGamers()[i].getCarteInMano()[1] = t.getMazzoRisorse().get(0);
-				System.out.println("Questa è la tua prima carta risorsa: ");
+				System.out.println("__________ Questa è la tua prima carta risorsa iniziale _____________");
+				System.out.println();
 				System.out.println(t.getMazzoRisorse().get(0).toString());
+				System.out.println("_____________________________________________________________________|");					
+
 				System.out.println();
 				
 				t.getGamers()[i].getCarteInMano()[2] = t.getMazzoRisorse().get(1);
-				System.out.println("Questa è la tua prima carta risorsa: ");
+				System.out.println("__________ Questa è la tua seconda carta risorsa iniziale _____________");
+				System.out.println();
 				System.out.println(t.getMazzoRisorse().get(1).toString());
+				System.out.println("_____________________________________________________________________|");					
+				
 				System.out.println();
 				
 				t.getMazzoRisorse().remove(0);
