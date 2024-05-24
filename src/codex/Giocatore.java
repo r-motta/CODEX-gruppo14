@@ -440,6 +440,7 @@ public class Giocatore {
     			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1]).setAs("vuoto");
         	
     	}
+    	
         	
     	
     	//se e' una carta risorsa con i punti, incrementa punti
