@@ -27,6 +27,7 @@ public class Tavolo{
 				CartaRisorsa cr8 = new CartaRisorsa(Color.RED, "vuoto", "fungo", "vuoto", null, 1, "https://drive.google.com/file/d/1P_GgOcgstqP9fn0M-EPUVd7_yrFiiylv/view");
 				CartaRisorsa cr9 = new CartaRisorsa(Color.RED, "fungo", null, "vuoto", "vuoto", 1, "https://drive.google.com/file/d/1_RecsmzelsIPNruSdBsKf1W9ll0z0Zek/view");
 				CartaRisorsa cr10 = new CartaRisorsa(Color.RED, null, "vuoto", "fungo", "vuoto", 1, "https://drive.google.com/file/d/1aH5DU6bBJbK-T5-31Ms3zsiKDpHhcGhT/view");
+				
 				CartaRisorsa cr11 = new CartaRisorsa(Color.GREEN, "foglia", "vuoto", "foglia", null, 0, "https://drive.google.com/file/d/1b26w1kKjcVetvgsFfPE2pudHUaWVMsWx/view");
 				CartaRisorsa cr12 = new CartaRisorsa(Color.GREEN, "foglia", "foglia", null, "vuoto", 0, "https://drive.google.com/file/d/1uwHYLq5d7PXEC3my25_VFl_ifTj_vfMf/view");
 				CartaRisorsa cr13 = new CartaRisorsa(Color.GREEN, "vuoto", null, "foglia", "foglia", 0, "https://drive.google.com/file/d/17YWeVb4bVS9Cq0yC83evZMVq_vS9xbLQ/view");
@@ -37,6 +38,7 @@ public class Tavolo{
 				CartaRisorsa cr18 = new CartaRisorsa(Color.GREEN, "vuoto", "vuoto", "foglia", null, 1, "https://drive.google.com/file/d/17MkJhL4WmDqrUrD1lM7cOCuqlK_01eau/view");
 				CartaRisorsa cr19 = new CartaRisorsa(Color.GREEN, "vuoto", "vuoto", null, "foglia", 1, "https://drive.google.com/file/d/1grrFFGxOE8vHNgxkrRCL06bygpVi9Z8J/view");
 				CartaRisorsa cr20 = new CartaRisorsa(Color.GREEN, null, "foglia", "vuoto", "vuoto", 1, "https://drive.google.com/file/d/1yumhXwzZGF_FVkDuu11mcMkADRx67PV3/view");
+				
 				CartaRisorsa cr21 = new CartaRisorsa(Color.BLUE, "lupo", "lupo", "vuoto", null, 0, "https://drive.google.com/file/d/1w4B1j1LGX1byRjabkfXQYwaivFaKgAWz/view");
 				CartaRisorsa cr22 = new CartaRisorsa(Color.BLUE, null, "vuoto", "lupo", "lupo", 0, "https://drive.google.com/file/d/1oljNa3UTWSFojHS1irjq-Zbw46Oc4P06/view");
 				CartaRisorsa cr23 = new CartaRisorsa(Color.BLUE, "lupo", null, "lupo", "vuoto", 0, "https://drive.google.com/file/d/1KsjPP2wATALtR3dJUrIMkug-1un84OJg/view");
@@ -47,6 +49,7 @@ public class Tavolo{
 				CartaRisorsa cr28 = new CartaRisorsa(Color.BLUE, null, "vuoto", "lupo", "vuoto", 1, "https://drive.google.com/file/d/1l9dTbLC3IVB26OZb5DfabZenQHJGRR7W/view");
 				CartaRisorsa cr29 = new CartaRisorsa(Color.BLUE, "vuoto", null, "vuoto", "lupo", 1, "https://drive.google.com/file/d/14_tcmcvAlYmlH1FIgUh3mvBkdZhf9FoJ/view");
 				CartaRisorsa cr30 = new CartaRisorsa(Color.BLUE, "vuoto", "lupo", "vuoto", null, 1, "https://drive.google.com/file/d/1HA75WIz3vuZGE-bt2c8qYHlKm91y_g8m/view");
+				
 				CartaRisorsa cr31 = new CartaRisorsa(Color.MAGENTA, "farfalla", "farfalla", "vuoto", null, 0, "https://drive.google.com/file/d/1EBhqlCun8TnpNV6ubA_wdnQ8W_zQDI_G/view");
 				CartaRisorsa cr32 = new CartaRisorsa(Color.MAGENTA, null, "vuoto", "farfalla", "farfalla", 0, "https://drive.google.com/file/d/1pfXzezEEpTBlVEBUgwcbh0zT8Q6etrru/view");
 				CartaRisorsa cr33 = new CartaRisorsa(Color.MAGENTA, "farfalla", null, "farfalla", "vuoto", 0, "https://drive.google.com/file/d/1GSMxopBjzpR7yfQPfTrYbsfUavDw4f5y/view");
@@ -62,45 +65,48 @@ public class Tavolo{
 			// colore, asx, adx, bsx, bdx, requisiti, punteggio, url
 			//
 				CartaOro co1 = new CartaOro(Color.RED, null, "vuoto", "vuoto", "piuma", "fungo fungo lupo","");
-				CartaOro co2 = new CartaOro(Color.RED, "vuoto", "bottiglia", null, "vuoto", "fungo fungo pianta","");
+				CartaOro co2 = new CartaOro(Color.RED, "vuoto", "bottiglia", null, "vuoto", "fungo fungo foglia","");
 				CartaOro co3 = new CartaOro(Color.RED, "pergamena", "vuoto", "vuoto", null, "fungo fungo farfalla","");
 				CartaOro co4 = new CartaOro(Color.RED, "vuoto", "vuoto", null, "vuoto", "fungo fungo fungo lupo","");
-				CartaOro co5 = new CartaOro(Color.RED, "vuoto", "vuoto", "vuoto", null, "fungo fungo fungo pianta","");
+				CartaOro co5 = new CartaOro(Color.RED, "vuoto", "vuoto", "vuoto", null, "fungo fungo fungo foglia","");
 				CartaOro co6 = new CartaOro(Color.RED, "vuoto", null, "vuoto", "vuoto", "fungo fungo fungo farfalla","");
 				CartaOro co7 = new CartaOro(Color.RED, "vuoto", null, "bottiglia", null, "fungo fungo fungo","");
 				CartaOro co8 = new CartaOro(Color.RED, "piuma", "vuoto", null, null, "fungo fungo fungo","");
 				CartaOro co9 = new CartaOro(Color.RED, null, "pergamena", null, "vuoto", "fungo fungo fungo","");
 				CartaOro co10 = new CartaOro(Color.RED, "vuoto", null, "vuoto", null, "fungo fungo fungo fungo fungo","");
-				CartaOro co11 = new CartaOro(Color.GREEN, "piuma", "vuoto", "vuoto", null, "pianta pianta farfalla","");
-				CartaOro co12 = new CartaOro(Color.GREEN, "vuoto", "pergamena", null, "vuoto", "pianta pianta fungo","");
-				CartaOro co13 = new CartaOro(Color.GREEN, "vuoto", null, "bottiglia", "vuoto", "pianta pianta lupo","");
-				CartaOro co14 = new CartaOro(Color.GREEN, null, "vuoto", "vuoto", "vuoto", "pianta pianta pianta farfalla","");
-				CartaOro co15 = new CartaOro(Color.GREEN, "vuoto", "vuoto", "vuoto", null, "pianta pianta pianta lupo","");
-				CartaOro co16 = new CartaOro(Color.GREEN, "vuoto", null, "vuoto", "vuoto", "pianta pianta pianta fungo","");
-				CartaOro co17 = new CartaOro(Color.GREEN, "vuoto", null, "piuma", null, "pianta pianta pianta ","");
-				CartaOro co18 = new CartaOro(Color.GREEN, "pergamena", "vuoto",  null, null, "pianta pianta pianta ","");
-				CartaOro co19 = new CartaOro(Color.GREEN, null, "bottiglia", null, "vuoto", "pianta pianta pianta ","");
-				CartaOro co20 = new CartaOro(Color.GREEN, "vuoto", "vuoto", null, null, "pianta pianta pianta pianta pianta", "");
-				CartaOro co21 = new CartaOro(Color.BLUE, "bottiglia", "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co22 = new CartaOro(Color.BLUE, null, "vuoto", "vuoto", null, "lupo lupo farfalla", "");
-				CartaOro co23 = new CartaOro(Color.BLUE, null, "vuoto", "vuoto", "pergamena", "lupo lupo pianta", "");
-				CartaOro co24 = new CartaOro(Color.BLUE, "vuoto", null, "piuma", "vuoto", "lupo lupo fungo", "");
-				CartaOro co25 = new CartaOro(Color.BLUE, "vuoto", "vuoto", null, "vuoto", "lupo lupo lupo farfalla", "");
-				CartaOro co26 = new CartaOro(Color.BLUE, "vuoto", null, "vuoto", "vuoto", "lupo lupo lupo fungo", "");
-				CartaOro co27 = new CartaOro(Color.BLUE, null, "vuoto", "vuoto", "vuoto", "lupo lupo lupo pianta", "");
-				CartaOro co28 = new CartaOro(Color.BLUE, "vuoto", null, "pergamena", null, "lupo lupo lupo", "");
-				CartaOro co29 = new CartaOro(Color.BLUE, "vuoto", "bottiglia", null, null, "lupo lupo lupo", "");
-				CartaOro co30 = new CartaOro(Color.BLUE, null, "vuoto", null, "piuma", "lupo lupo lupo", "");
-				CartaOro co31 = new CartaOro(Color.MAGENTA, null, "vuoto", null, "vuoto", "lupo lupo lupo lupo lupo", "");
-				CartaOro co32 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co33 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co34 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co35 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co36 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co37 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co38 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co39 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
-				CartaOro co40 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "piuma", "fungo fungo farfalla", "");
+				
+				CartaOro co11 = new CartaOro(Color.GREEN, "piuma", "vuoto", "vuoto", null, "foglia foglia farfalla","");
+				CartaOro co12 = new CartaOro(Color.GREEN, "vuoto", "pergamena", null, "vuoto", "foglia foglia fungo","");
+				CartaOro co13 = new CartaOro(Color.GREEN, "vuoto", null, "bottiglia", "vuoto", "foglia foglia lupo","");
+				CartaOro co14 = new CartaOro(Color.GREEN, null, "vuoto", "vuoto", "vuoto", "foglia foglia foglia farfalla","");
+				CartaOro co15 = new CartaOro(Color.GREEN, "vuoto", "vuoto", "vuoto", null, "foglia foglia foglia lupo","");
+				CartaOro co16 = new CartaOro(Color.GREEN, "vuoto", null, "vuoto", "vuoto", "foglia foglia foglia fungo","");
+				CartaOro co17 = new CartaOro(Color.GREEN, "vuoto", null, "piuma", null, "foglia foglia foglia","");
+				CartaOro co18 = new CartaOro(Color.GREEN, "pergamena", "vuoto",  null, null, "foglia foglia foglia","");
+				CartaOro co19 = new CartaOro(Color.GREEN, null, "bottiglia", null, "vuoto", "foglia foglia foglia","");
+				CartaOro co20 = new CartaOro(Color.GREEN, "vuoto", "vuoto", null, null, "foglia foglia foglia foglia foglia","");
+				
+				CartaOro co21 = new CartaOro(Color.BLUE, "bottiglia", "vuoto", "vuoto", null, "lupo lupo farfalla", "");
+				CartaOro co22 = new CartaOro(Color.BLUE, null, "vuoto", "vuoto", "pergamena", "lupo lupo foglia", "");
+				CartaOro co23 = new CartaOro(Color.BLUE, "vuoto", null, "piuma", "vuoto", "lupo lupo fungo", "");
+				CartaOro co24 = new CartaOro(Color.BLUE, "vuoto", "vuoto", null, "vuoto", "lupo lupo lupo farfalla", "");
+				CartaOro co25 = new CartaOro(Color.BLUE, "vuoto", null, "vuoto", "vuoto", "lupo lupo lupo fungo", "");
+				CartaOro co26 = new CartaOro(Color.BLUE, null, "vuoto", "vuoto", "vuoto", "lupo lupo lupo foglia", "");
+				CartaOro co27 = new CartaOro(Color.BLUE, "vuoto", null, "pergamena", null, "lupo lupo lupo", "");
+				CartaOro co28 = new CartaOro(Color.BLUE, "vuoto", "bottiglia", null, null, "lupo lupo lupo", "");
+				CartaOro co29 = new CartaOro(Color.BLUE, null, "vuoto", null, "piuma", "lupo lupo lupo", "");
+				CartaOro co30 = new CartaOro(Color.BLUE, null, "vuoto", null, "vuoto", "lupo lupo lupo lupo lupo", "");
+				
+				CartaOro co31 = new CartaOro(Color.MAGENTA, "vuoto", "piuma", null, "vuoto", "farfalla farfalla foglia", "");
+				CartaOro co32 = new CartaOro(Color.MAGENTA, "vuoto", null, "pergamena", "vuoto", "farfalla farfalla lupo", "");
+				CartaOro co33 = new CartaOro(Color.MAGENTA, null, "vuoto", "vuoto", "bottiglia", "farfalla farfalla fungo", "");
+				CartaOro co34 = new CartaOro(Color.MAGENTA, "vuoto", "vuoto", null, "vuoto", "farfalla farfalla farfalla lupo", "");
+				CartaOro co35 = new CartaOro(Color.MAGENTA, "vuoto", "vuoto", "vuoto", null, "farfalla farfalla farfalla foglia", "");
+				CartaOro co36 = new CartaOro(Color.MAGENTA, "vuoto", null, "vuoto", "vuoto", "farfalla farfalla farfalla fungo", "");
+				CartaOro co37 = new CartaOro(Color.MAGENTA, "bottiglia", null, "vuoto", null, "farfalla farfalla farfalla", "");
+				CartaOro co38 = new CartaOro(Color.MAGENTA, "vuoto", "pergamena", null, null, "farfalla farfalla farfalla", "");
+				CartaOro co39 = new CartaOro(Color.MAGENTA, null, null, "piuma", "vuoto", "farfalla farfalla farfalla", "");
+				CartaOro co40 = new CartaOro(Color.MAGENTA, "vuoto", "vuoto", null, null, "farfalla farfalla farfalla farfalla farfalla", "");
 			        
 			        
 			    CartaIniziale ci1 = new CartaIniziale("ci1","fungo","foglia","farfalla","lupo");
