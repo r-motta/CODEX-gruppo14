@@ -3,8 +3,7 @@ import java.awt.Color;
 import java.awt.Image;
 
 public class CartaOro extends Carta{
-	
-	private String nome;
+
 	private String requisiti;
 	
 	
@@ -57,27 +56,27 @@ public class CartaOro extends Carta{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
-						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						{	//messo al contrario perche' ad puo' essere null e (null equals) mi da eccezione null pointer
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-									contaLupi++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaLupi++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaLupi++;
+								
+								
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaLupi++;
 								
 								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -87,26 +86,26 @@ public class CartaOro extends Carta{
 						}
 						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-									contaLupi++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaLupi++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaLupi++;
+								
+								
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaLupi++;
 						
 							
@@ -140,16 +139,16 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+							if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+							if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+							if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+							if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaPiume++;
 						}
 					}
@@ -178,26 +177,26 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-									contaFoglie++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFoglie++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFoglie++;
+								
+								
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFoglie++;
 								
 								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -207,26 +206,26 @@ public class CartaOro extends Carta{
 						}
 						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-									contaFoglie++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFoglie++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFoglie++;
+								
+								
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFoglie++;
 								
 							
@@ -260,16 +259,16 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j]!=null)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaBottiglie++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaBottiglie++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaBottiglie++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaBottiglie++;
 						}
 					}
@@ -298,26 +297,26 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalle++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
-									contaFarfalle++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFarfalle++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFarfalle++;
+								
+								
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFarfalle++;
 								
 								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -327,26 +326,26 @@ public class CartaOro extends Carta{
 						}
 						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalle++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
-									contaFarfalle++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFarfalle++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFarfalle++;
+								
+								
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFarfalle++;
 								
 								
@@ -380,16 +379,16 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j]!=null)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+							if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaPergamene++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+							if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaPergamene++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+							if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaPergamene++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+							if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaPergamene++;
 						}
 					}
@@ -419,26 +418,26 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-									contaLupi++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+									contaLupi++;
+								
+								
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
 								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -448,26 +447,26 @@ public class CartaOro extends Carta{
 						}
 						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-									contaLupi++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+									contaLupi++;
+								
+								
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
 							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -517,26 +516,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								    contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-									contaFoglie++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+									contaFoglie++;
+								
+								
+								if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
 								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -546,26 +545,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								    contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-									contaFoglie++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFunghi++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+									contaFoglie++;
+								
+								
+								if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFunghi++;
+								else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
 								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -615,24 +614,24 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								 contaFunghi++;
-							 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFarfalle++;
 									
-							 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							 if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFunghi++;
-							 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFarfalle++;
 									
-							 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+							 if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFunghi++;
-							 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFarfalle++;
 									
-							 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							 if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFunghi++;
-							 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
 							 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -642,24 +641,24 @@ public class CartaOro extends Carta{
 						}
 						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								 contaFunghi++;
-							 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFarfalle++;
 									
-							 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+							 if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFunghi++;
-							 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFarfalle++;
 									
-							 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+							 if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFunghi++;
-							 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFarfalle++;
 									
-							 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+							 if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFunghi++;
-							 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+							 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 							 
 									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -705,18 +704,18 @@ public class CartaOro extends Carta{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 						    contaFunghi++;
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 							contaFunghi++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 							contaFunghi++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 							contaFunghi++;
 						
 						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -724,18 +723,18 @@ public class CartaOro extends Carta{
 					}
 					else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 					{
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 						    contaFunghi++;
 						
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 							contaFunghi++;
 						
 						
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 							contaFunghi++;
 						
 						
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 							contaFunghi++;
 						
 						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
@@ -783,18 +782,18 @@ public class CartaOro extends Carta{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 						    contaFunghi++;
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 							contaFunghi++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 							contaFunghi++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+						if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 							contaFunghi++;
 						
 						
@@ -803,18 +802,18 @@ public class CartaOro extends Carta{
 					}
 					else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 					{
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 						    contaFunghi++;
 						
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 							contaFunghi++;
 						
 						
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 							contaFunghi++;
 						
 						
-						if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
+						if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 							contaFunghi++;
 						
 						
@@ -864,26 +863,26 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+							if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFoglia++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFoglia++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
-									contaFarfalla++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-									contaFoglia++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFoglia++;
-								else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+									contaFarfalla++;
+								
+								
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFoglia++;
+								else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 								
 								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -893,26 +892,26 @@ public class CartaOro extends Carta{
 						}
 						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 						{
-							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+							if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaFoglia++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFoglia++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
-									contaFarfalla++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-									contaFoglia++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaFoglia++;
-								else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+									contaFarfalla++;
+								
+								
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFoglia++;
+								else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 						
 							
@@ -946,16 +945,16 @@ public class CartaOro extends Carta{
 					{
 						if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+							if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaPiume++;
 						}
 					}
@@ -986,26 +985,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFungo++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-										contaFungo++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-										contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFungo++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFungo++;
+									
+									
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFoglia++;
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFungo++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -1015,26 +1014,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFungo++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-										contaFungo++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-										contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFungo++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFungo++;
+									
+									
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFoglia++;
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFungo++;
 							
 								
@@ -1068,16 +1067,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+								if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPergamene++;
 							}
 						}
@@ -1106,26 +1105,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-										contaLupi++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-										contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFoglia++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaLupi++;
+									
+									
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFoglia++;
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -1135,26 +1134,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-										contaLupi++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-										contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFoglia++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaLupi++;
+									
+									
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFoglia++;
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 								
@@ -1188,16 +1187,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+								if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaBottiglie++;
 							}
 						}
@@ -1227,24 +1226,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 											contaFarfalle++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -1254,24 +1253,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 											contaFarfalle++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -1319,24 +1318,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -1346,24 +1345,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -1410,24 +1409,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								 if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFoglia++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -1437,24 +1436,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								 if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFoglia++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contafunghi++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -1501,18 +1500,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFoglia++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFoglia++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFoglia++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
@@ -1520,18 +1519,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglia++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFoglia++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFoglia++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+									if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFoglia++;
 							
 								
@@ -1563,16 +1562,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPiume++;
 							}
 						}
@@ -1600,18 +1599,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
-									contaFoglie++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFoglie++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFoglie++;
+								
+								
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFoglie++;
 								
 								
@@ -1620,18 +1619,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFoglie++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
-									contaFoglie++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFoglie++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFoglie++;
+								
+								
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFoglie++;
 								
 								
@@ -1683,26 +1682,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+									else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
-										contaFarfalle++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
-										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+									else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+									else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFarfalle++;
+									
+									
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaLupi++;
+									else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Lupo"))
@@ -1712,26 +1711,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+									else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
-										contaFarfalle++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
-										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+									else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+									else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFarfalle++;
+									
+									
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaLupi++;
+									else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFarfalle++;
 									
 								
@@ -1765,16 +1764,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+								if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaBottiglie++;
 							}
 						}
@@ -1803,26 +1802,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-										contaFoglie++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
-										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFoglie++;
+									
+									
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaLupi++;
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Lupo"))
@@ -1832,26 +1831,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-										contaFoglie++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
-										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFoglie++;
+									
+									
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaLupi++;
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 							
 								
@@ -1885,16 +1884,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+								if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPergamene++;
 							}
 						}
@@ -1923,26 +1922,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-										contaFunghi++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
-										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFunghi++;
+									
+									
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaLupi++;
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
@@ -1952,26 +1951,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-										contaFunghi++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
-										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFunghi++;
+									
+									
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaLupi++;
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 							
 								
@@ -2005,16 +2004,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPiume++;
 							}
 						}
@@ -2043,24 +2042,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 											contaFarfalle++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
@@ -2070,24 +2069,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										 contaFarfalle++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								 else if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 											contaFarfalle++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -2134,24 +2133,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
@@ -2161,24 +2160,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -2225,24 +2224,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								 if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaLupi++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
@@ -2252,24 +2251,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								 if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaLupi++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -2315,18 +2314,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaLupi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Lupo"))
@@ -2334,18 +2333,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaLupi++;
 							
 								
@@ -2377,16 +2376,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+								if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPergamene++;
 							}
 						}
@@ -2414,18 +2413,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaLupi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Lupo"))
@@ -2433,18 +2432,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaLupi++;
 							
 								
@@ -2476,16 +2475,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+								if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaBottiglie++;
 							}
 						}
@@ -2513,18 +2512,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaLupi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Lupo"))
@@ -2532,18 +2531,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Lupo"))
+									if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaLupi++;
 							
 								
@@ -2575,16 +2574,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPiume++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPiume++;
 							}
 						}
@@ -2612,18 +2611,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
-									contaLupi++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaLupi++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaLupi++;
+								
+								
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaLupi++;
 								
 								
@@ -2632,18 +2631,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaLupi++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
-									contaLupi++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaLupi++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaLupi++;
+								
+								
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaLupi++;
 								
 								
@@ -2693,26 +2692,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-										contaFoglie++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFoglie++;
+									
+									
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFarfalla++;
+									else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
@@ -2722,26 +2721,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-										contaFoglie++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFoglie++;
+									
+									
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFarfalla++;
+									else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFoglie++;
 							
 								
@@ -2813,26 +2812,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-										contaLupi++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaLupi++;
+									
+									
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFarfalla++;
+									else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
@@ -2842,26 +2841,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-										contaLupi++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaLupi++;
+									
+									
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFarfalla++;
+									else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaLupi++;
 							
 								
@@ -2895,16 +2894,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Pergamena"))
+								if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPergamene++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPergamene++;
 							}
 						}
@@ -2934,26 +2933,26 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-										contaFunghi++;
-									
-									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
-									else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFunghi++;
+									
+									
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFarfalla++;
+									else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
@@ -2963,26 +2962,26 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-										contaFunghi++;
-									
-									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
-									else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+										contaFunghi++;
+									
+									
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+										contaFarfalla++;
+									else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 										contaFunghi++;
 							
 								
@@ -3054,24 +3053,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
@@ -3081,24 +3080,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
+								 else if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaLupi++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -3146,24 +3145,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
@@ -3173,24 +3172,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
+								 else if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFoglie++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -3238,24 +3237,24 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								 if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFarfalla++;
-								 else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
 								 if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
@@ -3265,24 +3264,24 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 										
-								 if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								 if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									 contaFarfalla++;
-								 else if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
+								 else if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									 contaFunghi++;
 								 
 										if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
@@ -3328,18 +3327,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFarfalla++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Farfalla"))
@@ -3347,18 +3346,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFarfalla++;
 							
 								
@@ -3390,16 +3389,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Bottiglia"))
+								if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaBottiglie++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Bottiglia"))
+									if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaBottiglie++;
 							}
 						}
@@ -3428,18 +3427,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFarfalla++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Farfalla"))
@@ -3447,18 +3446,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFarfalla++;
 							
 								
@@ -3490,16 +3489,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Pergamena"))
+								if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPergamena++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPergamena++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPergamena++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Pergamena"))
+									if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPergamena++;
 							}
 						}
@@ -3527,18 +3526,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
 									
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Farfalla"))
+									if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFarfalla++;
 									
 									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("Farfalla"))
@@ -3546,18 +3545,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalla++;
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaFarfalla++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaFarfalla++;
 									
 									
-									if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Farfalla"))
+									if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaFarfalla++;
 							
 								
@@ -3589,16 +3588,16 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("Piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPiuma++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("Piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 										contaPiuma++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("Piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 										contaPiuma++;
 									
-									if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("Piuma"))
+									if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 										contaPiuma++;
 							}
 						}
@@ -3626,18 +3625,18 @@ public class CartaOro extends Carta{
 						{
 							if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalle++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
-									contaFarfalle++;
-								
-								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFarfalle++;
 								
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFarfalle++;
+								
+								
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFarfalle++;
 								
 								
@@ -3646,18 +3645,18 @@ public class CartaOro extends Carta{
 							}
 							else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
 							{
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaFarfalle++;
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
-									contaFarfalle++;
-								
-								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaFarfalle++;
 								
 								
-								if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFarfalle++;
+								
+								
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaFarfalle++;
 								
 								
@@ -3691,6 +3690,8 @@ public class CartaOro extends Carta{
 					
 				return false;	
 		     }
+			
+			return false;
 			
   }
 	

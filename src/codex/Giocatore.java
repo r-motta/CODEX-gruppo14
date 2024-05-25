@@ -399,13 +399,13 @@ public class Giocatore {
     	
     	
     	//controllo se c'e' carta in alto a destra rispetto a dove posiziono io la carta. se c'e', angolo basso sinitro = "vuoto"
-    	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1] != null) {
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)] != null) {
     		
-    		if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1] instanceof Carta)
-    			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1]).setBs("vuoto");
+    		if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)] instanceof Carta)
+    			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)]).setBs("vuoto");
     		
-    		else if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1] instanceof CartaIniziale)	
-    			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1]).setBs("vuoto");
+    		else if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)] instanceof CartaIniziale)	
+    			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()-1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)]).setBs("vuoto");
     		
     	}	
     	
@@ -426,18 +426,18 @@ public class Giocatore {
     		if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()-1)] instanceof Carta)
     			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()-1)]).setAd("vuoto");
     		else if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()-1)] instanceof CartaIniziale)
-    			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()-1]).setAd("vuoto");
+    			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()-1)]).setAd("vuoto");
         	
     	}
         	
     	//controllo se c'e' carta in basso a destra rispetto a dove posiziono io la carta. se c'e', angolo alto sinistro = "vuoto"
     	
-    	if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1] != null)
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)] != null)
     	{
-    		if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1] instanceof Carta)
-    			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1]).setAs("vuoto");
-    		else if(t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1] instanceof CartaIniziale)
-    			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1][t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1]).setAs("vuoto");
+    		if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)] instanceof Carta)
+    			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)]).setAs("vuoto");
+    		else if(t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)] instanceof CartaIniziale)
+    			((CartaIniziale) t.getGamers()[i].getAreaDiGioco().getArea()[(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getX()+1)][(t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).get(sceltaPosizioneCarta).getY()+1)]).setAs("vuoto");
         	
     	}
     	
