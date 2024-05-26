@@ -17,11 +17,11 @@ public class Tavolo{
 				gamers = new Giocatore[Main.numGiocatori];
 
 	
-				CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "");
-				CartaRisorsa cr2 = new CartaRisorsa(Color.RED, "fungo", "fungo", null , "vuoto", 0, "");
-				CartaRisorsa cr3 = new CartaRisorsa(Color.RED, "vuoto", null, "fungo", "fungo", 0, "");
-				CartaRisorsa cr4 = new CartaRisorsa(Color.RED, null, "fungo", "vuoto", "fungo", 0, "");
-				CartaRisorsa cr5 = new CartaRisorsa(Color.RED, null, "piuma", "foglia", "fungo", 0, "");
+				CartaRisorsa cr1 = new CartaRisorsa(Color.RED, "fungo", "vuoto", "fungo", null, 0, "immagini/carteRisorsa/cr1.jpg");
+				CartaRisorsa cr2 = new CartaRisorsa(Color.RED, "fungo", "fungo", null , "vuoto", 0, "immagini/carteRisorsa/cr2.jpg");
+				CartaRisorsa cr3 = new CartaRisorsa(Color.RED, "vuoto", null, "fungo", "fungo", 0, "immagini/carteRisorsa/cr3.jpg");
+				CartaRisorsa cr4 = new CartaRisorsa(Color.RED, null, "fungo", "vuoto", "fungo", 0, "immagini/carteRisorsa/cr4.jpg");
+				CartaRisorsa cr5 = new CartaRisorsa(Color.RED, null, "piuma", "foglia", "fungo", 0, "immagini/carteRisorsa/cr5.jpg");
 				CartaRisorsa cr6 = new CartaRisorsa(Color.RED, "bottiglia", "fungo", null, "lupo", 0, "");
 				CartaRisorsa cr7 = new CartaRisorsa(Color.RED, "fungo", "farfalla", "pergamena", null, 0, "");
 				CartaRisorsa cr8 = new CartaRisorsa(Color.RED, "vuoto", "fungo", "vuoto", null, 1, "");

@@ -2,7 +2,16 @@ package codex;
 
 
 import java.util.InputMismatchException;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 public class Giocatore {
 
@@ -885,6 +894,31 @@ public class Giocatore {
 		System.out.println();
 		System.out.println();
 	}
+	
+	
+
+	    public static void mostraCartaDaJPEG(Carta c) {
+	        
+	        JFrame frame = new JFrame("Visualizzazione Carta");
+	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+	        try {
+	            
+	            Image img = ImageIO.read(new File(c.getPercorsoImmagine()));
+
+	           
+	            JLabel label = new JLabel(new ImageIcon(img));
+
+	            
+	            frame.getContentPane().add(label, BorderLayout.CENTER);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        
+	        frame.pack();
+	        frame.setVisible(true);
+	    }
 
 	
 }
