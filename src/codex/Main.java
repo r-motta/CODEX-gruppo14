@@ -56,7 +56,7 @@ public class Main {
 		{
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
-				if(t.getGamers()[i].getPunti()<20)
+				if(t.getGamers()[i].getPunti()<=0)
 				{
 					
 					t.getGamers()[i].posizionaCarta(t, i);

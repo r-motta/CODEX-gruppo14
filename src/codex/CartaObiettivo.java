@@ -410,26 +410,44 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("fungo"))
-						contaFunghi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("fungo"))
-							contaFunghi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("fungo"))
-							contaFunghi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("fungo"))
-							contaFunghi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
-							contaFunghi++;
-						
-						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+							    contaFunghi++;
+							
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+								contaFunghi++;
+							
+							
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+								contaFunghi++;
+							
+							
+							if("fungo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+								contaFunghi++;
+							
+							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("fungo"))
+								contaFunghi++;
+						}
+						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+							    contaFunghi++;
+							
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+								contaFunghi++;
+							
+							
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+								contaFunghi++;
+							
+							
+							if("fungo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+								contaFunghi++;
+							
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
-								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
 								
 								for(int k=0;k<simboli.length;k++)
 								{
@@ -470,28 +488,44 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("foglia"))
-						contaFoglie++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("foglia"))
-							contaFoglie++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("foglia"))
-							contaFoglie++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("foglia"))
-							contaFoglie++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
-							contaFoglie++;
-						
-						//simbolo retro della carta iniziale è tipo: foglia,foglia,lupo quindi vado a spezzettare parola grazie alla virgola e conto se ci sono foglie
-						
-						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+								contaFoglie++;
+								
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+									contaFoglie++;
+								
+								
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFoglie++;
+								
+								
+								if("foglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFoglie++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("foglia"))
+									contaFoglie++;
+						}
+						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+								contaFoglie++;
+								
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+									contaFoglie++;
+								
+								
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFoglie++;
+								
+								
+								if("foglia".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFoglie++;
+								
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
-								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
 								
 								for(int k=0;k<simboli.length;k++)
 								{
@@ -532,26 +566,44 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("lupo"))
-						contaLupi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("lupo"))
-							contaLupi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("lupo"))
-							contaLupi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("lupo"))
-							contaLupi++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
-							contaLupi++;
-						
-						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+								contaLupi++;
+								
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+									contaLupi++;
+								
+								
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaLupi++;
+								
+								
+								if("lupo".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaLupi++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("lupo"))
+									contaLupi++;
+						}
+						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+								contaLupi++;
+								
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+									contaLupi++;
+								
+								
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaLupi++;
+								
+								
+								if("lupo".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaLupi++;
+								
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
-								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
 								
 								for(int k=0;k<simboli.length;k++)
 								{
@@ -592,26 +644,44 @@ public class CartaObiettivo{
 				{
 					if(g.getAreaDiGioco().getArea()[i][j]!=null)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("farfalla"))
-						    contaFarfalle++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("farfalla"))
-							contaFarfalle++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("farfalla"))
-							contaFarfalle++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("farfalla"))
-							contaFarfalle++;
-						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
-							contaFarfalle++;
-						
-						if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
+							if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+								contaFarfalle++;
+								
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+									contaFarfalle++;
+								
+								
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFarfalle++;
+								
+								
+								if("farfalla".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFarfalle++;
+								
+								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("farfalla"))
+									contaFarfalle++;
+						}
+						else if(g.getAreaDiGioco().getArea()[i][j] instanceof CartaIniziale)
+						{
+							if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAd()))
+								contaFarfalle++;
+								
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getAs()))
+									contaFarfalle++;
+								
+								
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBd()))
+									contaFarfalle++;
+								
+								
+								if("farfalla".equals(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getBs()))
+									contaFarfalle++;
+								
+							if(((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().equals("vuoto") == false)
 							{
-								String[] simboli = ((Carta) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
+								String[] simboli = ((CartaIniziale) g.getAreaDiGioco().getArea()[i][j]).getSimboloRetro().split(",");
 								
 								for(int k=0;k<simboli.length;k++)
 								{

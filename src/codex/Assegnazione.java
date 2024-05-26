@@ -263,7 +263,7 @@ public class Assegnazione {
 				System.out.println();
 				
 				t.getMazzoRisorse().remove(0);
-				t.getMazzoRisorse().remove(1);
+				t.getMazzoRisorse().remove(0);
 				
 				
 				

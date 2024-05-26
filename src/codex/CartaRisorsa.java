@@ -13,7 +13,7 @@ public class CartaRisorsa extends Carta{
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString()+"\n"+"Punti: "+puntoVittoria+"\n";
 	}
 
 	public int getPuntoVittoria() {

@@ -39,7 +39,7 @@ public class CartaOro extends Carta{
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() +"\n"+"Requisiti: "+requisiti+"\n";
 	}
 	
 	public boolean controlloRequisiti(CartaOro c, Giocatore g)
@@ -155,7 +155,8 @@ public class CartaOro extends Carta{
 					
 				}
 				
-				g.incrementaPunti(contaPiume);
+				//+1 perché conta piume che ci sono gia' giu' prima di posizionare questa carta (ogni carta di questo tipo ha gia' un simbolo su essa)
+				g.incrementaPunti(contaPiume+1);
 				
 				return true;
 			}
@@ -275,7 +276,7 @@ public class CartaOro extends Carta{
 					
 				}
 				
-				g.incrementaPunti(contaBottiglie);
+				g.incrementaPunti(contaBottiglie+1);
 				
 				return true;
 			}
@@ -395,7 +396,7 @@ public class CartaOro extends Carta{
 					
 				}
 				
-				g.incrementaPunti(contaPergamene);
+				g.incrementaPunti(contaPergamene+1);
 				
 				return true;
 			}
@@ -961,7 +962,7 @@ public class CartaOro extends Carta{
 					
 				}
 				
-				g.incrementaPunti(contaPiume);
+				g.incrementaPunti(contaPiume+1);
 				
 				return true;
 			}
@@ -1083,7 +1084,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaPergamene);
+					g.incrementaPunti(contaPergamene+1);
 					
 					return true;
 				}
@@ -1203,7 +1204,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaBottiglie);
+					g.incrementaPunti(contaBottiglie+1);
 					
 					return true;
 				}
@@ -1780,7 +1781,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaBottiglie);
+					g.incrementaPunti(contaBottiglie+1);
 					
 					return true;
 				}
@@ -1900,7 +1901,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaPergamene);
+					g.incrementaPunti(contaPergamene+1);
 					
 					return true;
 				}
@@ -2020,7 +2021,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaPiume);
+					g.incrementaPunti(contaPiume+1);
 					
 					return true;
 				}
@@ -2790,7 +2791,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaPiume);
+					g.incrementaPunti(contaPiume+1);
 					
 					return true;
 				}
@@ -2910,7 +2911,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaPergamene);
+					g.incrementaPunti(contaPergamene+1);
 					
 					return true;
 				}
@@ -3031,7 +3032,7 @@ public class CartaOro extends Carta{
 						
 					}
 					
-					g.incrementaPunti(contaBottiglie);
+					g.incrementaPunti(contaBottiglie+1);
 					
 					return true;
 				}
