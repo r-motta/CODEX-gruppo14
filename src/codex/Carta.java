@@ -4,8 +4,8 @@ import java.awt.Color;
 public abstract class Carta {
 	
     private Color colore;
-    private String as; // sui vari angoli ci sarà una parola/stringa corrispondente al simbolo 
-    private String ad; // fungo, lupo, foglia, farfalla, pergamena, piuma, bottiglia
+    private String as; 
+    private String ad; 
     private String bs;
     private String bd;
     private String percorsoImmagine;
