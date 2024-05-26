@@ -1,27 +1,28 @@
 package codex;
-import java.awt.Color;
-import java.awt.Image;
+import java.awt.Color;	
+
 
 public class CartaOro extends Carta{
 
 	private String requisiti;
+	private String punti;
 	
 	
-	
-	public CartaOro(Color colore, String asx, String adx, String bsx, String bdx, String req, String percorsoImmagine)
+	public CartaOro(Color colore, String asx, String adx, String bsx, String bdx, String req, String p, String percorsoImmagine)
 	{
 		super(colore, asx, adx, bsx, bdx, percorsoImmagine);
 		
-		requisiti = req; //una stringa tipo: farfalla farfalla foglia
-		// quando la vado ad usare, spezzetto questa stringa tra i vari spazi e conto le parole 
-		// (2 farfalle e 1 foglia) e faccio controllo  
-		
-		//i punti faccio funzione controllo per ogni carta e non uno generale nel costruttore
-		
+		requisiti = req; 
+		punti = p;
 	}
 	
 	public String getRequisiti() {
 		return requisiti;
+	}
+	
+	public String getPunti()
+	{
+		return punti;
 	}
 	
 	
@@ -29,7 +30,7 @@ public class CartaOro extends Carta{
 	
 	public static CartaOro clonaCarta(CartaOro c)
 	{
-		CartaOro temp = new CartaOro(c.getColore(), c.getAs(), c.getAd(), c.getBs(), c.getBd(), c.getRequisiti(), c.getPercorsoImmagine());
+		CartaOro temp = new CartaOro(c.getColore(), c.getAs(), c.getAd(), c.getBs(), c.getBd(), c.getRequisiti(), c.getPunti() ,c.getPercorsoImmagine());
 		
 		return temp;
 		
@@ -39,7 +40,7 @@ public class CartaOro extends Carta{
 	
 	@Override
 	public String toString() {
-		return super.toString() +"\n"+"Requisiti: "+requisiti+"\n";
+		return super.toString() +"\n"+"Requisiti: "+requisiti+"\n"+punti+"\n";
 	}
 	
 	public boolean controlloRequisiti(CartaOro c, Giocatore g)

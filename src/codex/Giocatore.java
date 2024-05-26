@@ -1,6 +1,6 @@
 package codex;
 
-import java.util.Collections;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -75,7 +75,17 @@ public class Giocatore {
 					System.out.println("[3] prima carta oro ");
 					System.out.println("[4] seconda carta oro ");
 					System.out.print("Risposta: ");
-					scelta= sc.nextInt();
+					try
+					{
+						scelta= sc.nextInt();
+					}
+					catch(InputMismatchException e)
+					{
+						System.out.println("Errore, inserire un numero tra 1 e 4 ");
+						System.out.println();
+						sc.nextLine();
+					}
+					
 				}while(scelta<1 || scelta>4);
 				
 				
@@ -169,7 +179,7 @@ public class Giocatore {
         for (int j = 0; j < AreaDiGioco.maxColonne; j++) {
             System.out.printf("%3d", j);
         }
-        System.out.println(); // Nuova linea
+        System.out.println();
 
         for (int i = 0; i < AreaDiGioco.maxRighe; i++) {
             // Stampa l'indice della riga
@@ -182,14 +192,14 @@ public class Giocatore {
                     System.out.print("  O");
                 }
             }
-            System.out.println(); // Nuova linea alla fine della riga
+            System.out.println(); 
         }
     }
     
     public void posizionaCarta(Tavolo t, int i)
     {
     	boolean validInput = false;
-    	Scanner sc = new Scanner(System.in);
+    	
     	int sceltaCartaInMano = 0;
     	boolean haScelto = false;
     	
@@ -201,17 +211,17 @@ public class Giocatore {
     	
     	System.out.println(t.getGamers()[i].getNickname()+", quale carta vuoi posizionare? ");
     	System.out.println();
-    	System.out.println("__________ CARTA [0] __________ ");
+    	System.out.println("__________ CARTA [0] __________________ ");
     	System.out.println(t.getGamers()[i].getCarteInMano()[0].toString());
-    	System.out.println("_______________________________|");
+    	System.out.println("_______________________________________|");
     	System.out.println();
-    	System.out.println("__________ CARTA [1] __________ ");
+    	System.out.println("__________ CARTA [1] __________________ ");
     	System.out.println(t.getGamers()[i].getCarteInMano()[1].toString());
-    	System.out.println("_______________________________|");
+    	System.out.println("_______________________________________|");
     	System.out.println();
-    	System.out.println("__________ CARTA [2] __________ ");
+    	System.out.println("__________ CARTA [2] __________________ ");
     	System.out.println(t.getGamers()[i].getCarteInMano()[2].toString());
-    	System.out.println("_______________________________|");
+    	System.out.println("_______________________________________|");
     	System.out.println();
     	
     	
@@ -399,10 +409,12 @@ public class Giocatore {
     	
     	//mettere angolo = "vuoto" alla/e carta/e prima
     	
-    	
+    	int contaAngoliCoperti=0;
     	
     	//controllo se c'e' carta in alto a destra rispetto a dove posiziono io la carta. se c'e', angolo basso sinitro = "vuoto"
-    	if(t.getGamers()[i].getAreaDiGioco().getArea()[xPosizione-1][(yPosizione+1)] != null) {
+    	if(t.getGamers()[i].getAreaDiGioco().getArea()[xPosizione-1][(yPosizione+1)] != null)
+    	{
+    		contaAngoliCoperti++;
     		
     		if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione-1)][(yPosizione+1)] instanceof Carta)
     			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione-1)][(yPosizione+1)]).setBs("vuoto");
@@ -412,10 +424,14 @@ public class Giocatore {
     		
     	}	
     	
+    	
+    	
     	//controllo se c'e' carta in alto a sinistra rispetto a dove posiziono io la carta. se c'e', angolo basso destro = "vuoto"
     	
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione-1)][(yPosizione-1)] != null)
     	{	
+    		contaAngoliCoperti++;
+    		
     		if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione-1)][(yPosizione-1)] instanceof Carta)
     			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione-1)][(yPosizione-1)]).setBd("vuoto");
     		else if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione-1)][(yPosizione-1)] instanceof CartaIniziale)
@@ -426,6 +442,8 @@ public class Giocatore {
     	
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione-1)] != null)
     	{
+    		contaAngoliCoperti++;
+    		
     		if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione-1)] instanceof Carta)
     			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione-1)]).setAd("vuoto");
     		else if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione-1)] instanceof CartaIniziale)
@@ -437,6 +455,8 @@ public class Giocatore {
     	
     	if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(xPosizione+1)] != null)
     	{
+    		contaAngoliCoperti++;
+    		
     		if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione+1)] instanceof Carta)
     			((Carta) t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione+1)]).setAs("vuoto");
     		else if(t.getGamers()[i].getAreaDiGioco().getArea()[(xPosizione+1)][(yPosizione+1)] instanceof CartaIniziale)
@@ -458,7 +478,24 @@ public class Giocatore {
     	//stampa matrice dopo posizionamento
     	t.getGamers()[i].stampaAreaDiGioco(t.getGamers()[i]);
     	
+    	//controllo carte oro che prendono punti per ogni angolo che coprono
+    	
+    	String[] carteOroPuntiPerAngoli = {"fungo fungo fungo lupo", "fungo fungo fungo foglia", "fungo fungo fungo farfalla", "foglia foglia foglia farfalla", "foglia foglia foglia lupo", "foglia foglia foglia fungo", "lupo lupo lupo farfalla", "lupo lupo lupo fungo", "lupo lupo lupo foglia","farfalla farfalla farfalla lupo","farfalla farfalla farfalla foglia", "farfalla farfalla farfalla fungo"};
+    	
+    	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaOro)
+    	{
+    		for(int k=0;k<carteOroPuntiPerAngoli.length;k++)
+    		{
+    			if(((CartaOro)t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]).getRequisiti().equals(carteOroPuntiPerAngoli[k]))
+    			{
+    				t.getGamers()[i].incrementaPunti(2*contaAngoliCoperti);
+    			}
+    		}
+    	}
+    	
     	t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] = null;
+    	
+    	contaAngoliCoperti = 0;
     	
     	System.out.println();
     	
@@ -544,17 +581,17 @@ public class Giocatore {
 			{
 				case 1:
 				{
-					System.out.println("__________ CARTA [0] __________ ");
+					System.out.println("__________ CARTA [0] __________________ ");
 			    	System.out.println(t.getGamers()[i].getCarteInMano()[0].toString());
-			    	System.out.println("_______________________________|");
+			    	System.out.println("_______________________________________|");
 			    	System.out.println();
-			    	System.out.println("__________ CARTA [1] __________ ");
+			    	System.out.println("__________ CARTA [1] __________________ ");
 			    	System.out.println(t.getGamers()[i].getCarteInMano()[1].toString());
-			    	System.out.println("_______________________________|");
+			    	System.out.println("_______________________________________|");
 			    	System.out.println();
-			    	System.out.println("__________ CARTA [2] __________ ");
+			    	System.out.println("__________ CARTA [2] __________________ ");
 			    	System.out.println(t.getGamers()[i].getCarteInMano()[2].toString());
-			    	System.out.println("_______________________________|");
+			    	System.out.println("_______________________________________|");
 			    	System.out.println();
 						
 						break;
@@ -575,15 +612,15 @@ public class Giocatore {
 					System.out.println("____________ Questa e' la prima carta obiettivo comune ____________________");
 					System.out.println();
 					System.out.println(Main.cobPubblica1.toString());
-					System.out.println("_____________________________________________________________________|");					
+					System.out.println("___________________________________________________________________________|");					
 
 					System.out.println();
 					
-					System.out.println("____________ Questa e' la seconda carta obiettivo comune ____________________");
+					System.out.println("____________ Questa e' la seconda carta obiettivo comune __________________");
 					System.out.println();
 					System.out.println("Questa e' la seconda carta obiettivo comune: ");
 					System.out.println(Main.cobPubblica2.toString());
-					System.out.println("_____________________________________________________________________|");	
+					System.out.println("___________________________________________________________________________|");	
 					System.out.println();
 					
 					break;

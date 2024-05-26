@@ -1,10 +1,5 @@
 package codex;
-import java.awt.Color;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import java.awt.Color;	
 
 public abstract class Carta {
 	
@@ -13,9 +8,7 @@ public abstract class Carta {
     private String ad; // fungo, lupo, foglia, farfalla, pergamena, piuma, bottiglia
     private String bs;
     private String bd;
-    private Image image;
     private String percorsoImmagine;
-    private String immRetro;
     private String simboloRetro;
 
     public Carta(Color colore, String asx, String adx, String bsx, String bdx, String percorsoImmagine)
@@ -27,14 +20,7 @@ public abstract class Carta {
         this.bd = bdx;
         this.simboloRetro = "vuoto";
         this.percorsoImmagine = percorsoImmagine;
-    }
-
-    public Image caricaImmagine() throws IOException {
-        this.image = ImageIO.read(new File(percorsoImmagine));
-
-        return image;
-    }
-    
+    }    
     
 
     public Carta useRetro(Carta c)

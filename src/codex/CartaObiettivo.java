@@ -1,6 +1,6 @@
 package codex;
 
-import java.awt.Color;
+import java.awt.Color;	
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,8 +8,6 @@ public class CartaObiettivo{
 	
 	private String requisiti;
 	private int punti;
-	
-	private Set<Cella> posCartaVerticale = new HashSet<Cella>();
 	
 	public CartaObiettivo(String req, int punt)
 	{
@@ -44,28 +42,31 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
 					{
-							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.RED))
-							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
+						if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+						{
+								if(g.getAreaDiGioco().getArea()[i+1][j-1] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.RED))
 								{
-									
-									if(posDiagDxRossa.add(new Cella(i,j))==true)
+									if(g.getAreaDiGioco().getArea()[i+2][j-2] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.RED))
 									{
-										if(posDiagDxRossa.add(new Cella(i+1,j-1))==true)
+										
+										if(posDiagDxRossa.add(new Cella(i,j))==true)
 										{
-											if(posDiagDxRossa.add(new Cella(i+2,j-2))==true)
+											if(posDiagDxRossa.add(new Cella(i+1,j-1))==true)
 											{
-												conta++;
-												g.incrementaPunti(2);
+												if(posDiagDxRossa.add(new Cella(i+2,j-2))==true)
+												{
+													conta++;
+													g.incrementaPunti(2);
+												}
 											}
 										}
+										
+										
 									}
-									
-									
 								}
-							}
+						}
 					}
 						
 				}
@@ -88,11 +89,13 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
 					{
-							if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.GREEN))
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j+1] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.GREEN))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.GREEN))
+								if(g.getAreaDiGioco().getArea()[i+2][j+2] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.GREEN))
 								{
 									
 									if(posDiagSxVerde.add(new Cella(i,j))==true)
@@ -111,7 +114,7 @@ public class CartaObiettivo{
 								}
 							}
 					}
-						
+					}
 				}
 			}
 			if(conta==0)
@@ -132,11 +135,13 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
 					{
-							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j-1] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
+								if(g.getAreaDiGioco().getArea()[i+2][j-2] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j-2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-2]).getColore().equals(Color.BLUE))
 								{
 									
 									if(posDiagDxBlu.add(new Cella(i,j))==true)
@@ -155,7 +160,7 @@ public class CartaObiettivo{
 								}
 							}
 					}
-						
+					}	
 				}
 			}
 			if(conta==0)
@@ -177,11 +182,13 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
 					{
-							if(g.getAreaDiGioco().getArea()[i+1][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.GREEN))
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.GREEN))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.GREEN))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.MAGENTA))
+								if(g.getAreaDiGioco().getArea()[i+2][j-1] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.MAGENTA))
 								{
 									
 									if(posTorreVerdeMagenta .add(new Cella(i,j))==true)
@@ -199,6 +206,7 @@ public class CartaObiettivo{
 									
 								}
 							}
+					}
 					}
 						
 				}
@@ -222,11 +230,13 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
 					{
-							if(g.getAreaDiGioco().getArea()[i+1][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.RED))
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j]).getColore().equals(Color.RED))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.BLUE))
+								if(g.getAreaDiGioco().getArea()[i+2][j+1] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.BLUE))
 								{
 									
 									if(posTorreRossadxBlu.add(new Cella(i,j))==true)
@@ -244,6 +254,7 @@ public class CartaObiettivo{
 									
 								}
 							}
+					}
 					}
 						
 				}
@@ -271,11 +282,13 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.MAGENTA))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
 					{
-							if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.MAGENTA))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j+1] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.MAGENTA))
+								if(g.getAreaDiGioco().getArea()[i+2][j+2] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j+2]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+2]).getColore().equals(Color.MAGENTA))
 								{
 									
 									if(posDiagSxMagenta.add(new Cella(i,j))==true)
@@ -293,6 +306,7 @@ public class CartaObiettivo{
 									
 								}
 							}
+					}
 					}
 						
 				}
@@ -316,11 +330,13 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
-				
-							if(g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
+					if(g.getAreaDiGioco().getArea()[i][j] != null)
+					{
+					if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.RED))
+					{
+							if(g.getAreaDiGioco().getArea()[i+1][j-1] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j-1]).getColore().equals(Color.BLUE))
 							{
-								if(g.getAreaDiGioco().getArea()[i+2][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.BLUE))
+								if(g.getAreaDiGioco().getArea()[i+2][j-1] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j-1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j-1]).getColore().equals(Color.BLUE))
 								{
 									
 									if(posTorreBluDxRossa.add(new Cella(i,j))==true)
@@ -339,8 +355,10 @@ public class CartaObiettivo{
 								}
 							}
 					}
+					}
 						
 				}
+			}
 			
 			if(conta==0)
 				System.out.println("Verticale di due carte blu e diagonale in alto a dx di una carta rossa NON completata! ");
@@ -364,11 +382,13 @@ public class CartaObiettivo{
 		{
 			for(int j=0; j<AreaDiGioco.maxColonne; j++)
 			{
-				if(g.getAreaDiGioco().getArea()[i][j]!=null && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
+				if(g.getAreaDiGioco().getArea()[i][j] != null)
 				{
-						if(g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
+				if(g.getAreaDiGioco().getArea()[i][j] instanceof Carta && ((Carta) g.getAreaDiGioco().getArea()[i][j]).getColore().equals(Color.BLUE))
+				{
+						if(g.getAreaDiGioco().getArea()[i+1][j+1] instanceof Carta && g.getAreaDiGioco().getArea()[i+1][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+1][j+1]).getColore().equals(Color.MAGENTA))
 						{
-							if(g.getAreaDiGioco().getArea()[i+2][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.MAGENTA))
+							if(g.getAreaDiGioco().getArea()[i+2][j+1] instanceof Carta && g.getAreaDiGioco().getArea()[i+2][j+1]!=null && ((Carta) g.getAreaDiGioco().getArea()[i+2][j+1]).getColore().equals(Color.MAGENTA))
 							{
 								
 								if(posSxBluTorreMagenta.add(new Cella(i,j))==true)
@@ -386,6 +406,7 @@ public class CartaObiettivo{
 								
 							}
 						}
+				}
 				}
 					
 			}
@@ -724,37 +745,37 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+						if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaPiume++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+						else if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaBottiglie++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+						else if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaPergamene++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+						if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 							contaPiume++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+						else if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaBottiglie++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+						else if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaPergamene++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+						if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 							contaPiume++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+						else if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaBottiglie++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+						else if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaPergamene++;
 						
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+						if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 							contaPiume++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+						else if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaBottiglie++;
-						else if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+						else if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaPergamene++;
 						
 						
@@ -794,18 +815,18 @@ public class CartaObiettivo{
 			{
 				for(int j=0; j<AreaDiGioco.maxColonne; j++)
 				{
-					if(g.getAreaDiGioco().getArea()[i][j]!=null)
+					if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 					{
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("pergamena"))
+						if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 							contaPergamene++;
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("pergamena"))
+						if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 							contaPergamene++;
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("pergamena"))
+						if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 							contaPergamene++;
 						
-						if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("pergamena"))
+						if("pergamena".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 							contaPergamene++;
 						
 						
@@ -835,18 +856,18 @@ public class CartaObiettivo{
 				{
 					for(int j=0; j<AreaDiGioco.maxColonne; j++)
 					{
-						if(g.getAreaDiGioco().getArea()[i][j]!=null)
+						if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 						{
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 								contaBottiglie++;
 							
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 								contaBottiglie++;
 							
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 								contaBottiglie++;
 							
-							if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("bottiglia"))
+							if("bottiglia".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 								contaBottiglie++;
 							
 							
@@ -876,18 +897,18 @@ public class CartaObiettivo{
 					{
 						for(int j=0; j<AreaDiGioco.maxColonne; j++)
 						{
-							if(g.getAreaDiGioco().getArea()[i][j]!=null)
+							if(g.getAreaDiGioco().getArea()[i][j]!=null && g.getAreaDiGioco().getArea()[i][j] instanceof Carta)
 							{
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAd()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getAs()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBd()))
 									contaPiume++;
 								
-								if(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs().equals("piuma"))
+								if("piuma".equals(((Carta) g.getAreaDiGioco().getArea()[i][j]).getBs()))
 									contaPiume++;
 								
 								

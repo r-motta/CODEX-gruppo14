@@ -189,8 +189,7 @@ public class Assegnazione {
 					{
 						
 						t.getGamers()[i].setCartaObiettivoSegreta(t.getMazzoObiettivo().get(k));
-						t.getMazzoObiettivo().remove(k);
-						k++;	
+						t.getMazzoObiettivo().remove(k);	
 						
 						break;
 					}
@@ -213,15 +212,14 @@ public class Assegnazione {
 			System.out.println("____________ Questa e' la prima carta obiettivo comune ____________________");
 			System.out.println();
 			System.out.println(Main.cobPubblica1.toString());
-			System.out.println("_____________________________________________________________________|");					
+			System.out.println("___________________________________________________________________________|");					
 
 			System.out.println();
 			
-			System.out.println("____________ Questa e' la seconda carta obiettivo comune ____________________");
+			System.out.println("____________ Questa e' la seconda carta obiettivo comune __________________");
 			System.out.println();
-			System.out.println("Questa e' la seconda carta obiettivo comune: ");
 			System.out.println(Main.cobPubblica2.toString());
-			System.out.println("_____________________________________________________________________|");					
+			System.out.println("___________________________________________________________________________|");					
 
 
 			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa

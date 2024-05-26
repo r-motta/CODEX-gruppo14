@@ -33,7 +33,7 @@ public class CartaIniziale{
 	            ci.ad = "vuoto";
 	            ci.bs = null;
 	            ci.bd = null;
-	            String simboloRetro = "foglia,lupo,fungo";
+	            simboloRetro = "foglia,lupo,fungo";
     		}
     	else if(ci.nome == "ci3")
     		{
