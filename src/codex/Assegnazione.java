@@ -90,6 +90,8 @@ public class Assegnazione {
 					System.out.println(tempRetroIniziale.useRetro(tempRetroIniziale).toString()); 
 					System.out.println("_____________________________________________________");
 					
+					Giocatore.mostraCarteIniziali(t.getGamers()[i].getCartaInizialePropria(), tempRetroIniziale);
+					
 					System.out.println();
 					
 					do {

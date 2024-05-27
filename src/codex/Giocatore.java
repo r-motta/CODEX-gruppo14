@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Scanner;
 
 import javax.swing.ImageIcon;
@@ -614,6 +615,8 @@ public class Giocatore {
 					System.out.println("_____________________________________________________________________|");					
 					System.out.println();
 					
+					
+					
 					break;
 				}
 				case 3:
@@ -699,7 +702,8 @@ public class Giocatore {
 					System.out.println("______________________________________________________ ");
 					System.out.println();
 
-       
+					mostraCartaDaJPG((Carta)t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]);
+					
 					   break;
 				}
 
@@ -897,14 +901,20 @@ public class Giocatore {
 	
 	
 
-	    public static void mostraCartaDaJPEG(Carta c) {
+	    public static void mostraCartaDaJPG(Carta c) {
 	        
 	        JFrame frame = new JFrame("Visualizzazione Carta");
 	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 	        try {
 	            
-	            Image img = ImageIO.read(new File(c.getPercorsoImmagine()));
+	        	URL urlImmagine = Giocatore.class.getResource(c.getPercorsoImmagine());
+	            if (urlImmagine == null) {
+	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	                return;
+	            }
+	        	
+	            Image img = ImageIO.read(urlImmagine);
 
 	           
 	            JLabel label = new JLabel(new ImageIcon(img));
@@ -918,6 +928,88 @@ public class Giocatore {
 	        
 	        frame.pack();
 	        frame.setVisible(true);
+	    }
+	    
+	    public static void mostraCarteIniziali(CartaIniziale c, CartaIniziale c1) {
+	        
+	        JFrame frame = new JFrame("Visualizzazione Carte");
+	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+	        try {
+	            
+	        	URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+	            if (urlImmagine1 == null) {
+	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	                return;
+	            }
+	           
+	                
+	             URL urlImmagine2 = Giocatore.class.getResource(c1.getPercorsoImmagine());
+		            if (urlImmagine2 == null) {
+		                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
+		                return;
+	            }
+	        	
+	            Image img = ImageIO.read(urlImmagine1);
+	            Image img2 = ImageIO.read(urlImmagine2);
+
+	           
+	            JLabel label = new JLabel(new ImageIcon(img));
+	            JLabel label2 = new JLabel(new ImageIcon(img2));
+
+	            
+	            frame.getContentPane().add(label, BorderLayout.NORTH);
+	            frame.getContentPane().add(label2, BorderLayout.SOUTH);
+	            
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        
+	        frame.pack();
+	        frame.setVisible(true);
+	      
+	    }
+
+	    public static void mostraCarteObiettivo(CartaObiettivo c, CartaObiettivo c1) {
+	        
+	        JFrame frame = new JFrame("Visualizzazione Carte");
+	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+	        try {
+	            
+	        	URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+	            if (urlImmagine1 == null) {
+	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	                return;
+	            }
+	           
+	                
+	             URL urlImmagine2 = Giocatore.class.getResource(c1.getPercorsoImmagine());
+		            if (urlImmagine2 == null) {
+		                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
+		                return;
+	            }
+	        	
+	            Image img = ImageIO.read(urlImmagine1);
+	            Image img2 = ImageIO.read(urlImmagine2);
+
+	           
+	            JLabel label = new JLabel(new ImageIcon(img));
+	            JLabel label2 = new JLabel(new ImageIcon(img2));
+
+	            
+	            frame.getContentPane().add(label, BorderLayout.NORTH);
+	            frame.getContentPane().add(label2, BorderLayout.SOUTH);
+	            
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        
+	        frame.pack();
+	        frame.setVisible(true);
+	      
 	    }
 
 	

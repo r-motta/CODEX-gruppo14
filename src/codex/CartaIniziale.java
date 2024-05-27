@@ -3,9 +3,10 @@ package codex;
 public class CartaIniziale{
 
     private String nome,as,ad,bs,bd;
+    private String percorsoImmagine;
     private String simboloRetro;
 
-    public CartaIniziale(String nome, String asx, String adx, String bsx, String bdx)
+    public CartaIniziale(String nome, String asx, String adx, String bsx, String bdx, String percorso)
     {
     	this.nome = nome;
         this.as = asx;
@@ -13,6 +14,7 @@ public class CartaIniziale{
         this.bs = bsx;
         this.bd = bdx;
         simboloRetro = "vuoto";
+        percorsoImmagine = percorso;
     }
     
     
@@ -26,6 +28,7 @@ public class CartaIniziale{
 	            ci.bs = "farfalla";
 	            ci.bd ="vuoto";
 	            simboloRetro = "farfalla";
+	            percorsoImmagine = "/immagini/carteIniziali/ci1Retro.jpg";
     		}
     	else if(ci.nome == "ci2")
     		{
@@ -34,6 +37,7 @@ public class CartaIniziale{
 	            ci.bs = null;
 	            ci.bd = null;
 	            simboloRetro = "foglia,lupo,fungo";
+	            percorsoImmagine = "/immagini/carteIniziali/ci2Retro.jpg";
     		}
     	else if(ci.nome == "ci3")
     		{
@@ -42,6 +46,7 @@ public class CartaIniziale{
 	            ci.bs = null;
 	            ci.bd = null;
 	            simboloRetro = "lupo,farfalla,foglia";
+	            percorsoImmagine = "/immagini/carteIniziali/ci3Retro.jpg";
     		}
     	else if(ci.nome == "ci4")
     		{
@@ -50,6 +55,7 @@ public class CartaIniziale{
 	            ci.bs = "vuoto";
 	            ci.bd = "vuoto";
 	            simboloRetro = "lupo,farfalla";
+	            percorsoImmagine = "/immagini/carteIniziali/ci4Retro.jpg";
     		}
     	else if(ci.nome == "ci5")
     		{
@@ -58,6 +64,7 @@ public class CartaIniziale{
 	            ci.bs = "vuoto";
 	            ci.bd = "vuoto";
 	            simboloRetro = "foglia,fungo";
+	            percorsoImmagine = "/immagini/carteIniziali/ci5Retro.jpg";
     		}
     	else if(ci.nome == "ci6")
     		{
@@ -66,11 +73,16 @@ public class CartaIniziale{
 	            ci.bs = "vuoto";
 	            ci.bd = "fungo";
 	            simboloRetro = "fungo";
+	            percorsoImmagine = "/immagini/carteIniziali/ci6Retro.jpg";
     		}
     	
     		return ci;
     }
-
+    
+    public String getPercorsoImmagine()
+    {
+    	return percorsoImmagine;
+    }
 
 
     public String getNome() {
@@ -81,16 +93,7 @@ public class CartaIniziale{
 		return "Angolo alto sinistra = " + as +"\n"+ "Angolo alto destra = " + ad +"\n"+ "Angolo basso sinistra = " + bs +"\n"+ "Angolo basso destra = " + bd+"\n"+ "Simbolo retro = " + simboloRetro+"\n";
 	}
 
-    public static CartaIniziale clonaCarta(CartaIniziale c)
-	{
-    	CartaIniziale temp = new CartaIniziale(c.getNome(), c.getAs(), c.getAd(), c.getBs(), c.getBd());
-		
-		return temp;
-		
-		//ho bisogno di clonare questi attributi in modo da poter richiamare sempre il to string 
-	}
-
-
+    
 
 	public String getAs() {
 		return as;
@@ -145,7 +148,14 @@ public class CartaIniziale{
 	}
 	
 	
-	
+	public static CartaIniziale clonaCarta(CartaIniziale c)
+	{
+    	CartaIniziale temp = new CartaIniziale(c.getNome(), c.getAs(), c.getAd(), c.getBs(), c.getBd(), c.getPercorsoImmagine());
+		
+		return temp;
+		
+		//ho bisogno di clonare questi attributi in modo da poter richiamare sempre il to string 
+	}
 	
 
 

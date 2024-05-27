@@ -8,11 +8,13 @@ public class CartaObiettivo{
 	
 	private String requisiti;
 	private int punti;
+	private String percorsoImmagine;
 	
-	public CartaObiettivo(String req, int punt)
+	public CartaObiettivo(String req, int punt, String percorso)
 	{
 		requisiti = req;
 		punti = punt;
+		percorsoImmagine = percorso;
 	}
 	
 	public String getRequisiti() {
@@ -20,6 +22,11 @@ public class CartaObiettivo{
 	}
 	public int getPunti() {
 		return punti;
+	}
+	
+	public String getPercorsoImmagine()
+	{
+		return percorsoImmagine;
 	}
 	
 	
