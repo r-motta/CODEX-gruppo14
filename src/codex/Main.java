@@ -2,7 +2,7 @@ package codex;
 import java.util.Scanner;				
 import javax.swing.*;
 import java.util.Arrays;
-
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.InputMismatchException;
 
@@ -38,6 +38,8 @@ public class Main {
 		}while(numGiocatori<2 || numGiocatori>4);
 		
 		Tavolo t = new Tavolo();
+		
+		Collections.shuffle(t.getMazzoObiettivo());
 		
 		cobPubblica1 = t.getMazzoObiettivo().get(0);
 		t.getMazzoObiettivo().remove(0);

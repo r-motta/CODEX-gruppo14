@@ -90,7 +90,7 @@ public class Assegnazione {
 					System.out.println(tempRetroIniziale.useRetro(tempRetroIniziale).toString()); 
 					System.out.println("_____________________________________________________");
 					
-					Giocatore.mostraCarteIniziali(t.getGamers()[i].getCartaInizialePropria(), tempRetroIniziale);
+					Giocatore.mostraCarteInizialiInJPG(t.getGamers()[i].getCartaInizialePropria(), tempRetroIniziale,t,i);
 					
 					System.out.println();
 					
@@ -153,6 +153,8 @@ public class Assegnazione {
 					
 					int scelta=0;
 					
+					Giocatore.mostraCarteObiettivoInJPG(t.getMazzoObiettivo().get(y), t.getMazzoObiettivo().get(k));
+					
 					System.out.println();
 					System.out.println();
 					
@@ -208,22 +210,8 @@ public class Assegnazione {
 							  
 				
 			}
-			System.out.println();
-			System.out.println("Queste invece sono le due carte obiettivo comuni a tutti i giocatori: ");
-			//fa vedere carte obiettivo comuni
-			System.out.println("____________ Questa e' la prima carta obiettivo comune ____________________");
-			System.out.println();
-			System.out.println(Main.cobPubblica1.toString());
-			System.out.println("___________________________________________________________________________|");					
-
-			System.out.println();
 			
-			System.out.println("____________ Questa e' la seconda carta obiettivo comune __________________");
-			System.out.println();
-			System.out.println(Main.cobPubblica2.toString());
-			System.out.println("___________________________________________________________________________|");					
-
-
+			
 			Collections.shuffle(t.getMazzoRisorse());//mischia le carte risorsa
 			Collections.shuffle(t.getMazzoOro());//mischia le carte oro
 
@@ -231,6 +219,23 @@ public class Assegnazione {
 			
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
+				System.out.println();
+				System.out.println("Queste invece sono le due carte obiettivo comuni a tutti i giocatori: ");
+				//fa vedere carte obiettivo comuni
+				System.out.println("____________ Questa e' la prima carta obiettivo comune ____________________");
+				System.out.println();
+				System.out.println(Main.cobPubblica1.toString());
+				System.out.println("___________________________________________________________________________|");					
+
+				System.out.println();
+				
+				System.out.println("____________ Questa e' la seconda carta obiettivo comune __________________");
+				System.out.println();
+				System.out.println(Main.cobPubblica2.toString());
+				System.out.println("___________________________________________________________________________|");					
+
+				Giocatore.mostraCarteObiettivoInJPG(Main.cobPubblica1, Main.cobPubblica2);
+				
 				System.out.println();
 				System.out.println("@@@@@@@@@@@@@ GIOCATORE: "+t.getGamers()[i].getNickname()+" @@@@@@@@@@@@@");
 				System.out.println();
@@ -260,12 +265,28 @@ public class Assegnazione {
 				System.out.println(t.getMazzoRisorse().get(1).toString());
 				System.out.println("_____________________________________________________________________|");					
 				
+				
+				Giocatore.mostraCarteInManoInJPG(t.getGamers()[i].getCarteInMano()[0],t.getGamers()[i].getCarteInMano()[1],t.getGamers()[i].getCarteInMano()[2],i,t);
+				
 				System.out.println();
 				
 				t.getMazzoRisorse().remove(0);
 				t.getMazzoRisorse().remove(0);
 				
-				
+				String prosGioc = null;
+				do {
+					try
+					{
+						System.out.print("Digita 'ESCI' quando hai finito di visualizzare le carte: ");
+						prosGioc = sc.next();
+					}
+					catch(InputMismatchException e)
+        			{
+        				System.out.println("Errore: per favore scrivi la parola 'esci' in maiuscolo o minuscolo.");
+                        sc.nextLine();
+        			}
+				    
+				}while(!(prosGioc.equalsIgnoreCase("ESCI") || prosGioc.equalsIgnoreCase("esci")));
 				
 				
 			}

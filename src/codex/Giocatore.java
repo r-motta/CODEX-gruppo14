@@ -70,6 +70,7 @@ public class Giocatore {
 				System.out.println(t.getMazzoOro().get(k).toString());
 				System.out.println("_________________________________________________________________|");
 				
+				mostraCarteDaPescareInJPG(t.getMazzoRisorse().get(y),t.getMazzoRisorse().get(k),t.getMazzoOro().get(y),t.getMazzoOro().get(k));
 				
 				int scelta=0;
 				
@@ -167,7 +168,7 @@ public class Giocatore {
 				
 				default:
 				{
-					System.out.println("Errore, riprova! ");
+					System.out.println("Errore, inserisci un numero da 1 a 4! ");
 					break;
 				}
 				
@@ -247,6 +248,8 @@ public class Giocatore {
             	
         		}while(sceltaCartaInMano<0 || sceltaCartaInMano>2);
             	
+            	mostraCartaDaJPG(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            	
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaOro)
             	{
             		
@@ -255,9 +258,10 @@ public class Giocatore {
         			{
         				try
             			{
+        					
         					System.out.println("Vuoi usare il retro della carta oro? ");
             				System.out.println("SI oppure NO? ");
-                			System.out.println("Risposta: ");
+                			System.out.print("Risposta: ");
                 			rispostaRetroOro = sc.next();
             			}
             			catch(InputMismatchException e)
@@ -277,14 +281,19 @@ public class Giocatore {
                 			System.out.println("I requisiti per utilizzare questa carta non sono soddisfatti. ");
                 			System.out.println("Vuoi usare il retro della carta? ");
                 			
-                			CartaOro tempRetro = CartaOro.clonaCarta((CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+                			CartaOro tempRetroOro = CartaOro.clonaCarta((CartaOro) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+                			
+                			mostraCartaRetroDaJPG(tempRetroOro.useRetro(tempRetroOro));
                 			
                 			
                 			//creo carta temporanea uguale a cui applico il metodo retro cosi da poter fare il to string.
                 			// se facessi metodo retro su originale e utente mi dice che non vuole usare il retro della carta ma sceglierne 
                 			// un'altra, non posso settarla frontale di nuovo
-                			
-                			tempRetro.useRetro(tempRetro).toString();
+                			System.out.println();
+                			System.out.println("_____________retro della carta _______________");
+                			System.out.println();
+                			System.out.println(tempRetroOro.useRetro(tempRetroOro).toString());
+                			System.out.println("______________________________________________|");
                 			String rispostaRetro = null;
                 			
                 			do
@@ -324,11 +333,18 @@ public class Giocatore {
             		
             	if(t.getGamers()[i].getCarteInMano()[sceltaCartaInMano] instanceof CartaRisorsa)
             	{
+            		CartaRisorsa tempRetroRisorsa = CartaRisorsa.clonaCarta((CartaRisorsa) t.getGamers()[i].getCarteInMano()[sceltaCartaInMano]);
+            		mostraCartaRetroDaJPG(tempRetroRisorsa.useRetro(tempRetroRisorsa));
             		String rispostaRetroRisorsa=null;
             		do
         			{
         				try
             			{
+        					System.out.println();
+        					System.out.println("____________retro della carta ________________");
+                			System.out.println();
+                			System.out.println(tempRetroRisorsa.useRetro(tempRetroRisorsa).toString());
+                			System.out.println("______________________________________________|");
         					System.out.println();
         					System.out.println("Vuoi usare il retro della carta risorsa (SI/NO)? ");
                 			System.out.print("Risposta: ");
@@ -603,6 +619,8 @@ public class Giocatore {
 			    	System.out.println(t.getGamers()[i].getCarteInMano()[2].toString());
 			    	System.out.println("_______________________________________|");
 			    	System.out.println();
+			    	
+			    	mostraCarteInManoInJPG(t.getGamers()[i].getCarteInMano()[0],t.getGamers()[i].getCarteInMano()[1],t.getGamers()[i].getCarteInMano()[2],i,t);
 						
 						break;
 				}
@@ -615,7 +633,7 @@ public class Giocatore {
 					System.out.println("_____________________________________________________________________|");					
 					System.out.println();
 					
-					
+					mostraCartaObiettivoSegretaDaJPG(t.getGamers()[i].getCartaObiettivoSegreta());
 					
 					break;
 				}
@@ -634,6 +652,8 @@ public class Giocatore {
 					System.out.println(Main.cobPubblica2.toString());
 					System.out.println("___________________________________________________________________________|");	
 					System.out.println();
+					
+					mostraCarteObiettivoInJPG(Main.cobPubblica1, Main.cobPubblica2);
 					
 					break;
 				}
@@ -702,7 +722,10 @@ public class Giocatore {
 					System.out.println("______________________________________________________ ");
 					System.out.println();
 
-					mostraCartaDaJPG((Carta)t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]);
+					if(t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna] instanceof Carta)
+						mostraCartaDaJPG((Carta)t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]);
+					else if(t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna] instanceof CartaIniziale)
+						mostraCartaInizialeDaJPG((CartaIniziale)t.getGamers()[i].getAreaDiGioco().getArea()[riga][colonna]);
 					
 					   break;
 				}
@@ -899,117 +922,307 @@ public class Giocatore {
 		System.out.println();
 	}
 	
+	public static void mostraCartaObiettivoSegretaDaJPG(CartaObiettivo c)
+    {
+    	JFrame frame = new JFrame("Visualizzazione Carta");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
+
+        try {
+            
+            URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+            if (urlImmagine1 == null) {
+                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+                return;
+            }
+            Image img1 = ImageIO.read(urlImmagine1);
+            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+            frame.getContentPane().add(label1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        frame.pack();
+        
+        frame.setVisible(true);
+    }
+	
+	public static void mostraCartaRetroDaJPG(Carta c)
+    {
+    	JFrame frame = new JFrame("Visualizzazione Carta");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
+
+        try {
+            
+            URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+            if (urlImmagine1 == null) {
+                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+                return;
+            }
+            Image img1 = ImageIO.read(urlImmagine1);
+            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+            frame.getContentPane().add(label1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        frame.pack();
+        
+        int x = 350;
+        int y = 0; // Sposta il frame a 50 pixel dal bordo superiore
+        frame.setLocation(x, y);
+        
+        frame.setVisible(true);
+    }
+	
 	
 
-	    public static void mostraCartaDaJPG(Carta c) {
-	        
-	        JFrame frame = new JFrame("Visualizzazione Carta");
+	public static void mostraCartaDaJPG(Carta c)
+    {
+    	JFrame frame = new JFrame("Visualizzazione Carta");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
+
+        try {
+            
+            URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+            if (urlImmagine1 == null) {
+                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+                return;
+            }
+            Image img1 = ImageIO.read(urlImmagine1);
+            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+            frame.getContentPane().add(label1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        frame.pack();
+        
+        frame.setVisible(true);
+    }
+	    
+	    public static void mostraCarteInizialiInJPG(CartaIniziale c1, CartaIniziale c2, Tavolo t, int i)
+	    {
+	    	JFrame frame = new JFrame("Visualizzazione Carta iniziale di "+t.getGamers()[i].getNickname());
 	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
 
 	        try {
 	            
-	        	URL urlImmagine = Giocatore.class.getResource(c.getPercorsoImmagine());
-	            if (urlImmagine == null) {
-	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	            URL urlImmagine1 = Giocatore.class.getResource(c1.getPercorsoImmagine());
+	            if (urlImmagine1 == null) {
+	                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
 	                return;
 	            }
-	        	
-	            Image img = ImageIO.read(urlImmagine);
-
-	           
-	            JLabel label = new JLabel(new ImageIcon(img));
+	            Image img1 = ImageIO.read(urlImmagine1);
+	            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+	            frame.getContentPane().add(label1);
 
 	            
-	            frame.getContentPane().add(label, BorderLayout.CENTER);
+	            URL urlImmagine2 = Giocatore.class.getResource(c2.getPercorsoImmagine());
+	            if (urlImmagine2 == null) {
+	                System.err.println("File non trovato: " + c2.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img2 = ImageIO.read(urlImmagine2);
+	            Image img2Scaled = img2.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label2 = new JLabel(new ImageIcon(img2Scaled));
+	            frame.getContentPane().add(label2);
+
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
 
-	        
 	        frame.pack();
+	        
+	        frame.setVisible(true);
+	    }
+
+	    public static void mostraCarteObiettivoInJPG(CartaObiettivo c1, CartaObiettivo c2)
+	    {
+	    	JFrame frame = new JFrame("Visualizzazione Carte obiettivo");
+	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
+
+	        try {
+	            
+	            URL urlImmagine1 = Giocatore.class.getResource(c1.getPercorsoImmagine());
+	            if (urlImmagine1 == null) {
+	                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img1 = ImageIO.read(urlImmagine1);
+	            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+	            frame.getContentPane().add(label1);
+
+	            
+	            URL urlImmagine2 = Giocatore.class.getResource(c2.getPercorsoImmagine());
+	            if (urlImmagine2 == null) {
+	                System.err.println("File non trovato: " + c2.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img2 = ImageIO.read(urlImmagine2);
+	            Image img2Scaled = img2.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label2 = new JLabel(new ImageIcon(img2Scaled));
+	            frame.getContentPane().add(label2);
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        frame.pack();
+	        
+	        
+	        int x = 900;
+	        int y = 0; 
+	        frame.setLocation(x, y);
+	        
 	        frame.setVisible(true);
 	    }
 	    
-	    public static void mostraCarteIniziali(CartaIniziale c, CartaIniziale c1) {
-	        
-	        JFrame frame = new JFrame("Visualizzazione Carte");
+	    public static void mostraCarteInManoInJPG(Carta c1, Carta c2, Carta c3,int i,Tavolo t) {
+	        JFrame frame = new JFrame("Visualizzazione Carte in mano di "+t.getGamers()[i].getNickname());
 	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
 
 	        try {
-	            
-	        	URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+	            // Carica e ridimensiona l'immagine della prima carta
+	            URL urlImmagine1 = Giocatore.class.getResource(c1.getPercorsoImmagine());
 	            if (urlImmagine1 == null) {
-	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
 	                return;
 	            }
-	           
-	                
-	             URL urlImmagine2 = Giocatore.class.getResource(c1.getPercorsoImmagine());
-		            if (urlImmagine2 == null) {
-		                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
-		                return;
+	            Image img1 = ImageIO.read(urlImmagine1);
+	            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+	            frame.getContentPane().add(label1);
+
+	            // Carica e ridimensiona l'immagine della seconda carta
+	            URL urlImmagine2 = Giocatore.class.getResource(c2.getPercorsoImmagine());
+	            if (urlImmagine2 == null) {
+	                System.err.println("File non trovato: " + c2.getPercorsoImmagine());
+	                return;
 	            }
-	        	
-	            Image img = ImageIO.read(urlImmagine1);
 	            Image img2 = ImageIO.read(urlImmagine2);
+	            Image img2Scaled = img2.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label2 = new JLabel(new ImageIcon(img2Scaled));
+	            frame.getContentPane().add(label2);
 
-	           
-	            JLabel label = new JLabel(new ImageIcon(img));
-	            JLabel label2 = new JLabel(new ImageIcon(img2));
+	            // Carica e ridimensiona l'immagine della terza carta
+	            URL urlImmagine3 = Giocatore.class.getResource(c3.getPercorsoImmagine());
+	            if (urlImmagine3 == null) {
+	                System.err.println("File non trovato: " + c3.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img3 = ImageIO.read(urlImmagine3);
+	            Image img3Scaled = img3.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label3 = new JLabel(new ImageIcon(img3Scaled));
+	            frame.getContentPane().add(label3);
 
-	            
-	            frame.getContentPane().add(label, BorderLayout.NORTH);
-	            frame.getContentPane().add(label2, BorderLayout.SOUTH);
-	            
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
 
-	        
 	        frame.pack();
+	        
 	        frame.setVisible(true);
-	      
 	    }
-
-	    public static void mostraCarteObiettivo(CartaObiettivo c, CartaObiettivo c1) {
-	        
-	        JFrame frame = new JFrame("Visualizzazione Carte");
+	    
+	    public static void mostraCarteDaPescareInJPG(Carta c1, Carta c2, Carta c3, Carta c4)
+	    {
+	        JFrame frame = new JFrame("Visualizzazione Carte da poter pescare");
 	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
 
 	        try {
-	            
-	        	URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+	            // Carica e ridimensiona l'immagine della prima carta
+	            URL urlImmagine1 = Giocatore.class.getResource(c1.getPercorsoImmagine());
 	            if (urlImmagine1 == null) {
-	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
 	                return;
 	            }
-	           
-	                
-	             URL urlImmagine2 = Giocatore.class.getResource(c1.getPercorsoImmagine());
-		            if (urlImmagine2 == null) {
-		                System.err.println("File non trovato: " + c1.getPercorsoImmagine());
-		                return;
+	            Image img1 = ImageIO.read(urlImmagine1);
+	            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+	            frame.getContentPane().add(label1);
+
+	            // Carica e ridimensiona l'immagine della seconda carta
+	            URL urlImmagine2 = Giocatore.class.getResource(c2.getPercorsoImmagine());
+	            if (urlImmagine2 == null) {
+	                System.err.println("File non trovato: " + c2.getPercorsoImmagine());
+	                return;
 	            }
-	        	
-	            Image img = ImageIO.read(urlImmagine1);
 	            Image img2 = ImageIO.read(urlImmagine2);
+	            Image img2Scaled = img2.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label2 = new JLabel(new ImageIcon(img2Scaled));
+	            frame.getContentPane().add(label2);
 
-	           
-	            JLabel label = new JLabel(new ImageIcon(img));
-	            JLabel label2 = new JLabel(new ImageIcon(img2));
+	            // Carica e ridimensiona l'immagine della terza carta
+	            URL urlImmagine3 = Giocatore.class.getResource(c3.getPercorsoImmagine());
+	            if (urlImmagine3 == null) {
+	                System.err.println("File non trovato: " + c3.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img3 = ImageIO.read(urlImmagine3);
+	            Image img3Scaled = img3.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label3 = new JLabel(new ImageIcon(img3Scaled));
+	            frame.getContentPane().add(label3);
+	            
+	            // Carica e ridimensiona l'immagine della quarta carta
+	            URL urlImmagine4 = Giocatore.class.getResource(c4.getPercorsoImmagine());
+	            if (urlImmagine4 == null) {
+	                System.err.println("File non trovato: " + c4.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img4 = ImageIO.read(urlImmagine1);
+	            Image img4Scaled = img4.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label4 = new JLabel(new ImageIcon(img4Scaled));
+	            frame.getContentPane().add(label4);
 
-	            
-	            frame.getContentPane().add(label, BorderLayout.NORTH);
-	            frame.getContentPane().add(label2, BorderLayout.SOUTH);
-	            
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
 
-	        
 	        frame.pack();
+	        
 	        frame.setVisible(true);
-	      
+	    }
+	    
+	    public static void mostraCartaInizialeDaJPG(CartaIniziale c)
+	    {
+	    	JFrame frame = new JFrame("Visualizzazione Carta");
+	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	        frame.setLayout(new FlowLayout()); // Usa FlowLayout per visualizzare le carte una accanto all'altra
+
+	        try {
+	            
+	            URL urlImmagine1 = Giocatore.class.getResource(c.getPercorsoImmagine());
+	            if (urlImmagine1 == null) {
+	                System.err.println("File non trovato: " + c.getPercorsoImmagine());
+	                return;
+	            }
+	            Image img1 = ImageIO.read(urlImmagine1);
+	            Image img1Scaled = img1.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+	            JLabel label1 = new JLabel(new ImageIcon(img1Scaled));
+	            frame.getContentPane().add(label1);
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        frame.pack();
+	        
+	        frame.setVisible(true);
 	    }
 
 	

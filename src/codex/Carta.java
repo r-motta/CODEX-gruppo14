@@ -44,7 +44,7 @@ public abstract class Carta {
         	if(c.getColore() == Color.RED)
         		percorsoImmagine = "/immagini/carteRisorsa/crRetroRosso.jpg";
             else if(c.getColore() == Color.MAGENTA)
-            	percorsoImmagine = "/immagini/carteRisorsa/crRetroMagenta.jpg";
+            	percorsoImmagine = "/immagini/carteRisorsa/crRetroViola.jpg";
             else if(c.getColore() == Color.BLUE)
             	percorsoImmagine = "/immagini/carteRisorsa/crRetroBlu.jpg";
             else if(c.getColore() == Color.GREEN)
@@ -56,7 +56,7 @@ public abstract class Carta {
         	if(c.getColore() == Color.RED)
         		percorsoImmagine = "/immagini/carteOro/coRetroRosso.jpg";
             else if(c.getColore() == Color.MAGENTA)
-            	percorsoImmagine = "/immagini/carteOro/coRetroMagenta.jpg";
+            	percorsoImmagine = "/immagini/carteOro/coRetroViola.jpg";
             else if(c.getColore() == Color.BLUE)
             	percorsoImmagine = "/immagini/carteOro/coRetroBlu.jpg";
             else if(c.getColore() == Color.GREEN)

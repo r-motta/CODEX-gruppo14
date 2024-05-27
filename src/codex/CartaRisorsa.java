@@ -20,6 +20,20 @@ public class CartaRisorsa extends Carta{
 		return puntoVittoria;
 	}
 	
+	public int getPunti()
+	{
+		return puntoVittoria;
+	}
+	
+	public static CartaRisorsa clonaCarta(CartaRisorsa c)
+	{
+		CartaRisorsa temp = new CartaRisorsa(c.getColore(), c.getAs(), c.getAd(), c.getBs(), c.getBd(), c.getPunti() ,c.getPercorsoImmagine());
+		
+		return temp;
+		
+		//ho bisogno di clonare questi attributi in modo da poter richiamare sempre il to string 
+	}
+	
 	
 			
 	
