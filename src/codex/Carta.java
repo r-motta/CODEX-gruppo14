@@ -30,19 +30,39 @@ public abstract class Carta {
         c.bs = "vuoto";
         c.bd = "vuoto";
 
-        if(c.colore == Color.RED)
+        if(c.getColore() == Color.RED)
             simboloRetro = "fungo";
-        else if(c.colore == Color.MAGENTA)
+        else if(c.getColore() == Color.MAGENTA)
             simboloRetro = "farfalla";
-        else if(c.colore == Color.BLUE)
+        else if(c.getColore() == Color.BLUE)
             simboloRetro = "lupo";
-        else if(c.colore == Color.GREEN)
+        else if(c.getColore() == Color.GREEN)
             simboloRetro = "foglia";
         
         if(c instanceof CartaRisorsa)
-        	percorsoImmagine = "/immagini/carteRisorsa/crRetro.jpg";
+        {
+        	if(c.getColore() == Color.RED)
+        		percorsoImmagine = "/immagini/carteRisorsa/crRetroRosso.jpg";
+            else if(c.getColore() == Color.MAGENTA)
+            	percorsoImmagine = "/immagini/carteRisorsa/crRetroMagenta.jpg";
+            else if(c.getColore() == Color.BLUE)
+            	percorsoImmagine = "/immagini/carteRisorsa/crRetroBlu.jpg";
+            else if(c.getColore() == Color.GREEN)
+            	percorsoImmagine = "/immagini/carteRisorsa/crRetroVerde.jpg";
+        		
+        }
         else if(c instanceof CartaOro)
-        	percorsoImmagine = "/immagini/carteOro/coRetro.jpg";
+        {
+        	if(c.getColore() == Color.RED)
+        		percorsoImmagine = "/immagini/carteOro/coRetroRosso.jpg";
+            else if(c.getColore() == Color.MAGENTA)
+            	percorsoImmagine = "/immagini/carteOro/coRetroMagenta.jpg";
+            else if(c.getColore() == Color.BLUE)
+            	percorsoImmagine = "/immagini/carteOro/coRetroBlu.jpg";
+            else if(c.getColore() == Color.GREEN)
+            	percorsoImmagine = "/immagini/carteOro/coRetroVerde.jpg";
+        		
+        }
         
         return c; //no metodo voi ma ritorna carta perché ci serve nel metodo posiziona carta in Giocatore
 
