@@ -39,6 +39,11 @@ public abstract class Carta {
         else if(c.colore == Color.GREEN)
             simboloRetro = "foglia";
         
+        if(c instanceof CartaRisorsa)
+        	percorsoImmagine = "/immagini/carteRisorsa/crRetro.jpg";
+        else if(c instanceof CartaOro)
+        	percorsoImmagine = "/immagini/carteOro/coRetro.jpg";
+        
         return c; //no metodo voi ma ritorna carta perché ci serve nel metodo posiziona carta in Giocatore
 
     }
