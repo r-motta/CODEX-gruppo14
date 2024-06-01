@@ -10,6 +10,13 @@ public class CartaObiettivo{
 	private int punti;
 	private String percorsoImmagine;
 	
+	/**
+	 * Crea una nuova carta obiettivo con i requisiti specificati, il numero di punti e il percorso dell'immagine.
+	 *
+	 * @param req          i requisiti associati alla carta obiettivo
+	 * @param punt         il numero di punti assegnati alla carta obiettivo
+	 * @param percorso     il percorso dell'immagine associata alla carta obiettivo
+	 */
 	public CartaObiettivo(String req, int punt, String percorso)
 	{
 		requisiti = req;
@@ -17,24 +24,52 @@ public class CartaObiettivo{
 		percorsoImmagine = percorso;
 	}
 	
+	/**
+	 * Restituisce i requisiti associati alla carta obiettivo.
+	 *
+	 * @return i requisiti associati alla carta obiettivo
+	 */
 	public String getRequisiti() {
 		return requisiti;
 	}
+	
+	/**
+	 * Restituisce il numero di punti assegnati alla carta obiettivo.
+	 *
+	 * @return il numero di punti assegnati alla carta obiettivo
+	 */
 	public int getPunti() {
 		return punti;
 	}
 	
+	/**
+	 * Restituisce il percorso dell'immagine associata alla carta obiettivo.
+	 *
+	 * @return il percorso dell'immagine associata alla carta obiettivo
+	 */
 	public String getPercorsoImmagine()
 	{
 		return percorsoImmagine;
 	}
 	
-	
+	/**
+	 * Restituisce una stringa che rappresenta la carta obiettivo, includendo i requisiti e i punti.
+	 *
+	 * @return una stringa che rappresenta la carta obiettivo
+	 */
 	public String toString()
 	{
 		return "Requisiti: "+requisiti+"\n"+"Punti: "+punti;
 	}
 	
+	/**
+	 * Controlla una carta obiettivo di un giocatore specifico, verificando se ha completato l'obiettivo della carta
+	 * Se l'obiettivo è stato completato verrà stampata una stringa contenente: nome dell'obiettivo + completato
+	 * altrimenti: nome dell'obiettivo + NON completato
+	 *
+	 * @param co          La carta obiettivo da controllare
+	 * @param g           Il giocatore di cui si vuole verificare il completamento della carta obiettivo
+	 */
 	public void controllo(CartaObiettivo co, Giocatore g)
 	{
 		

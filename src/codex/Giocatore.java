@@ -26,12 +26,23 @@ public class Giocatore {
     
     Scanner sc = new Scanner(System.in);
     
+    /**
+     * Crea un nuovo giocatore con il nickname specificato.
+     * @param nickname Il nickname del giocatore.
+     */
     public Giocatore(String nome)
     {
         this.nickname = nome;
         this.sc = new Scanner(System.in);
     }
 
+    /**
+     * Questo metodo permette a un giocatore di pescare una carta tra le opzioni disponibili
+     * e aggiungerla alla propria mano.
+     * 
+     * @param t Il tavolo di gioco su cui operare.
+     * @param s L'indice del giocatore che sta pescando la carta.
+     */
     public void pesca(Tavolo t, int s)
     {
 				int y=0,k=1;
@@ -182,6 +193,11 @@ public class Giocatore {
 
     }
     
+    /**
+     * Questo metodo stampa l'area di gioco di un giocatore, evidenziando le posizioni occupate e libere.
+     * 
+     * @param g Il giocatore di cui stampare l'area di gioco.
+     */
     public void stampaAreaDiGioco(Giocatore g)
     {
     	System.out.println("Area di gioco di: "+g.getNickname());
@@ -207,6 +223,13 @@ public class Giocatore {
         }
     }
     
+    /**
+     * Questo metodo consente a un giocatore di posizionare una carta scelta dalla propria mano
+     * nell'area di gioco, selezionando la carta e la posizione desiderate.
+     * 
+     * @param t Il tavolo di gioco su cui operare.
+     * @param i L'indice del giocatore che sta posizionando la carta.
+     */
     public void posizionaCarta(Tavolo t, int i)
     {
     	boolean validInput = false;
@@ -529,51 +552,103 @@ public class Giocatore {
     }
     
     
-
+    /**
+     * Restituisce la carta iniziale del giocatore.
+     * 
+     * @return La carta iniziale del giocatore.
+     */
     public CartaIniziale getCartaInizialePropria() {
         return CartaInizialePropria;
     }
-
+    
+    /**
+     * Imposta la carta iniziale del giocatore.
+     * 
+     * @param cartaInizialePropria La carta iniziale da assegnare al giocatore.
+     */
     public void setCartaInizialePropria(CartaIniziale cartaInizialePropria) {
         CartaInizialePropria = cartaInizialePropria;
     }
-
+    
+    /**
+     * Restituisce la carta obiettivo segreta del giocatore.
+     * 
+     * @return La carta obiettivo segreta del giocatore.
+     */
     public CartaObiettivo getCartaObiettivoSegreta() {
         return cartaObiettivoSegreta;
     }
-
+    
+    /**
+     * Imposta la carta obiettivo segreta del giocatore.
+     * 
+     * @param cartaObiettivoSegreta La carta obiettivo segreta da assegnare al giocatore.
+     */
     public void setCartaObiettivoSegreta(CartaObiettivo cartaObiettivoSegreta) {
         this.cartaObiettivoSegreta = cartaObiettivoSegreta;
     }
-
+    
+    /**
+     * Restituisce il nickname del giocatore.
+     * 
+     * @return Il nickname del giocatore.
+     */
 	public String getNickname() {
 		return nickname;
 	}
-
+	
+	/**
+	 * Restituisce l'area di gioco del giocatore.
+	 * 
+	 * @return L'area di gioco del giocatore.
+	 */
 	public AreaDiGioco getAreaDiGioco() {
 		return area;
 	}
 	
 	
-
+	/**
+	 * Restituisce i punti del giocatore.
+	 * 
+	 * @return I punti del giocatore.
+	 */
 	public int getPunti() {
 		return punti;
 	}
 	
-	
+	/**
+	 * Incrementa i punti del giocatore.
+	 * 
+	 * @param valore Il valore da aggiungere ai punti del giocatore.
+	 */
 	public void incrementaPunti(int valore) {
         this.punti += valore;
     }
 	
-
+	/**
+	 * Restituisce le carte attualmente in mano al giocatore.
+	 * 
+	 * @return Le carte attualmente in mano al giocatore.
+	 */
 	public Carta[] getCarteInMano() {
 		return carteInMano;
 	}
-
+	
+	/**
+	 * Imposta l'area di gioco del giocatore.
+	 * 
+	 * @param g Il giocatore a cui associare l'area di gioco.
+	 */
 	public void setArea(Giocatore g) {
 		area = new AreaDiGioco(g);
 	}
 	
+	/**
+	 * Visualizza le opzioni di stampa disponibili per il giocatore all'interno del tavolo specificato.
+	 * 
+	 * @param t Il tavolo su cui visualizzare le opzioni.
+	 * @param i L'indice del giocatore le cui opzioni devono essere visualizzate.
+	 */
 	public void visualizza(Tavolo t, int i)
 	{
 		int scelta =0;
@@ -922,6 +997,11 @@ public class Giocatore {
 		System.out.println();
 	}
 	
+	/**
+	 * Visualizza un'immagine della carta obiettivo segreta specificata utilizzando Java Swing.
+	 * 
+	 * @param c La carta obiettivo segreta da visualizzare.
+	 */
 	public static void mostraCartaObiettivoSegretaDaJPG(CartaObiettivo c)
     {
     	JFrame frame = new JFrame("Visualizzazione Carta");
@@ -949,6 +1029,11 @@ public class Giocatore {
         frame.setVisible(true);
     }
 	
+	/**
+	 * Visualizza un'immagine del retro della carta specificata utilizzando Java Swing.
+	 * 
+	 * @param c La carta di cui visualizzare il retro.
+	 */
 	public static void mostraCartaRetroDaJPG(Carta c)
     {
     	JFrame frame = new JFrame("Visualizzazione Carta");
@@ -981,7 +1066,11 @@ public class Giocatore {
     }
 	
 	
-
+	/**
+	 * Visualizza un'immagine della carta specificata utilizzando Java Swing.
+	 * 
+	 * @param c La carta di cui visualizzare l'immagine.
+	 */
 	public static void mostraCartaDaJPG(Carta c)
     {
     	JFrame frame = new JFrame("Visualizzazione Carta");
@@ -1009,6 +1098,15 @@ public class Giocatore {
         frame.setVisible(true);
     }
 	    
+	/**
+	 * Visualizza le immagini della carta iniziale (fronte e retro) del giocatore specificato utilizzando Java Swing.
+	 * Le due immagini vengono visualizzate in una finestra JFrame con layout FlowLayout, una accanto all'altra.
+	 * 
+	 * @param c1 La carta iniziale da visualizzare.
+	 * @param c2 La carta iniziale posta di retro da visualizzare.
+	 * @param t Il tavolo di gioco.
+	 * @param i L'indice del giocatore di cui visualizzare la carta iniziale.
+	 */
 	    public static void mostraCarteInizialiInJPG(CartaIniziale c1, CartaIniziale c2, Tavolo t, int i)
 	    {
 	    	JFrame frame = new JFrame("Visualizzazione Carta iniziale di "+t.getGamers()[i].getNickname());
@@ -1046,7 +1144,14 @@ public class Giocatore {
 	        
 	        frame.setVisible(true);
 	    }
-
+	    
+	    /**
+	     * Visualizza le immagini delle carte obiettivo specificate utilizzando Java Swing.
+	     * Le carte obiettivo vengono visualizzate in una finestra JFrame con layout FlowLayout, una accanto all'altra.
+	     * 
+	     * @param c1 La prima carta obiettivo da visualizzare.
+	     * @param c2 La seconda carta obiettivo da visualizzare.
+	     */
 	    public static void mostraCarteObiettivoInJPG(CartaObiettivo c1, CartaObiettivo c2)
 	    {
 	    	JFrame frame = new JFrame("Visualizzazione Carte obiettivo");
@@ -1090,6 +1195,16 @@ public class Giocatore {
 	        frame.setVisible(true);
 	    }
 	    
+	    /**
+	     * Visualizza le immagini delle carte in mano di un giocatore specifico utilizzando Java Swing.
+	     * Le carte in mano vengono visualizzate in una finestra JFrame con layout FlowLayout, una accanto all'altra.
+	     * 
+	     * @param c1 La prima carta in mano da visualizzare.
+	     * @param c2 La seconda carta in mano da visualizzare.
+	     * @param c3 La terza carta in mano da visualizzare.
+	     * @param i  L'indice del giocatore nel tavolo.
+	     * @param t  Il tavolo di gioco.
+	     */
 	    public static void mostraCarteInManoInJPG(Carta c1, Carta c2, Carta c3,int i,Tavolo t) {
 	        JFrame frame = new JFrame("Visualizzazione Carte in mano di "+t.getGamers()[i].getNickname());
 	        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -1138,6 +1253,15 @@ public class Giocatore {
 	        frame.setVisible(true);
 	    }
 	    
+	    /**
+	     * Visualizza le immagini delle carte disponibili da pescare.
+	     * Le carte vengono visualizzate in una finestra JFrame con layout FlowLayout, una accanto all'altra.
+	     * 
+	     * @param c1 La prima carta disponibile da pescare.
+	     * @param c2 La seconda carta disponibile da pescare.
+	     * @param c3 La terza carta disponibile da pescare.
+	     * @param c4 La quarta carta disponibile da pescare.
+	     */
 	    public static void mostraCarteDaPescareInJPG(Carta c1, Carta c2, Carta c3, Carta c4)
 	    {
 	        JFrame frame = new JFrame("Visualizzazione Carte da poter pescare");
@@ -1198,6 +1322,12 @@ public class Giocatore {
 	        frame.setVisible(true);
 	    }
 	    
+	    /**
+	     * Visualizza l'immagine della carta iniziale scelta.
+	     * La carta viene visualizzata in una finestra JFrame con layout FlowLayout.
+	     * 
+	     * @param c La carta iniziale da visualizzare.
+	     */
 	    public static void mostraCartaInizialeDaJPG(CartaIniziale c)
 	    {
 	    	JFrame frame = new JFrame("Visualizzazione Carta");

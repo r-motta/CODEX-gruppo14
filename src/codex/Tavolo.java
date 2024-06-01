@@ -11,6 +11,9 @@ public class Tavolo{
 	private List <CartaOro> mazzoOro;
 	private List <CartaObiettivo> mazzoObiettivo;
 	
+	/**
+     * Crea un nuovo tavolo di gioco inizializzando tutti i mazzi e l'array di giocatori.
+     */
 	public Tavolo()
 	{
 	
@@ -264,23 +267,48 @@ public class Tavolo{
 			mazzoIniziali.add(ci6);
 			
 			}
-
+	
+	/**
+     * Restituisce il mazzo delle carte risorsa.
+     *
+     * @return il mazzo delle carte risorsa
+     */
 	public ArrayList<CartaRisorsa> getMazzoRisorse() {
 		return (ArrayList<CartaRisorsa>) mazzoRisorse;
 	}
-
+	
+	/**
+     * Restituisce l'array dei giocatori.
+     *
+     * @return l'array dei giocatori
+     */
 	public Giocatore[] getGamers() {
 		return gamers;
 	}
-
+	
+	/**
+     * Restituisce il mazzo delle carte iniziali.
+     *
+     * @return il mazzo delle carte iniziali
+     */
 	public ArrayList<CartaIniziale> getMazzoIniziali() {
 		return (ArrayList<CartaIniziale>) mazzoIniziali;
 	}
-
+	
+	/**
+     * Restituisce il mazzo delle carte oro.
+     *
+     * @return il mazzo delle carte oro
+     */
 	public ArrayList<CartaOro> getMazzoOro() {
 		return (ArrayList<CartaOro>) mazzoOro;
 	}
-
+	
+	/**
+     * Restituisce il mazzo delle carte obiettivo.
+     *
+     * @return il mazzo delle carte obiettivo
+     */
 	public ArrayList<CartaObiettivo> getMazzoObiettivo() {
 		return (ArrayList<CartaObiettivo>) mazzoObiettivo;
 	}

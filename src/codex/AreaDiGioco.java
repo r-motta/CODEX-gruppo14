@@ -9,6 +9,13 @@ public class AreaDiGioco {
 	public static final int maxRighe=20; //static perché le usiamo in CartaObiettivo per scorrere la matrice
 	public static final int maxColonne=20;
 	
+	/**
+	 * Crea un'area di gioco per il giocatore specificato.
+	 * L'area di gioco è rappresentata da una matrice di oggetti con dimensioni predefinite
+	 * e contiene la carta iniziale del giocatore nella posizione centrale (10, 10).
+	 * 
+	 * @param g Il giocatore a cui appartiene l'area di gioco.
+	 */
 	public AreaDiGioco(Giocatore g)
 	{
 		area = new Object[AreaDiGioco.maxRighe][AreaDiGioco.maxColonne];
@@ -16,16 +23,31 @@ public class AreaDiGioco {
 		posLibere = new ArrayList <Cella>();
 	}
 	
+	/**
+	 * Restituisce l'area di gioco rappresentata da una matrice di oggetti.
+	 * 
+	 * @return La matrice di oggetti che rappresenta l'area di gioco.
+	 */
 	public Object[][] getArea() {
 		return area;
 	}
 
-	
+	/**
+	 * Restituisce la lista delle posizioni libere nell'area di gioco.
+	 * 
+	 * @return La lista delle posizioni libere nell'area di gioco.
+	 */
+
 	public List<Cella> getPosLibere() {
 		return posLibere;
 	}
 	
-	
+	/**
+	 * Trova e restituisce le posizioni libere attorno alle carte presenti nell'area di gioco del giocatore specificato.
+	 *
+	 * @param g Il giocatore di cui si vuole trovare le posizioni libere attorno alle carte.
+	 * @return Un elenco delle posizioni libere attorno alle carte nell'area di gioco del giocatore.
+	 */
 	public ArrayList <Cella> posizioniLibere(Giocatore g)
 	{
 		
@@ -122,10 +144,6 @@ public class AreaDiGioco {
 		return (ArrayList<Cella>) g.getAreaDiGioco().getPosLibere();
 	}
 
-	
-
-	
-	
 	
 
 }

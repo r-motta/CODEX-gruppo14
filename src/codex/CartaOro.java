@@ -7,7 +7,18 @@ public class CartaOro extends Carta{
 	private String requisiti;
 	private String punti;
 	
-	
+	/**
+	 * Crea una nuova carta oro con il colore specificato, gli angoli e il percorso dell'immagine.
+	 *
+	 * @param colore il colore della carta oro
+	 * @param asx l'angolo alto sinistra della carta oro
+	 * @param adx l'angolo alto destra della carta oro
+	 * @param bsx l'angolo basso sinistra della carta oro
+	 * @param bdx l'angolo basso destra della carta oro
+	 * @param req i requisiti associati alla carta oro
+	 * @param p i punti associati alla carta oro
+	 * @param percorsoImmagine il percorso dell'immagine della carta oro
+	 */
 	public CartaOro(Color colore, String asx, String adx, String bsx, String bdx, String req, String p, String percorsoImmagine)
 	{
 		super(colore, asx, adx, bsx, bdx, percorsoImmagine);
@@ -16,18 +27,32 @@ public class CartaOro extends Carta{
 		punti = p;
 	}
 	
+	/**
+	 * Restituisce i requisiti associati alla carta oro.
+	 *
+	 * @return i requisiti della carta oro
+	 */
 	public String getRequisiti() {
 		return requisiti;
 	}
 	
+	/**
+	 * Restituisce i punti associati alla carta oro.
+	 *
+	 * @return i punti della carta oro
+	 */
 	public String getPunti()
 	{
 		return punti;
 	}
 	
 	
-	
-	
+	/**
+	 * Crea una copia della carta oro specificata.
+	 *
+	 * @param c la carta oro da clonare
+	 * @return una copia della carta oro
+	 */
 	public static CartaOro clonaCarta(CartaOro c)
 	{
 		CartaOro temp = new CartaOro(c.getColore(), c.getAs(), c.getAd(), c.getBs(), c.getBd(), c.getRequisiti(), c.getPunti() ,c.getPercorsoImmagine());
@@ -37,12 +62,23 @@ public class CartaOro extends Carta{
 		//ho bisogno di clonare questi attributi in modo da poter richiamare sempre il to string 
 	}
 	
-	
+	/**
+	 * Restituisce una rappresentazione testuale della carta oro, incluso il colore, gli angoli, i requisiti, i punti e il percorso dell'immagine.
+	 *
+	 * @return una stringa che rappresenta la carta oro
+	 */
 	@Override
 	public String toString() {
 		return super.toString() +"\n"+"Requisiti: "+requisiti+"\n"+punti+"\n";
 	}
 	
+	/**
+	 * Controlla se un giocatore soddisfa i requisiti specificati da una carta oro.
+	 *
+	 * @param c la carta oro contenente i requisiti da soddisfare
+	 * @param g il giocatore di cui controllare l'area di gioco
+	 * @return true se il giocatore soddisfa i requisiti della carta oro, false altrimenti
+	 */
 	public boolean controlloRequisiti(CartaOro c, Giocatore g)
 	{
 		if(c.getRequisiti().equals("fungo fungo lupo"))

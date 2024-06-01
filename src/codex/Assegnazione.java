@@ -8,12 +8,20 @@ public class Assegnazione {
 	
 	Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * Gestisce l'assegnazione delle carte e l'inizializzazione del gioco.
+	 * Richiede ai giocatori di inserire i loro nickname, distribuisce le carte iniziali e obiettivo,
+	 * e assegna loro le carte risorse e oro iniziali.
+	 *
+	 * @param t il tavolo di gioco su cui viene gestita l'assegnazione
+	 */
 	public Assegnazione(Tavolo t)
 	{
 		this.sc = new Scanner(System.in);
 		
 		System.out.println();
 		System.out.println("Inserite i vostri nickname: ");
+		System.out.println("Il nickname puo' contenere solo lettere, non numeri ");
 		System.out.println("(L'ordine dei giocatori in partita sara' uguale all'ordine in cui vi inserirete adesso)");
 		System.out.println();
 		
