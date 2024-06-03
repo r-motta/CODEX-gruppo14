@@ -440,7 +440,7 @@ public class Giocatore {
             	{
             		System.out.print(t.getGamers()[i].getNickname()+", inserisci una posizone: ");
                 	sceltaPosizioneCarta = sc.nextInt();
-            	}while(sceltaPosizioneCarta<0 || sceltaPosizioneCarta>t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).size());
+            	}while(sceltaPosizioneCarta<0 || sceltaPosizioneCarta>=t.getGamers()[i].getAreaDiGioco().posizioniLibere(t.getGamers()[i]).size());
             	
                 validInput = true;
             } catch (InputMismatchException e) {

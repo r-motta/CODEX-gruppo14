@@ -63,23 +63,25 @@ public class Assegnazione {
 		}
 			
 			
-		Collections.shuffle(t.getMazzoIniziali());
+		
 			
 			//parte grafica per mostarre le carte inziaili per fronte e retro
 			
-		int j=0;
+		
 			
 			//assegnazione delle carte inziali e decisione su fronte o retro
 			for(int i=0;i<Main.numGiocatori;i++)
 			{
+				Collections.shuffle(t.getMazzoIniziali());
+				
 				System.out.println("@@@@@@@@@@@@@ GIOCATORE: "+t.getGamers()[i].getNickname()+" @@@@@@@@@@@@@");
 				
 				System.out.println();
 				System.out.println("Ciao "+t.getGamers()[i].getNickname()+", questa è la carta iniziale che ti è stata assegnata: ");
 				System.out.println();
 					
-					if(i==0)
-						j=0;
+					
+				int j=0;
 					
 					String scelta = null;
 					
@@ -97,6 +99,7 @@ public class Assegnazione {
 					
 					System.out.println(tempRetroIniziale.useRetro(tempRetroIniziale).toString()); 
 					System.out.println("_____________________________________________________");
+					
 					
 					Giocatore.mostraCarteInizialiInJPG(t.getGamers()[i].getCartaInizialePropria(), tempRetroIniziale,t,i);
 					
@@ -123,7 +126,7 @@ public class Assegnazione {
 				    		
 				    }
 				    	
-					j++;
+					t.getMazzoIniziali().remove(0);
 					
 					System.out.println();
 				

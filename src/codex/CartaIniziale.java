@@ -47,20 +47,20 @@ public class CartaIniziale{
     		}
     	else if(ci.nome == "ci2")
     		{
-	    		ci.as = "vuoto";
+	    		ci.as = "lupo";
 	            ci.ad = "vuoto";
-	            ci.bs = null;
-	            ci.bd = null;
-	            simboloRetro = "foglia,lupo,fungo";
+	            ci.bs = "vuoto";
+	            ci.bd = "fungo";
+	            simboloRetro = "fungo";
 	            percorsoImmagine = "/immagini/carteIniziali/ci2Retro.jpg";
     		}
     	else if(ci.nome == "ci3")
     		{
 	    		ci.as = "vuoto";
 	            ci.ad = "vuoto";
-	            ci.bs = null;
-	            ci.bd = null;
-	            simboloRetro = "lupo,farfalla,foglia";
+	            ci.bs = "vuoto";
+	            ci.bd = "vuoto";
+	            simboloRetro = "foglia,fungo";
 	            percorsoImmagine = "/immagini/carteIniziali/ci3Retro.jpg";
     		}
     	else if(ci.nome == "ci4")
@@ -76,18 +76,18 @@ public class CartaIniziale{
     		{
 	    		ci.as = "vuoto";
 	            ci.ad = "vuoto";
-	            ci.bs = "vuoto";
-	            ci.bd = "vuoto";
-	            simboloRetro = "foglia,fungo";
+	            ci.bs = null;
+	            ci.bd = null;
+	            simboloRetro = "lupo,farfalla,foglia";
 	            percorsoImmagine = "/immagini/carteIniziali/ci5Retro.jpg";
     		}
     	else if(ci.nome == "ci6")
     		{
-	    		ci.as = "lupo";
+	    		ci.as = "vuoto";
 	            ci.ad = "vuoto";
-	            ci.bs = "vuoto";
-	            ci.bd = "fungo";
-	            simboloRetro = "fungo";
+	            ci.bs = null;
+	            ci.bd = null;
+	            simboloRetro = "foglia,lupo,fungo";
 	            percorsoImmagine = "/immagini/carteIniziali/ci6Retro.jpg";
     		}
     	

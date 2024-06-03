@@ -113,11 +113,11 @@ public class Tavolo{
 			        
 			        
 			    CartaIniziale ci1 = new CartaIniziale("ci1","fungo","foglia","farfalla","lupo","/immagini/carteIniziali/ci1.jpg");
-			    CartaIniziale ci2 = new CartaIniziale("ci2", "fungo","lupo","foglia","farfalla","/immagini/carteIniziali/ci2.jpg");
-			    CartaIniziale ci3 = new CartaIniziale("ci3", "farfalla","fungo","foglia","lupo","/immagini/carteIniziali/ci3.jpg");
+			    CartaIniziale ci2 = new CartaIniziale("ci2", "foglia","lupo","fungo","farfalla","/immagini/carteIniziali/ci2.jpg");
+			    CartaIniziale ci3 = new CartaIniziale("ci3", "farfalla","lupo","fungo","foglia","/immagini/carteIniziali/ci3.jpg");
 			    CartaIniziale ci4 = new CartaIniziale("ci4", "foglia","farfalla","lupo","fungo","/immagini/carteIniziali/ci4.jpg");
-			    CartaIniziale ci5 = new CartaIniziale("ci5", "farfalla","lupo","fungo","foglia","/immagini/carteIniziali/ci5.jpg");
-			    CartaIniziale ci6 = new CartaIniziale("ci6", "foglia","lupo","fungo","farfalla","/immagini/carteIniziali/ci6.jpg");
+			    CartaIniziale ci5 = new CartaIniziale("ci5", "farfalla","fungo","foglia","lupo","/immagini/carteIniziali/ci5.jpg");
+			    CartaIniziale ci6 = new CartaIniziale("ci6", "fungo","lupo","foglia","farfalla","/immagini/carteIniziali/ci6.jpg");
 			        
 			        
 			    CartaObiettivo cob1 = new CartaObiettivo("Diagonale dx di tre carte rosse", 2,"/immagini/carteObiettivo/cob1.jpg");
