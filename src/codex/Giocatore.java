@@ -21,7 +21,7 @@ public class Giocatore {
     private CartaObiettivo cartaObiettivoSegreta;
     private CartaIniziale CartaInizialePropria = null;
     private final int maxCarteInMano=3;
-    private Carta[] carteInMano = new Carta[maxCarteInMano];
+    private Carta[] carteInMano;
     private AreaDiGioco area;
     
     Scanner sc = new Scanner(System.in);
@@ -34,6 +34,7 @@ public class Giocatore {
     {
         this.nickname = nome;
         this.sc = new Scanner(System.in);
+        this.carteInMano = new Carta[maxCarteInMano];
     }
 
     /**
